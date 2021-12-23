@@ -34,6 +34,7 @@
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
                             <label for="txtFullName">Name</label>
+                            <input type="hidden" name="id" id="txtid" name="">
                             <input type="text" class="form-control" name="name"  id="name"  placeholder="First Probation Unit"  required="">
                             <div class="valid-feedback">
                                 Looks good!
@@ -115,7 +116,7 @@
                         </div>
                     </div>
 
-                    <button id="btnSave" class="btn btn-primary" type="button">Create</button>
+                    <button id="btnSave" class="btn btn-primary" type="button">Save</button>
                 </form>
             </div>
         </div>

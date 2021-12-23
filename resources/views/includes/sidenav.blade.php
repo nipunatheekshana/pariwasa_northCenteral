@@ -20,7 +20,7 @@
                 <li>
                     <a href="#">
                         <span class="nav-link-icon">
-                            <i data-feather="shopping-cart"></i>
+                            <i data-feather="shield"></i>
                         </span>
                         <span>Probation Units</span>
                     </a>
@@ -30,9 +30,28 @@
                                 @endif href="/createProbationUnit">Create</a>
                         </li>
                         <li>
-                            <a @if(request()->segment(1) == 'products') class="active"
-                                @endif href="#">List</a>
+                            <a @if(request()->segment(1) == 'probationUnitList') class="active"
+                                @endif href="/probationUnitList">List</a>
                         </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="users"></i>
+                        </span>
+                        <span>Users</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a @if(request()->segment(1) == 'createProbationUnitUser') class="active"
+                                @endif href="/createProbationUnitUser">Create Probation Unit User</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'probationUnitUserList') class="active"
+                                @endif href="/probationUnitUserList">Probation Unit User List</a>
+                        </li>
+
                     </ul>
                 </li>
             </ul>

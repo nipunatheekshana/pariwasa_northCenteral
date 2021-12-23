@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProbationUnitController;
+use App\Http\Controllers\probationUnitListController;
+use App\Http\Controllers\probationUnitUserListController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,5 +41,29 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
         return view('pages.Admin.createProbationUnit');
     });
     Route::post('/register_Probation_unit/save',[ProbationUnitController::class,'save']);
+    Route::post('/register_Probation_unit/update',[ProbationUnitController::class,'update']);
+
+    Route::get('/register_Probation_unit/loadProbationUnit/{id}', [ProbationUnitController::class, 'loadProbationUnit']);
+
+
+    //Probation Unit List
+    Route::get('/probationUnitList', function () {
+        return view('pages.Admin.probationUnitList');
+    });
+    Route::get('/probationUnitList/loadProbationUnits', [probationUnitListController::class, 'loadProbationUnits']);
+
+    //createProbationUnitUser
+    Route::get('/createProbationUnitUser', function () {
+        return view('pages.Admin.createProbationUnitUser');
+    });
+    Route::post('/createProbationUnitUser/saveProbationUnitUser',[userController::class,'saveProbationUnitUser']);
+    Route::get('/createProbationUnitUser/loadProbationUnits', [userController::class, 'loadProbationUnits']);
+
+    // probationUnitUserList
+    Route::get('/probationUnitUserList', function () {
+        return view('pages.Admin.probationUnitUserList');
+    });
+    Route::get('/probationUnitUserList/loadProbationUnitUsers', [probationUnitUserListController::class, 'loadProbationUnitUsers']);
+    Route::delete('/probationUnitUserList/deleteProbationUnitUsers/{id}', [probationUnitUserListController::class, 'deleteProbationUnitUsers']);
 
 });

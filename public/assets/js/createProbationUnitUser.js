@@ -1,10 +1,8 @@
-console.log('register_Probation_unit.js loading');
+console.log('createProbationUnitUser.js loading');
 $(document).ready(function() {
 
-
-
     $('#btnSave').on('click', function () {
-        var form = $('#probation_unit_form').get(0);
+        var form = $('#createUserForm').get(0);
         var data = new FormData(form);
 
         if($('#btnSave').text().trim()=='Save'){
@@ -16,6 +14,7 @@ $(document).ready(function() {
 
     });
     loadProbationUnit() ;
+    loadProbationUnits();
 });
 
 
@@ -23,7 +22,7 @@ $(document).ready(function() {
 function save(data){
     $.ajax({
         type: "POST",
-        url: "/register_Probation_unit/save",
+        url: "/createProbationUnitUser/saveProbationUnitUser",
         data: data,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -77,7 +76,7 @@ function save(data){
 function update(data){
     $.ajax({
         type: "POST",
-        url: "/register_Probation_unit/update",
+        url: "/createProbationUnitUser/updateProbationUnitUser",
         data: data,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -128,7 +127,27 @@ function update(data){
 
     });
 }
+function loadProbationUnits(){
+    $.ajax({
+        type: 'GET',
+        url: '/createProbationUnitUser/loadProbationUnits',
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
 
+                    html += '<option value="'+value.Probation_unit_id+'" > '+value.name+' </option>';
+                });
+                $('#probationUnitid').html(html);
+
+
+            }
+        }, error: function(data){
+            console.log('something went wrong');
+        }
+    });
+}
 function loadProbationUnit() {
 
     if (window.location.search.length > 0) {
