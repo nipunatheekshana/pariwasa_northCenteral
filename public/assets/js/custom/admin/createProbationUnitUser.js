@@ -9,12 +9,14 @@ $(document).ready(function() {
             save(data);
         }
         else{
-            update(data);
+            //function is also commeted below
+            // update(data);
         }
 
     });
-    loadProbationUnit() ;
     loadProbationUnits();
+    loadProbationUnit() ;
+
 });
 
 
@@ -73,60 +75,60 @@ function save(data){
     });
 }
 
-function update(data){
-    $.ajax({
-        type: "POST",
-        url: "/createProbationUnitUser/updateProbationUnitUser",
-        data: data,
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        processData: false,
-        contentType: false,
-        cache: false,
-        timeout: 800000,
-        beforeSend: function () {
+// function update(data){
+//     $.ajax({
+//         type: "POST",
+//         url: "/createProbationUnitUser/updateProbationUnitUser",
+//         data: data,
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         },
+//         processData: false,
+//         contentType: false,
+//         cache: false,
+//         timeout: 800000,
+//         beforeSend: function () {
 
-        },
-        success: function (response) {
-            console.log(response);
-            if(response.data.success){
-                toastr.success('Probation Center Updated');
-                reset();
-                location.href='/probationUnitList'
-            }
-            else{
-                toastr.error('Something went wrong');
+//         },
+//         success: function (response) {
+//             console.log(response);
+//             if(response.data.success){
+//                 toastr.success('Probation Center Updated');
+//                 reset();
+//                 location.href='/probationUnitList'
+//             }
+//             else{
+//                 toastr.error('Something went wrong');
 
-            }
+//             }
 
-        },
-        error: function (error) {
-            console.log(error);
+//         },
+//         error: function (error) {
+//             console.log(error);
 
-            if (error.status == 422) { // when status code is 422, it's a validation issue
-                console.log(error.responseJSON);
-                // you can loop through the errors object and show it to the user
-                console.warn(error.responseJSON.errors);
-                // display errors on each form field
-                $.each(error.responseJSON.errors, function (i, error) {
-                    var el = $(document).find('[name="'+i+'"]');
-                    el.after($('<span style="color: red;">'+error[0]+'</span>'));
-                    toastr.warning(error[0]);
-                    console.clear()
+//             if (error.status == 422) { // when status code is 422, it's a validation issue
+//                 console.log(error.responseJSON);
+//                 // you can loop through the errors object and show it to the user
+//                 console.warn(error.responseJSON.errors);
+//                 // display errors on each form field
+//                 $.each(error.responseJSON.errors, function (i, error) {
+//                     var el = $(document).find('[name="'+i+'"]');
+//                     el.after($('<span style="color: red;">'+error[0]+'</span>'));
+//                     toastr.warning(error[0]);
+//                     console.clear()
 
-                });
-            }
-            else{
-                toastr.error('Something went wrong');
-            }
-        },
-        complete: function () {
+//                 });
+//             }
+//             else{
+//                 toastr.error('Something went wrong');
+//             }
+//         },
+//         complete: function () {
 
-        }
+//         }
 
-    });
-}
+//     });
+// }
 function loadProbationUnits(){
     $.ajax({
         type: 'GET',
@@ -148,6 +150,7 @@ function loadProbationUnits(){
         }
     });
 }
+
 function loadProbationUnit() {
 
     if (window.location.search.length > 0) {
@@ -168,7 +171,7 @@ function loadProbationUnit() {
     if (id){
         $.ajax({
             type: "GET",
-            url: "/register_Probation_unit/loadProbationUnit/" + id,
+            url: "/createProbationUnitUser/loadProbationUnitUser/" + id,
             processData: false,
             contentType: false,
             cache: false,
@@ -178,23 +181,14 @@ function loadProbationUnit() {
             },
             success: function (response) {
 
-                console.log(response)
                 if (response.success) {
 
                     console.log(response.result);
                     var data = response.result;
-                    $('#txtid').val(data.Probation_unit_id);
+                    $('#probationUnitid').val(data.probationUnitid);
                     $('#name').val(data.name);
-                    $('#address').val(data.address);
-                    $('#district').val(data.district);
-                    $('#divitional_secretariat').val(data.divitional_secretariat);
-                    $('#senior_officer').val(data.senior_officer);
-                    $('#officer_incharge').val(data.officer_incharge);
-                    $('#tp_no').val(data.tp_no);
-                    $('#fax').val(data.fax);
                     $('#email').val(data.email);
-                    $('#remarks').val(data.remarks);
-
+                    $('#hiddenuserid').val(data.id);
                 }
 
             },
@@ -212,15 +206,12 @@ function loadProbationUnit() {
 }
 function reset(){
     $('#name').val('');
-    $('#address').val('');
-    $('#district').val('');
-    $('#divitional_secretariat').val('');
-    $('#senior_officer').val('');
-    $('#officer_incharge').val('');
-    $('#tp_no').val('');
-    $('#fax').val('');
     $('#email').val('');
-    $('#remarks').val('');
+    $('#hiddenuserid').val('');
+    $('#Password').val('');
+    $('#password_confirmation').val('');
+
+
 
 
 }

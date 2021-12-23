@@ -71,7 +71,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="shopping-cart"></i>
                         </span>
-                        <span>E-commerce</span>
+                        <span>Probation Centers</span>
                     </a>
                     <ul>
                         <li>

@@ -44,6 +44,7 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom01">Name</label>
+                            <input type="hidden" name="userid" id="hiddenuserid">
                             <input type="text" class="form-control"  name="name" id="name" placeholder="@username" >
                             <div class="valid-feedback">
                                 Looks good!
@@ -86,6 +87,6 @@
 
 @endsection
 @section('script')
-<script src="{{ url('assets/js/createProbationUnitUser.js') }}"></script>
+<script src="{{ url('assets/js/custom/admin/createProbationUnitUser.js') }}"></script>
 
 @endsection

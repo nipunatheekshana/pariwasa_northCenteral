@@ -30,8 +30,7 @@ class probationUnitUserListController extends Controller
     {
         try {
 
-            $User = User::where($id);
-            $User->delete();
+            $User = User::where('id',$id)->delete();
 
             $response =  $this->responseBody(true, "deleteProbationUnitUsers", "deleted", null);
         } catch (Exception $exception) {

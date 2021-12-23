@@ -38,7 +38,7 @@ function loadProbationUnitUsers() {
                     var email = response.result[i]['email'];
                     var probationunitName=response.result[i]['pname'];
                     var edit = '<button class="btn btn-primary mr-1" onclick="edit(' + id + ')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
-                    var dele ='<button class="btn btn-danger mr-1" onclick="_delete(' + id + ')"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+                    var dele ='<button class="btn btn-danger mr-1" onclick="_delete(' + id +')"><i class="fa fa-trash" aria-hidden="true"></i></button>';
                     var view = '<button class="btn btn-success mr-1" onclick="view(' + id + ')"><i class="fa fa-eye" aria-hidden="true"></i></button>';
 
 
@@ -47,7 +47,7 @@ function loadProbationUnitUsers() {
                             "thUnitName": probationunitName,
                             "thName": name,
                             "thEmail": email,
-                            "actions":view+edit,
+                            "actions":view+dele,
                         });
 
                 }
@@ -66,21 +66,40 @@ function loadProbationUnitUsers() {
 
 
 function _delete(id) {
-    $.ajax({
-        type: 'DELETE',
-        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-        url: '/probationUnitUserList/deleteProbationUnitUsers/' + id,
-        success: function (response) {
-            console.log(response);
 
-            if (response.success) {
-                toastr.error('User Deleted');
-                loadProbationUnitUsers();
-            }
-        }, error: function (data) {
-            console.log('something went wrong');
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover  !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+        if (willDelete) {
+            swal( "User has been deleted!", {icon: "success",});
+
+            $.ajax({
+                type: 'DELETE',
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                url: '/probationUnitUserList/deleteProbationUnitUsers/' + id,
+                success: function (response) {
+                    console.log(response);
+
+                    if (response.success) {
+                        toastr.error('User Deleted');
+                        loadProbationUnitUsers();
+                    }
+                }, error: function (data) {
+                    console.log('something went wrong');
+                }
+            });
+        } else {
+            swal("Aborted!", { icon: "error",});
         }
+
     });
+
+
 }
 
 function view(id) {

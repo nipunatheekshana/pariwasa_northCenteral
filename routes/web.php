@@ -58,6 +58,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::post('/createProbationUnitUser/saveProbationUnitUser',[userController::class,'saveProbationUnitUser']);
     Route::get('/createProbationUnitUser/loadProbationUnits', [userController::class, 'loadProbationUnits']);
+    Route::get('/createProbationUnitUser/loadProbationUnitUser/{id}', [userController::class, 'loadProbationUnitUser']);
+
 
     // probationUnitUserList
     Route::get('/probationUnitUserList', function () {

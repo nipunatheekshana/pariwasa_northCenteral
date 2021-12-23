@@ -126,6 +126,6 @@
 
 @endsection
 @section('script')
-<script src="{{ url('assets/js/register_Probation_unit.js') }}"></script>
+<script src="{{ url('assets/js/custom/admin/register_Probation_unit.js') }}"></script>
 
 @endsection

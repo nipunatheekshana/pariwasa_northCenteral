@@ -41,14 +41,25 @@ class userController extends Controller
         return response()->json(["data" => $responseBody]);
 
     }
+   
     public function loadProbationUnits(){
         try {
-            $Probation_unit =Probation_unit::all();
+            $Probation_unit =Probation_unit::all('Probation_unit_id','name');
 
             return $this->responseBody(true, "loadProbationUnits", "found", $Probation_unit);
         }
          catch (Exception $exception) {
             return $this->responseBody(false, "loadProbationUnits", "error", $exception->getMessage());
+        }
+    }
+    public function loadProbationUnitUser($id){
+        try {
+                $User=User::where('id',$id)->first();
+                return $this->responseBody(true, "loadProbationUnitUser", "found",$User );
+
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadProbationUnitUser", "error", $exception->getMessage());
         }
     }
 }
