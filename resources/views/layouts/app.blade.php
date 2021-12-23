@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Supplier Material</title>
+    <title>Department Of Probation</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url('assets/media/image/favicon.png') }}" />
@@ -20,6 +20,10 @@
 
     <!-- App css -->
     <link rel="stylesheet" href="{{ url('assets/css/app.min.css') }}" type="text/css">
+
+
+    {{-- crsf token --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
