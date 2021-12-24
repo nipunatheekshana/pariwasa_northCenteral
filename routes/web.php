@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\probationCenterCatagoryController;
+use App\Http\Controllers\probationCenterController;
+use App\Http\Controllers\probationCenterListController;
 use App\Http\Controllers\ProbationUnitController;
 use App\Http\Controllers\probationUnitListController;
 use App\Http\Controllers\probationUnitUserListController;
@@ -42,7 +45,6 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::post('/register_Probation_unit/save',[ProbationUnitController::class,'save']);
     Route::post('/register_Probation_unit/update',[ProbationUnitController::class,'update']);
-
     Route::get('/register_Probation_unit/loadProbationUnit/{id}', [ProbationUnitController::class, 'loadProbationUnit']);
 
 
@@ -67,5 +69,33 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::get('/probationUnitUserList/loadProbationUnitUsers', [probationUnitUserListController::class, 'loadProbationUnitUsers']);
     Route::delete('/probationUnitUserList/deleteProbationUnitUsers/{id}', [probationUnitUserListController::class, 'deleteProbationUnitUsers']);
+
+
+    // probation center
+    Route::get('/createProbationCenter', function () {
+        return view('pages.probationUnits.createProbationCenter');
+    });
+    Route::get('/createProbationCenter/loadcatagories', [probationCenterController::class, 'loadcatagories']);
+    Route::post('/createProbationCenter/save',[probationCenterController::class,'save']);
+    Route::post('/createProbationCenter/update',[probationCenterController::class,'update']);
+    Route::get('/createProbationCenter/loadProbationCenter/{id}', [probationCenterController::class, 'loadProbationCenter']);
+
+
+    // probationCenterCatagory
+    Route::get('/probationCenterCatagory', function () {
+        return view('pages.probationUnits.probationCenterCatagory');
+    });
+    Route::post('/probationCenterCatagory/save', [probationCenterCatagoryController::class, 'save']);
+    Route::post('/probationCenterCatagory/update', [probationCenterCatagoryController::class, 'update']);
+    Route::get('/probationCenterCatagory/loadcatagory', [probationCenterCatagoryController::class, 'loadcatagory']);
+    Route::get('/probationCenterCatagory/loadcatagory/{id}', [probationCenterCatagoryController::class, 'loadcatagoryToid']);
+    Route::delete('/probationCenterCatagory/delete/{id}', [probationCenterCatagoryController::class, 'delete']);
+
+
+    // probation Center List
+    Route::get('/probationCenterList', function () {
+        return view('pages.probationUnits.probationCenterList');
+    });
+    Route::get('/probationCenterList/loadProbationCenters', [probationCenterListController::class, 'loadProbationCenters']);
 
 });

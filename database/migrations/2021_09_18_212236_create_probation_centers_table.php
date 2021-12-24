@@ -27,7 +27,6 @@ class CreateProbationCentersTable extends Migration
             $table->string('registration_no');
             $table->string('registration_date');
             $table->string('fund');
-            $table->string('number_Of_stalf');
             $table->string('gramaseva_divition');
             $table->string('maximum_children_capacity');
             $table->string('minimum_children_capacity');
