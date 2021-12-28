@@ -386,12 +386,17 @@
   .input100:focus {
     height: 48px;
   }
-
+  .input100:not([value=""]) {
+    height: 48px;
+  }
   .input100:focus + .focus-input100 + .label-input100 {
     top: 14px;
     font-size: 13px;
   }
-
+  .input100:not([value=""])  + .focus-input100 + .label-input100{
+    top: 14px;
+    font-size: 13px;
+  }
   .has-val {
     height: 48px !important;
   }
