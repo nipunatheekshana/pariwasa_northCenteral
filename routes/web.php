@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\designationController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\DivisionalSecretariatController;
 use App\Http\Controllers\GradesController;
@@ -9,7 +10,10 @@ use App\Http\Controllers\PoliceDivisionController;
 use App\Http\Controllers\probationCenterCatagoryController;
 use App\Http\Controllers\probationCenterController;
 use App\Http\Controllers\probationCenterListController;
+use App\Http\Controllers\probationCenterUserListController;
 use App\Http\Controllers\ProbationUnitController;
+use App\Http\Controllers\probationUnitEmployeeController;
+use App\Http\Controllers\probationUnitEmployeeListController;
 use App\Http\Controllers\probationUnitListController;
 use App\Http\Controllers\probationUnitUserListController;
 use App\Http\Controllers\userController;
@@ -80,6 +84,10 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/createProbationCenter', function () {
         return view('pages.probationUnits.createProbationCenter');
     });
+    Route::get('/createProbationCenter/loadDistrict', [probationCenterController::class, 'loadDistrict']);
+    Route::get('/createProbationCenter/loadDivitionalSecatariat/{id}', [probationCenterController::class, 'loadDivitionalSecatariat']);
+    Route::get('/createProbationCenter/loadGramasevadivision/{id}', [probationCenterController::class, 'loadGramasevadivision']);
+
     Route::get('/createProbationCenter/loadcatagories', [probationCenterController::class, 'loadcatagories']);
     Route::post('/createProbationCenter/save',[probationCenterController::class,'save']);
     Route::post('/createProbationCenter/update',[probationCenterController::class,'update']);
@@ -108,6 +116,12 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/registerProbationUnitEmployee', function () {
         return view('pages.probationUnits.registerProbationUnitEmployee');
     });
+    Route::get('/registerProbationUnitEmployee/loadpoliceDevition/{id}', [probationUnitEmployeeController::class, 'loadpoliceDevition']);
+
+    Route::post('/registerProbationUnitEmployee/save',[probationUnitEmployeeController::class,'save']);
+    Route::post('/createProbationCenter/update',[probationUnitEmployeeController::class,'update']);
+    Route::get('/registerProbationUnitEmployee/loadProbationUnitEmployee/{id}', [probationUnitEmployeeController::class, 'loadProbationUnitEmployee']);
+
 
     // grade
     Route::get('/grade', function () {
@@ -160,4 +174,37 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/gramasevadivision/loadgramasevadivision', [GramasevaDivisionController::class, 'loadpoliceDivitions']);
     Route::get('/gramasevadivision/loadgramasevadivision/{id}', [GramasevaDivisionController::class, 'loadgramasevadivisionToid']);
     Route::delete('/gramasevadivision/delete/{id}', [GramasevaDivisionController::class, 'delete']);
+
+    // designation
+
+    Route::get('/designation', function () {
+        return view('pages.designation');
+    });
+    Route::post('/designation/save', [designationController::class, 'save']);
+    Route::post('/designation/update', [designationController::class, 'update']);
+    Route::get('/designation/loaddesignation', [designationController::class, 'loaddesignation']);
+    Route::get('/designation/loaddesignation/{id}', [designationController::class, 'loaddesignationToid']);
+    Route::delete('/designation/delete/{id}', [designationController::class, 'delete']);
+
+    // probationUnitEmployeeList
+    Route::get('/probationUnitEmployeeList', function () {
+        return view('pages.probationUnits.probationUnitEmployeeList');
+    });
+    Route::get('/probationUnitEmployeeList/loadProbationUnitEmployees', [probationUnitEmployeeListController::class, 'loadProbationUnitEmployees']);
+    Route::delete('/probationUnitEmployeeList/delete/{id}', [probationUnitEmployeeListController::class, 'delete']);
+
+    //createProbationCenterUsers
+    Route::get('/createProbationCenterUsers', function () {
+        return view('pages.probationUnits.createProbationCenterUsers');
+    });
+    Route::post('/createProbationCenterUsers/saveProbationCenterUser',[userController::class,'saveProbationCenterUser']);
+    Route::get('/createProbationCenterUsers/loadProbationCenters', [userController::class, 'loadProbationCenters']);
+    Route::get('/createProbationCenterUsers/loadProbationCenterUser/{id}', [userController::class, 'loadProbationCenterUser']);
+
+    // probationCenterUserList
+    Route::get('/probationCenterUserList', function () {
+        return view('pages.probationUnits.probationCenterUserList');
+    });
+    Route::get('/probationCenterUserList/loadProbationCenterUsers', [probationCenterUserListController::class, 'loadProbationCenterUsers']);
+    Route::delete('/probationCenterUserList/deleteProbationCenterUsers/{id}', [probationCenterUserListController::class, 'deleteProbationCenterUsers']);
 });

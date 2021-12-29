@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\common\commonFeatures;
+use App\Models\District;
+use App\Models\Divisional_secretariat;
+use App\Models\Gramaseva_division;
 use App\Models\Probation_center;
 use App\Models\probationcenter_catagory;
 use Exception;
@@ -78,7 +81,7 @@ class probationCenterController extends Controller
 
         ]);
         try{
-          
+
             $save=Probation_center::where('probation_center_id',$request->id)
             ->update(
                 [
@@ -108,6 +111,36 @@ class probationCenterController extends Controller
         }
         return response()->json(["data" => $responseBody]);
 
+    }
+    public function loadDistrict(){
+        try {
+            $District =District::all();
+
+            return $this->responseBody(true, "loadDistrict", "found", $District);
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadDistrict", "error", $exception->getMessage());
+        }
+    }
+    public function loadDivitionalSecatariat($id){
+        try {
+            $Divisional_secretariat =Divisional_secretariat::where('districtId',$id)->get();
+
+            return $this->responseBody(true, "loadDivitionalSecatariat", "found", $Divisional_secretariat);
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadDivitionalSecatariat", "error", $exception->getMessage());
+        }
+    }
+    public function loadGramasevadivision($id){
+        try {
+            $Gramaseva_division =Gramaseva_division::where('divisionalSecretariatID',$id)->get();
+
+            return $this->responseBody(true, "loadGramasevadivision", "found", $Gramaseva_division);
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadGramasevadivision", "error", $exception->getMessage());
+        }
     }
     public function loadcatagories(){
         try {

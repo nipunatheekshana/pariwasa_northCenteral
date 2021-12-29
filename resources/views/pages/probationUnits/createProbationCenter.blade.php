@@ -67,22 +67,28 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Catagory</label>
-                            <select class="form-control" name="catagory" id="catagory"></select>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
                             <label for="validationCustom02">District</label>
-                            <input type="text" class="form-control" name="district" id="district"  placeholder="Galnewa " required="">
+                            <select class="form-control" name="district" id="district">
+                                <option value="">select District</option>
+                            </select>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Divisional secretariat</label>
-                            <input type="text" class="form-control"name="divitional_secretariat" id="divitional_secretariat"  placeholder="Anuradhapura" required="">
+                            <select class="form-control" name="divitional_secretariat" id="divitional_secretariat">
+                                <option value="">select Divisional secretariat</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Gramaseva divition</label>
+                            <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
+                                <option value="">select Gramaseva divition</option>
+                            </select>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -113,9 +119,12 @@
                         </div>
                     </div>
                     <div class="form-row">
+
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Gramaseva divition</label>
-                            <input type="text" class="form-control"  name="gramaseva_divition"   id="gramaseva_divition" placeholder="Galnaewa"  required="">
+                            <label for="validationCustom01">Catagory</label>
+                            <select class="form-control" name="catagory" id="catagory">
+                                <option value="">select catagory</option>
+                            </select>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

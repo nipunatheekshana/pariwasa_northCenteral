@@ -15,14 +15,97 @@ $(document).ready(function() {
         }
 
     });
-    loadProbationCenter() ;
+    $('#district').on('change', function () {
+
+        loadDivitionalSecatariat(this.value);
+    });
+    $('#divitional_secretariat').on('change', function () {
+
+        loadGramasevadivision(this.value);
+    });
+
     loadcatagories();
+    loadDistrict();
+    loadProbationCenter() ;
+
+
 });
+
+function loadDistrict(){
+    $.ajax({
+        type: 'GET',
+        url: '/createProbationCenter/loadDistrict',
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.district+' </option>';
+                });
+                $('#district').append(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
+function loadDivitionalSecatariat(id){
+    $.ajax({
+        type: 'GET',
+        url: '/createProbationCenter/loadDivitionalSecatariat/'+id,
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
+                });
+                $('#divitional_secretariat').html(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
+function loadGramasevadivision(id){
+    $.ajax({
+        type: 'GET',
+        url: '/createProbationCenter/loadGramasevadivision/'+id,
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
+                });
+                $('#gramaseva_divition').html(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
 
 function loadcatagories(){
     $.ajax({
         type: 'GET',
         url: '/createProbationCenter/loadcatagories',
+        async:false,
         success: function(response){
             console.log(response.result)
             if (response.success) {
@@ -31,7 +114,7 @@ function loadcatagories(){
 
                     html += '<option value="'+value.id+'" > '+value.category+' </option>';
                 });
-                $('#catagory').html(html);
+                $('#catagory').append(html);
 
 
             }
@@ -176,6 +259,8 @@ function loadProbationCenter() {
             contentType: false,
             cache: false,
             timeout: 800000,
+            async:false,
+
             beforeSend: function () {
 
             },
@@ -190,6 +275,9 @@ function loadProbationCenter() {
                     $('#date_started').val(data.date_started);
                     $('#catagory').val(data.catagory);
                     $('#district').val(data.district);
+                    loadGramasevadivision(data.divitional_secretariat);
+                    loadDivitionalSecatariat(data.district);
+
                     $('#divitional_secretariat').val(data.divitional_secretariat);
                     $('#tp_no').val(data.tp_no);
                     $('#registration_no').val(data.registration_no);

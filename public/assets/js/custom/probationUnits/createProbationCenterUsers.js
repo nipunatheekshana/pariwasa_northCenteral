@@ -1,4 +1,4 @@
-console.log('createProbationUnitUser.js loading');
+console.log('createProbationCenterUsers.js loading');
 $(document).ready(function() {
 
     $('#btnSave').on('click', function () {
@@ -14,8 +14,8 @@ $(document).ready(function() {
         }
 
     });
-    loadProbationUnits();
-    loadProbationUnitUser() ;
+    loadProbationCenters();
+    loadProbationCenterUser() ;
 
 });
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
 function save(data){
     $.ajax({
         type: "POST",
-        url: "/createProbationUnitUser/saveProbationUnitUser",
+        url: "/createProbationCenterUsers/saveProbationCenterUser",
         data: data,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -39,7 +39,7 @@ function save(data){
         success: function (response) {
             console.log(response);
             if(response.data.success){
-                toastr.success('Probation Center Created');
+                toastr.success('Probation Center User Created');
                 reset();
             }
             else{
@@ -129,19 +129,20 @@ function save(data){
 
 //     });
 // }
-function loadProbationUnits(){
+function loadProbationCenters(){
     $.ajax({
         type: 'GET',
-        url: '/createProbationUnitUser/loadProbationUnits',
+        url: '/createProbationCenterUsers/loadProbationCenters',
+        async:false,
         success: function(response){
-            console.log(response.result)
+            console.log(response)
             if (response.success) {
                 var html = "";
                 $.each(response.result, function(index, value){
 
-                    html += '<option value="'+value.Probation_unit_id+'" > '+value.name+' </option>';
+                    html += '<option value="'+value.probation_center_id+'" > '+value.name+' </option>';
                 });
-                $('#probationUnitid').html(html);
+                $('#probationCenterid').html(html);
 
 
             }
@@ -151,7 +152,7 @@ function loadProbationUnits(){
     });
 }
 
-function loadProbationUnitUser() {
+function loadProbationCenterUser() {
 
     if (window.location.search.length > 0) {
         var sPageURL = window.location.search.substring(1);
@@ -171,11 +172,12 @@ function loadProbationUnitUser() {
     if (id){
         $.ajax({
             type: "GET",
-            url: "/createProbationUnitUser/loadProbationUnitUser/" + id,
+            url: "/createProbationCenterUsers/loadProbationCenterUser/" + id,
             processData: false,
             contentType: false,
             cache: false,
             timeout: 800000,
+            async:false,
             beforeSend: function () {
 
             },
@@ -185,7 +187,7 @@ function loadProbationUnitUser() {
 
                     console.log(response.result);
                     var data = response.result;
-                    $('#probationUnitid').val(data.probationUnitid);
+                    $('#probationCenterid').val(data.probationCenterId);
                     $('#name').val(data.name);
                     $('#email').val(data.email);
                     $('#hiddenuserid').val(data.id);

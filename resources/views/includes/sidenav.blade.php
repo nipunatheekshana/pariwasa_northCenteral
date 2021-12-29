@@ -60,6 +60,40 @@
 
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="settings"></i>
+                        </span>
+                        <span>Setting</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
+                                @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'grade') class="active"
+                                @endif href="/grade">Employee Grades</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'district') class="active"
+                                @endif href="/district">Districts</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'divitionalSecretariat') class="active"
+                                @endif href="/divitionalSecretariat">Divitional Secretariats</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'policeDivitions') class="active"
+                                @endif href="/policeDivitions">Police Divitions</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'gramasevadivision') class="active"
+                                @endif href="/gramasevadivision">Gramaseva Divitions</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         @elseif (Auth::user()->role=='probationUnitUser')
             <ul>
@@ -106,13 +140,13 @@
                                         @endif href="/registerProbationUnitEmployee">Create</a>
                                 </li>
                                 <li>
-                                    <a @if(request()->segment(1) == 'products') class="active"
-                                        @endif href="#">List</a>
+                                    <a @if(request()->segment(1) == 'probationUnitEmployeeList') class="active"
+                                        @endif href="/probationUnitEmployeeList">List</a>
                                 </li>
 
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="">Probation Center</a>
                             <ul>
                                 <li>
@@ -125,7 +159,7 @@
                                 </li>
 
                             </ul>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </li>
@@ -141,12 +175,12 @@
                             <a href="">Probation Center Users</a>
                             <ul>
                                 <li>
-                                    <a @if(request()->segment(1) == '') class="active"
-                                        @endif href="#">Create</a>
+                                    <a @if(request()->segment(1) == 'createProbationCenterUsers') class="active"
+                                        @endif href="/createProbationCenterUsers">Create</a>
                                 </li>
                                 <li>
-                                    <a @if(request()->segment(1) == '') class="active"
-                                        @endif href="#">List</a>
+                                    <a @if(request()->segment(1) == 'probationCenterUserList') class="active"
+                                        @endif href="/probationCenterUserList">List</a>
                                 </li>
 
                             </ul>
@@ -168,7 +202,11 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
-                                @endif href="/grade">Grade</a>
+                                @endif href="/grade">Employee Grades</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'designation') class="active"
+                                @endif href="/designation">Employee designations</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'district') class="active"
@@ -222,6 +260,7 @@
                         </li>
                     </ul>
                 </li>
+
             </ul>
         @endif
 
