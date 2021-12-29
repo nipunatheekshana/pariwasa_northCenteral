@@ -9,7 +9,7 @@
 
     <div class="page-header">
         <div>
-            <h3>Probation Center Category</h3>
+            <h3>Divitional Secretariats</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -18,7 +18,7 @@
                     <li class="breadcrumb-item">
                         <a href="#">Setting</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Probation Center Category</li>
+                    <li class="breadcrumb-item active" aria-current="page">Divitional Secretariats</li>
                 </ol>
             </nav>
         </div>
@@ -33,10 +33,16 @@
                     <p class="card-description">  </p>
                     <form class="forms-sample" id="dform">
                         <div class="form-group">
-                            <label for="exampleInputName1">Category</label>
+                            <label for="exampleInputName1">District</label>
+                            <select class="form-control" id="district" name="district">
+                                <option value="0">Select A District</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Divitional Secretariat</label>
                             <input type="hidden" class="form-control" name="id" id="txtid" placeholder="Site Name">
 
-                            <input type="text" class="form-control" name="Category" id="Category" placeholder="Category">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Anuradhapura">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
@@ -47,13 +53,14 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Categories</h4>
+                    <h4 class="card-title">Divitional Secretariats</h4>
                     <div class="table-responsive">
-                        <table id="tblvendor" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                        <table id="tblgrade" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr>
                                     <th class="thid"> #</th>
-                                    <th class="thname"> Vendor</th>
+                                    <th class="thname"> Divitional Secretariat</th>
+                                    <th class="thDistrict"> District</th>
                                     <th class="edit">  Edit</th>
                                     <th class="delete"> Delete</th>
                                 </tr>
@@ -61,7 +68,6 @@
                             <tbody></tbody>
                         </table>
                     </div>
-                    <button id="btnexpt" type="button" class="btn btn-primary mr-2">Export</button>
                 </div>
             </div>
 
@@ -76,7 +82,7 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
 
-    <script src="{{ url('assets/js/custom/probationUnits/probationCenterCatagory.js') }}"></script>
+    <script src="{{ url('assets/js/custom/divitionalSecretariat.js') }}"></script>
 
 
 

@@ -99,13 +99,34 @@
                     </a>
                     <ul>
                         <li>
-                            <a @if(request()->segment(1) == 'orders') class="active"
-                                @endif href="#">Create</a>
+                            <a href="">Probation Unit</a>
+                            <ul>
+                                <li>
+                                    <a @if(request()->segment(1) == 'registerProbationUnitEmployee') class="active"
+                                        @endif href="/registerProbationUnitEmployee">Create</a>
+                                </li>
+                                <li>
+                                    <a @if(request()->segment(1) == 'products') class="active"
+                                        @endif href="#">List</a>
+                                </li>
+
+                            </ul>
                         </li>
                         <li>
-                            <a @if(request()->segment(1) == 'products') class="active"
-                                @endif href="#">List</a>
+                            <a href="">Probation Center</a>
+                            <ul>
+                                <li>
+                                    <a @if(request()->segment(1) == '') class="active"
+                                        @endif href="#">Create</a>
+                                </li>
+                                <li>
+                                    <a @if(request()->segment(1) == 'products') class="active"
+                                        @endif href="#">List</a>
+                                </li>
+
+                            </ul>
                         </li>
+
                     </ul>
                 </li>
                 <li>
@@ -144,6 +165,26 @@
                         <li>
                             <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
                                 @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'grade') class="active"
+                                @endif href="/grade">Grade</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'district') class="active"
+                                @endif href="/district">Districts</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'divitionalSecretariat') class="active"
+                                @endif href="/divitionalSecretariat">Divitional Secretariats</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'policeDivitions') class="active"
+                                @endif href="/policeDivitions">Police Divitions</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'gramasevadivision') class="active"
+                                @endif href="/gramasevadivision">Gramaseva Divitions</a>
                         </li>
                     </ul>
                 </li>

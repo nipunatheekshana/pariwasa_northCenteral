@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\DivisionalSecretariatController;
+use App\Http\Controllers\GradesController;
+use App\Http\Controllers\GramasevaDivisionController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\PoliceDivisionController;
 use App\Http\Controllers\probationCenterCatagoryController;
 use App\Http\Controllers\probationCenterController;
 use App\Http\Controllers\probationCenterListController;
@@ -83,7 +88,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
 
     // probationCenterCatagory
     Route::get('/probationCenterCatagory', function () {
-        return view('pages.probationUnits.probationCenterCatagory');
+        return view('pages.probationCenterCatagory');
     });
     Route::post('/probationCenterCatagory/save', [probationCenterCatagoryController::class, 'save']);
     Route::post('/probationCenterCatagory/update', [probationCenterCatagoryController::class, 'update']);
@@ -98,4 +103,61 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::get('/probationCenterList/loadProbationCenters', [probationCenterListController::class, 'loadProbationCenters']);
 
+
+    // registerProbationUnitEmployee
+    Route::get('/registerProbationUnitEmployee', function () {
+        return view('pages.probationUnits.registerProbationUnitEmployee');
+    });
+
+    // grade
+    Route::get('/grade', function () {
+        return view('pages.grade');
+    });
+    Route::post('/grade/save', [GradesController::class, 'save']);
+    Route::post('/grade/update', [GradesController::class, 'update']);
+    Route::get('/grade/loadGrade', [GradesController::class, 'loadGrade']);
+    Route::get('/grade/loadGrade/{id}', [GradesController::class, 'loadGradeToid']);
+    Route::delete('/grade/delete/{id}', [GradesController::class, 'delete']);
+
+    //district
+    Route::get('/district', function () {
+        return view('pages.district');
+    });
+    Route::post('/district/save', [DistrictController::class, 'save']);
+    Route::post('/district/update', [DistrictController::class, 'update']);
+    Route::get('/district/loaddistrict', [DistrictController::class, 'loaddistrict']);
+    Route::get('/district/loaddistrict/{id}', [DistrictController::class, 'loaddistrictToid']);
+    Route::delete('/district/delete/{id}', [DistrictController::class, 'delete']);
+
+
+    //divitionalSecretariat
+    Route::get('/divitionalSecretariat', function () {
+        return view('pages.divitionalSecretariat');
+    });
+    Route::post('/divitionalSecretariat/save', [DivisionalSecretariatController::class, 'save']);
+    Route::post('/divitionalSecretariat/update', [DivisionalSecretariatController::class, 'update']);
+    Route::get('/divitionalSecretariat/loaddivitionalSecretariat', [DivisionalSecretariatController::class, 'loaddivitionalSecretariat']);
+    Route::get('/divitionalSecretariat/loaddivitionalSecretariat/{id}', [DivisionalSecretariatController::class, 'loaddivitionalSecretariatToid']);
+    Route::delete('/divitionalSecretariat/delete/{id}', [DivisionalSecretariatController::class, 'delete']);
+
+
+    //policedivition
+    Route::get('/policeDivitions', function () {
+        return view('pages.policedivition');
+    });
+    Route::post('/policeDivitions/save', [PoliceDivisionController::class, 'save']);
+    Route::post('/policeDivitions/update', [PoliceDivisionController::class, 'update']);
+    Route::get('/policeDivitions/loadpoliceDivitions', [PoliceDivisionController::class, 'loadpoliceDivitions']);
+    Route::get('/policeDivitions/loadpoliceDivitions/{id}', [PoliceDivisionController::class, 'loadpoliceDivitionsToid']);
+    Route::delete('/policeDivitions/delete/{id}', [PoliceDivisionController::class, 'delete']);
+
+    // gramasevadivision
+    Route::get('/gramasevadivision', function () {
+        return view('pages.gramasevadivision');
+    });
+    Route::post('/gramasevadivision/save', [GramasevaDivisionController::class, 'save']);
+    Route::post('/gramasevadivision/update', [GramasevaDivisionController::class, 'update']);
+    Route::get('/gramasevadivision/loadgramasevadivision', [GramasevaDivisionController::class, 'loadpoliceDivitions']);
+    Route::get('/gramasevadivision/loadgramasevadivision/{id}', [GramasevaDivisionController::class, 'loadgramasevadivisionToid']);
+    Route::delete('/gramasevadivision/delete/{id}', [GramasevaDivisionController::class, 'delete']);
 });
