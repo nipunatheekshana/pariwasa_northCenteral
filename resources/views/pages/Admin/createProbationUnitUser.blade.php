@@ -45,7 +45,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom01">Name</label>
                             <input type="hidden" name="userid" id="hiddenuserid">
-                            <input type="text" class="form-control"  name="name" id="name" placeholder="@username" >
+                            <input type="text" class="form-control"  name="name" id="name" placeholder="Name" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -68,15 +68,12 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom02">Confirm Password</label>
-                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="XXX " required="">
+                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  placeholder="XXXX" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                     </div>
-
-
-
                     <button id="btnSave" class="btn btn-primary" type="button">Save</button>
                 </form>
             </div>

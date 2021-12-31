@@ -26,7 +26,6 @@
 
     <div class="row">
         <div class="col-md-12">
-
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"></h4>
@@ -34,15 +33,12 @@
                     <form class="forms-sample" id="dform">
                         <div class="form-group">
                             <label for="exampleInputName1">Grade</label>
-                            <input type="hidden" class="form-control" name="id" id="txtid" placeholder="Site Name">
-
-                            <input type="text" class="form-control" name="name" id="name" placeholder="A grade">
+                            <input type="hidden" class="form-control" name="id" id="txtid">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Grade">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
                     </form>
-
-
                 </div>
             </div>
             <div class="card">

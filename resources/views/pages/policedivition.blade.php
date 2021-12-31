@@ -39,27 +39,24 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Police division</label>
-                            <input type="hidden" class="form-control" name="id" id="txtid" placeholder="Site Name">
-
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Anuradhapura">
+                            <label for="exampleInputName1">Police Division</label>
+                            <input type="hidden" class="form-control" name="id" id="txtid">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Police Division">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
                     </form>
-
-
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Police division</h4>
+                    <h4 class="card-title">Police Division</h4>
                     <div class="table-responsive">
                         <table id="tblgrade" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr>
                                     <th class="thid"> #</th>
-                                    <th class="thname"> Police division</th>
+                                    <th class="thname"> Police Division</th>
                                     <th class="thDVSname"> Divitional Secretariat</th>
                                     <th class="edit">  Edit</th>
                                     <th class="delete"> Delete</th>

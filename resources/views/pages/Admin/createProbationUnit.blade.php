@@ -26,7 +26,6 @@
 
 <div class="row">
     <div class="col-md-12">
-
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title">Create Probation Unit</h6>
@@ -35,7 +34,7 @@
                         <div class="col-md-12 mb-3">
                             <label for="txtFullName">Name</label>
                             <input type="hidden" name="id" id="txtid" name="">
-                            <input type="text" class="form-control" name="name"  id="name"  placeholder="First Probation Unit"  required="">
+                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Probation Unit Name"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -44,21 +43,21 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">District</label>
-                            <input type="text" class="form-control"  name="district" id="district" placeholder="Anuradhapura" required="">
+                            <input type="text" class="form-control"  name="district" id="district" placeholder="District" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Divisional Secretariat</label>
-                            <input type="text" class="form-control" name="divitional_secretariat" id="divitional_secretariat"  placeholder="Galnewa " required="">
+                            <input type="text" class="form-control" name="divitional_secretariat" id="divitional_secretariat"  placeholder="Divisional Secretariat " required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">Senior Probational officer</label>
-                            <input type="text" class="form-control"name="senior_officer" id="senior_officer"  placeholder="Mr.Thilak" required="">
+                            <label for="validationCustom02">Senior Probational Officer</label>
+                            <input type="text" class="form-control"name="senior_officer" id="senior_officer"  placeholder="Senior Probational Officer" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -66,8 +65,8 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Probation officer incharge</label>
-                            <input type="text" class="form-control"  name="officer_incharge" id="officer_incharge" placeholder="Mr.Kabral" required="">
+                            <label for="validationCustom01">Probation Officer Incharge</label>
+                            <input type="text" class="form-control"  name="officer_incharge" id="officer_incharge" placeholder="Probation Officer Incharge" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -86,14 +85,14 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Telephone No</label>
-                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="076 XXX XX XX"  required="">
+                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="0XX XXX XX XX"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Fax</label>
-                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="011 XXX XX XX"  required="">
+                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

@@ -36,7 +36,7 @@
                             </form>
                         </div>
                     </li>
-                    <li class="nav-item dropdown d-none d-md-block">
+                    <li class="nav-item dropdown d-none d-md-none">
                         <a href="#" class="nav-link" title="Apps" data-toggle="dropdown">Apps</a>
                         <div class="dropdown-menu dropdown-menu-big">
                             <div class="border-bottom px-4 py-3 text-center d-flex justify-content-between">
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown d-none d-md-block">
+                    <li class="nav-item dropdown d-none d-md-none">
                         <a href="#" class="nav-link" title="Actions" data-toggle="dropdown">Create</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Add Products</a>
@@ -125,13 +125,13 @@
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-none">
                         <a href="#" class="nav-link nav-link-notify" title="Chats" data-sidebar-target="#chat-list">
                             <i data-feather="message-circle"></i>
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-none">
                         <a href="#" class="nav-link nav-link-notify" title="Notifications" data-toggle="dropdown">
                             <i data-feather="bell"></i>
                         </a>
@@ -246,7 +246,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item d-none">
                         <a href="#" title="Cart" class="nav-link" data-toggle="dropdown">
                             <i data-feather="shopping-bag"></i>
                         </a>
@@ -335,7 +335,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-none">
                         <a href="#" class="nav-link" title="Settings" data-sidebar-target="#settings">
                             <i data-feather="settings"></i>
                         </a>
@@ -361,7 +361,7 @@
                                 <a href="#" class="list-group-item">View Profile</a>
                                 <a href="{{route('logout')}}" class="list-group-item text-danger">Sign Out!</a>
                             </div>
-                            <div class="p-4">
+                            <div class="p-4 d-none">
                                 <div class="mb-4">
                                     <h6 class="d-flex justify-content-between">
                                         Storage

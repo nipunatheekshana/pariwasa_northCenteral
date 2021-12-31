@@ -39,11 +39,7 @@
                                     <th class="thEmail">Email</th>
                                     <th class="thNumOfOfficers">Num of Officers</th>
                                     <th class="thNumofCenters">Num of Centers</th>
-
                                     <th class="actions"> Actions</th>
-
-
-
                                 </tr>
                             </thead>
                             <tbody></tbody>

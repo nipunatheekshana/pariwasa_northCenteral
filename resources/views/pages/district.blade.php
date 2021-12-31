@@ -34,9 +34,8 @@
                     <form class="forms-sample" id="dform">
                         <div class="form-group">
                             <label for="exampleInputName1">District</label>
-                            <input type="hidden" class="form-control" name="id" id="txtid" placeholder="Site Name">
-
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Anuradhapura">
+                            <input type="hidden" class="form-control" name="id" id="txtid">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="District">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
