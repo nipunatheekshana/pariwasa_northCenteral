@@ -86,11 +86,11 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"
-                                @endif href="/policeDivitions">Police Divitions</a>
+                                @endif href="/policeDivitions">Police Divisions</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Gramaseva Divitions</a>
+                                @endif href="/gramasevadivision">Gramaseva Divisions</a>
                         </li>
                     </ul>
                 </li>
@@ -218,11 +218,11 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"
-                                @endif href="/policeDivitions">Police Divitions</a>
+                                @endif href="/policeDivitions">Police Divisions</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Gramaseva Divitions</a>
+                                @endif href="/gramasevadivision">Gramaseva Divisions</a>
                         </li>
                     </ul>
                 </li>
