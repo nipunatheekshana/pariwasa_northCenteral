@@ -42,15 +42,19 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">District</label>
-                            <input type="text" class="form-control"  name="district" id="district" placeholder="District" required="">
+                            <label for="validationCustom02">District</label>
+                            <select class="form-control" name="district" id="district">
+                                <option value="" selected disabled>Select District</option>
+                            </select>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Divisional Secretariat</label>
-                            <input type="text" class="form-control" name="divitional_secretariat" id="divitional_secretariat"  placeholder="Divisional Secretariat " required="">
+                            <select class="form-control" name="divitional_secretariat" id="divitional_secretariat">
+                                <option value=""selected disabled>Select Divisional Secretariat</option>
+                            </select>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

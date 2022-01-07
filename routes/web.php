@@ -55,7 +55,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::post('/register_Probation_unit/save',[ProbationUnitController::class,'save']);
     Route::post('/register_Probation_unit/update',[ProbationUnitController::class,'update']);
     Route::get('/register_Probation_unit/loadProbationUnit/{id}', [ProbationUnitController::class, 'loadProbationUnit']);
-
+    Route::get('/register_Probation_unit/loadDistrict', [ProbationUnitController::class, 'loadDistrict']);
+    Route::get('/register_Probation_unit/loadDivitionalSecatariat/{id}', [ProbationUnitController::class, 'loadDivitionalSecatariat']);
 
     //Probation Unit List
     Route::get('/probationUnitList', function () {

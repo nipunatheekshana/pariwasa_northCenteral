@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\common\commonFeatures;
+use App\Models\District;
+use App\Models\Divisional_secretariat;
 use App\Models\Probation_unit;
 use Exception;
 use Illuminate\Http\Request;
@@ -10,7 +12,7 @@ use Illuminate\Http\Request;
 class ProbationUnitController extends Controller
 {
     use commonFeatures;
-    
+
     public function save(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
@@ -100,6 +102,26 @@ class ProbationUnitController extends Controller
         }
          catch (Exception $exception) {
             return $this->responseBody(false, "loadProbationUnit", "error", $exception->getMessage());
+        }
+    }
+    public function loadDistrict(){
+        try {
+            $District =District::all();
+
+            return $this->responseBody(true, "loadDistrict", "found", $District);
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadDistrict", "error", $exception->getMessage());
+        }
+    }
+    public function loadDivitionalSecatariat($id){
+        try {
+            $Divisional_secretariat =Divisional_secretariat::where('districtId',$id)->get();
+
+            return $this->responseBody(true, "loadDivitionalSecatariat", "found", $Divisional_secretariat);
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "loadDivitionalSecatariat", "error", $exception->getMessage());
         }
     }
 }

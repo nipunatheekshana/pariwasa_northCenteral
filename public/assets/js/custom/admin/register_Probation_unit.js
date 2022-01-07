@@ -15,9 +15,59 @@ $(document).ready(function() {
         }
 
     });
+    $('#district').on('change', function () {
+        loadDivitionalSecatariat(this.value);
+    });
+    loadDistrict()
     loadProbationUnit() ;
 });
 
+function loadDistrict(){
+    $.ajax({
+        type: 'GET',
+        url: '/register_Probation_unit/loadDistrict',
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.district+' </option>';
+                });
+                $('#district').append(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
+function loadDivitionalSecatariat(id){
+    $.ajax({
+        type: 'GET',
+        url: '/register_Probation_unit/loadDivitionalSecatariat/'+id,
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
+                });
+                $('#divitional_secretariat').html(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
 
 
 function save(data){
@@ -168,6 +218,7 @@ function loadProbationUnit() {
                     $('#name').val(data.name);
                     $('#address').val(data.address);
                     $('#district').val(data.district);
+                    loadDivitionalSecatariat(data.district);
                     $('#divitional_secretariat').val(data.divitional_secretariat);
                     $('#senior_officer').val(data.senior_officer);
                     $('#officer_incharge').val(data.officer_incharge);
