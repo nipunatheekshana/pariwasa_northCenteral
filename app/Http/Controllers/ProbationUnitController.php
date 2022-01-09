@@ -22,7 +22,7 @@ class ProbationUnitController extends Controller
             'senior_officer' => ['required'],
             'officer_incharge' => ['required'],
             'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'fax' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
 
         ]);
@@ -61,7 +61,7 @@ class ProbationUnitController extends Controller
             'senior_officer' => ['required'],
             'officer_incharge' => ['required'],
             'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'fax' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
 
         ]);

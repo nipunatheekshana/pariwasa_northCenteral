@@ -8,6 +8,7 @@ use App\Models\Probation_unit_employee;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Else_;
 
 class probationUnitEmployeeController extends Controller
 {
@@ -23,8 +24,9 @@ class probationUnitEmployeeController extends Controller
             'date_of_employeement' => ['required','date'],
             'date_of_employeement_at_probational_unit' => ['required','date'],
             'basic_salary' => ['required'],
-            'Incriment_date' => ['required','date'],
-            'incriment_value' => ['required'],
+            'image' => ['image', 'max:1024'],
+            // 'Incriment_date' => ['date'],
+            // 'incriment_value' => ['required'],
             'designation' => ['required'],
             'grade' => ['required'],
             'working_divitional_secretariat' => ['required'],
@@ -35,8 +37,24 @@ class probationUnitEmployeeController extends Controller
 
         ]);
         try{
+            if($request->has('image')&&$request->has('image')!=null){
+
+                $id=$request->NIC_no;
+                $const='User-';
+                $imagename =$const.$id; //new image name
+                // dd($request->get('logo'));
+                $guessExtension = $request->file('image')->guessExtension(); //file extention
+                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/users/userImages', $imagename.'.'.$guessExtension,'public_uploads' );
+                //build url for the image
+                $const_url='uploads/'.Auth::user()->probationUnitid.'/users/userImages/';
+                $url=$const_url.$imagename.'.'.$guessExtension;
+            }
+            else{
+                $url=null;
+            }
             $Probation_unit_employee=new Probation_unit_employee();
             $Probation_unit_employee->Probation_unit_id=Auth::user()->probationUnitid;
+            $Probation_unit_employee->image= $url;
             $Probation_unit_employee->full_name=$request->name;
             $Probation_unit_employee->address=$request->address;
             $Probation_unit_employee->designation=$request->designation;
@@ -61,6 +79,7 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->courses_hope_to_fallow=$request->courses_hope_to_fallow;
             $save=$Probation_unit_employee->save();
 
+
             if($save){
                 $responseBody = $this->responseBody(true, "probationUnit", "saved",'data saved');
 
@@ -83,8 +102,9 @@ class probationUnitEmployeeController extends Controller
             'date_of_employeement' => ['required','date'],
             'date_of_employeement_at_probational_unit' => ['required','date'],
             'basic_salary' => ['required'],
-            'Incriment_date' => ['required','date'],
-            'incriment_value' => ['required'],
+            'image' => ['image', 'max:1024'],
+            // 'Incriment_date' => ['date'],
+            // 'incriment_value' => ['required'],
             'designation' => ['required'],
             'grade' => ['required'],
             'working_divitional_secretariat' => ['required'],
@@ -95,11 +115,28 @@ class probationUnitEmployeeController extends Controller
 
         ]);
         try{
+            if($request->has('image')&&$request->has('image')!=null){
+
+                $id=$request->NIC_no;
+                $const='User-';
+                $imagename =$const.$id; //new image name
+                // dd($request->get('logo'));
+                $guessExtension = $request->file('image')->guessExtension(); //file extention
+                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/users/userImages', $imagename.'.'.$guessExtension,'public_uploads' );
+                //build url for the image
+                $const_url='uploads/'.Auth::user()->probationUnitid.'/users/userImages/';
+                $url=$const_url.$imagename.'.'.$guessExtension;
+            }
+            else{
+                $url=$request->oldimage;
+            }
+
 
             $save=Probation_unit_employee::where('employee_id',$request->id)
             ->update(
                 [
                     'full_name' => $request->name,
+                    'image'=> $url,
                     'address' => $request->address,
                     'designation' => $request->designation,
                     'grade' => $request->grade,

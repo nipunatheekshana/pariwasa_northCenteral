@@ -22,7 +22,7 @@ class CreateProbationUnitsTable extends Migration
             $table->string('senior_officer');
             $table->string('officer_incharge');
             $table->string('tp_no');
-            $table->string('fax');
+            $table->string('fax')->nullable();
             $table->string('email');
             $table->string('remarks')->nullable();
             $table->timestamps();

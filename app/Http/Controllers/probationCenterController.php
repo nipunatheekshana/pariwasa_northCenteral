@@ -11,6 +11,7 @@ use App\Models\probationcenter_catagory;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class probationCenterController extends Controller
 {
@@ -134,9 +135,16 @@ class probationCenterController extends Controller
     }
     public function loadGramasevadivision($id){
         try {
-            $Gramaseva_division =Gramaseva_division::where('divisionalSecretariatID',$id)->get();
+            $Gramaseva_divisions =Gramaseva_division::where('divisionalSecretariatID',$id)->get();
+            $Gramaseva_division_arr = [];
 
-            return $this->responseBody(true, "loadGramasevadivision", "found", $Gramaseva_division);
+            foreach ($Gramaseva_divisions as $Gramaseva_division) {
+                array_push($Gramaseva_division_arr, ["img" => "", "id" => $Gramaseva_division['id'], "value" => $Gramaseva_division['name']]);
+            }
+
+
+
+            return $this->responseBody(true, "loadGramasevadivision", "found", $Gramaseva_division_arr);
         }
          catch (Exception $exception) {
             return $this->responseBody(false, "loadGramasevadivision", "error", $exception->getMessage());
@@ -155,6 +163,11 @@ class probationCenterController extends Controller
     public function loadProbationCenter($id){
         try {
                 $Probation_unit=Probation_center::where('probation_center_id',$id)->first();
+                $Probation_unit=DB::table('probation_centers')
+                                    ->join('gramaseva_divisions','gramaseva_divisions.id','=','probation_centers.gramaseva_divition')
+                                    ->where('probation_centers.probation_center_id',$id)
+                                    ->select('probation_centers.*','gramaseva_divisions.name as gramasewaname')
+                                    ->first();
                 return $this->responseBody(true, "loadProbationCenter", "found",$Probation_unit );
 
         }

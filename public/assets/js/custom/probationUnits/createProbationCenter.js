@@ -31,6 +31,10 @@ $(document).ready(function() {
 
 });
 
+function autoCompleteSelectedOption(input, data) {
+    $('#gramaseva_divition').val(data.id);
+}
+
 function loadDistrict(){
     $.ajax({
         type: 'GET',
@@ -83,16 +87,12 @@ function loadGramasevadivision(id){
         url: '/createProbationCenter/loadGramasevadivision/'+id,
         async:false,
         success: function(response){
-            console.log(response.result)
+            // console.log(response.result)
+            console.log(response);
             if (response.success) {
-                var html = "";
-                $.each(response.result, function(index, value){
-
-                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
-                });
-                $('#gramaseva_divition').html(html);
-
-
+                $('#gramasevaDivition').setData(response.result)
+            } else {
+                console.log('something went wrong');
             }
         }, error: function(data){
             console.log(data);
@@ -283,6 +283,7 @@ function loadProbationCenter() {
                     $('#registration_no').val(data.registration_no);
                     $('#registration_date').val(data.registration_date);
                     $('#fund').val(data.fund);
+                    $('#gramasevaDivition').val(data.gramasewaname);
                     $('#gramaseva_divition').val(data.gramaseva_divition);
                     $('#maximum_children_capacity').val(data.maximum_children_capacity);
                     $('#minimum_children_capacity').val(data.minimum_children_capacity);

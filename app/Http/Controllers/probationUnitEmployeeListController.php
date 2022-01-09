@@ -30,6 +30,11 @@ class probationUnitEmployeeListController extends Controller
     }
     public function delete($id){
         try {
+                $image=Probation_unit_employee::where('employee_id',$id)->first()->image;
+                if(file_exists($image)){
+                    unlink($image);
+                }
+
                 $Probation_unit_employee=Probation_unit_employee::where('employee_id',$id)->delete();
                 return $this->responseBody(true, "Probation_unit_employee", "Deleted",null );
 

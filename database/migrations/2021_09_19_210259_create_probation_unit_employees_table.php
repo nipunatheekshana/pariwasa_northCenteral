@@ -27,18 +27,19 @@ class CreateProbationUnitEmployeesTable extends Migration
             $table->string('date_of_employeement_at_probational_unit');
             $table->string('working_divitional_secretariat');
             $table->string('working_police_divition');
-            $table->string('working_equipment');
+            $table->string('working_equipment')->nullable();
             $table->string('DOB');
             $table->string('email');
             $table->string('date_of_employeement');
             $table->string('pension_no');
             $table->string('basic_salary');
-            $table->string('Incriment_date');
-            $table->string('incriment_value');
-            $table->string('Education_qualifications');
-            $table->string('other_qualification');
-            $table->string('courses_falloed_by_the_institute');
-            $table->string('courses_hope_to_fallow');
+            $table->string('image')->nullable();
+            $table->string('Incriment_date')->nullable();
+            $table->string('incriment_value')->nullable();
+            $table->string('Education_qualifications')->nullable();
+            $table->string('other_qualification')->nullable();
+            $table->string('courses_falloed_by_the_institute')->nullable();
+            $table->string('courses_hope_to_fallow')->nullable();
             $table->timestamps();
         });
     }

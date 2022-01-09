@@ -2,7 +2,9 @@
 
 @section('head')
 <!-- Prism -->
+<link rel="stylesheet" href="{{ url('assets/js/autocomplete2/css/autocomplete.min.css') }}" type="text/css">
 <link rel="stylesheet" href="{{ url('vendors/prism/prism.css') }}" type="text/css">
+
 @endsection
 
 @section('content')
@@ -84,9 +86,12 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Gramaseva Division</label>
-                            <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
+                            <input type="hidden" name="gramaseva_divition" id="gramaseva_divition">
+                            <input type="text" class="form-control auto-complete" id="gramasevaDivition" placeholder="Fund" >
+
+                            {{-- <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
                                 <option value=""selected disabled>Select Gramaseva Division</option>
-                            </select>
+                            </select> --}}
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -153,6 +158,7 @@
 
 @endsection
 @section('script')
+<script src="{{ url('assets/js/autocomplete2/js/autocomplete.min.js') }}"></script>
 <script src="{{ url('assets/js/custom/probationUnits/createProbationCenter.js') }}"></script>
 
 @endsection

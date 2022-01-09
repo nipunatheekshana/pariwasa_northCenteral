@@ -120,7 +120,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/registerProbationUnitEmployee/loadpoliceDevition/{id}', [probationUnitEmployeeController::class, 'loadpoliceDevition']);
 
     Route::post('/registerProbationUnitEmployee/save',[probationUnitEmployeeController::class,'save']);
-    Route::post('/createProbationCenter/update',[probationUnitEmployeeController::class,'update']);
+    Route::post('/registerProbationUnitEmployee/update',[probationUnitEmployeeController::class,'update']);
     Route::get('/registerProbationUnitEmployee/loadProbationUnitEmployee/{id}', [probationUnitEmployeeController::class, 'loadProbationUnitEmployee']);
 
 

@@ -1,6 +1,17 @@
 console.log('registerProbationUnitEmployee.js loading');
 $(document).ready(function() {
-
+    // image poo
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out',
+            opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
+    });
 
 
     $('#btnSave').on('click', function () {
@@ -175,7 +186,7 @@ function save(data){
 function update(data){
     $.ajax({
         type: "POST",
-        url: "/createProbationCenter/update",
+        url: "/registerProbationUnitEmployee/update",
         data: data,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -265,6 +276,11 @@ function loadProbationUnitEmployee() {
                     var data = response.result;
 
                     loadpoliceDevition(data.working_divitional_secretariat)
+
+                    if(!data.image==''){
+                        $("#userImage").attr("src",data.image);
+                        $('#oldimage').val(data.image);
+                    }
                     $('#txtid').val(data.employee_id);
                     $('#name').val(data.full_name);
                     $('#address').val(data.address);
@@ -304,6 +320,7 @@ function loadProbationUnitEmployee() {
     }
 
 }
+
 
 function reset(){
     $('#name').val('');
