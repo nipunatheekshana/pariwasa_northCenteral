@@ -35,7 +35,7 @@
             <div class="card-body">
                 <h6 class="card-title">Create Probation Unit Employee</h6>
                 <a class="image-popup" href="{{asset('uploads/user.jpg')}}">
-                    <img src="{{asset('uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
+                    <img src="{{asset('../uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
                 <form class="needs-validation" id="probation_Unit_employee_form"  enctype="multipart/form-data">
 
