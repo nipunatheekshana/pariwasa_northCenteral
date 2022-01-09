@@ -1,8 +1,8 @@
 <?php
 
 
-$targetFolder = $_SERVER['DOCUMENT_ROOT'].'/storage/app/public';
-$linkFolder = $_SERVER['DOCUMENT_ROOT'].'/public/storage';
-// symlink($targetFolder,$linkFolder);
+$targetFolder = $_SERVER['DOCUMENT_ROOT'];
+$linkFolder = 'Directory /domains/ncprobationdept.com/public_html';
+symlink($targetFolder,$linkFolder);
 echo $targetFolder;
 ?>

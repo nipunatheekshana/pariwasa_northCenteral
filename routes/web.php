@@ -16,6 +16,7 @@ use App\Http\Controllers\probationUnitEmployeeController;
 use App\Http\Controllers\probationUnitEmployeeListController;
 use App\Http\Controllers\probationUnitListController;
 use App\Http\Controllers\probationUnitUserListController;
+use App\Http\Controllers\symlincController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,10 @@ Route::post('/login', [LogInController::class, 'login']);
 Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 
 Route::group(['middleware'=>['is.logged']],function(){ //logged users route group
+
+
+    Route::get('/symlinc', [symlincController::class, 'test']);
+
 
     //dashboard
     Route::get('/dashbord', function () {
@@ -208,4 +213,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::get('/probationCenterUserList/loadProbationCenterUsers', [probationCenterUserListController::class, 'loadProbationCenterUsers']);
     Route::delete('/probationCenterUserList/deleteProbationCenterUsers/{id}', [probationCenterUserListController::class, 'deleteProbationCenterUsers']);
+
+
+
 });
