@@ -44,7 +44,6 @@ Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 Route::group(['middleware'=>['is.logged']],function(){ //logged users route group
 
 
-    Route::get('/symlinc', [symlincController::class, 'test']);
 
 
     //dashboard
