@@ -58,5 +58,5 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
     <!-- my script  -->
-    <script src="{{ url('assets/js/custom/probationUnits/probationUnitEmployeeList.js') }}"></script>
+    <script src="{{ url('assets/js/custom/probationUnits/probationUnitEmployeeList.js') }}?random=<?php echo uniqid(); ?>"></script>
 @endsection

@@ -159,6 +159,6 @@
 @endsection
 @section('script')
 <script src="{{ url('assets/js/autocomplete2/js/autocomplete.min.js') }}"></script>
-<script src="{{ url('assets/js/custom/probationUnits/createProbationCenter.js') }}"></script>
+<script src="{{ url('assets/js/custom/probationUnits/createProbationCenter.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 @endsection

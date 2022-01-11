@@ -214,5 +214,9 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::delete('/probationCenterUserList/deleteProbationCenterUsers/{id}', [probationCenterUserListController::class, 'deleteProbationCenterUsers']);
 
 
+    // registerChildren
+    Route::get('/registerChildren', function () {
+        return view('pages.probationCenters.registerChildren');
+    });
 
 });

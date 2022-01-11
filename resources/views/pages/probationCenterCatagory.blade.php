@@ -72,7 +72,7 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
 
-    <script src="{{ url('assets/js/custom/probationCenterCatagory.js') }}"></script>
+    <script src="{{ url('assets/js/custom/probationCenterCatagory.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 
 

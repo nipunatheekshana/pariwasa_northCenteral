@@ -241,23 +241,20 @@
                 <li>
                     <a href="#">
                         <span class="nav-link-icon">
-                            <i data-feather="shopping-cart"></i>
+                            <i data-feather="user-check"></i>
                         </span>
-                        <span>E-commerce</span>
+                        <span>Children</span>
                     </a>
                     <ul>
                         <li>
-                            <a @if(request()->segment(1) == 'orders') class="active"
-                                @endif href="#">Orders</a>
+                            <a @if(request()->segment(1) == 'registerChildren') class="active"
+                                @endif href="/registerChildren">Register</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'products') class="active"
-                                @endif href="#">Products</a>
+                                @endif href="#">list</a>
                         </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'product-detail') class="active"
-                                @endif href="#">Product Detail</a>
-                        </li>
+
                     </ul>
                 </li>
 

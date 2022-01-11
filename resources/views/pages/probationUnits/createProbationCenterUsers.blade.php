@@ -87,6 +87,6 @@
 
 @endsection
 @section('script')
-<script src="{{ url('assets/js/custom/probationUnits/createProbationCenterUsers.js') }}"></script>
+<script src="{{ url('assets/js/custom/probationUnits/createProbationCenterUsers.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 @endsection

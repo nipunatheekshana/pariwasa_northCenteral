@@ -79,7 +79,7 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
 
-    <script src="{{ url('assets/js/custom/divitionalSecretariat.js') }}"></script>
+    <script src="{{ url('assets/js/custom/divitionalSecretariat.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 
 

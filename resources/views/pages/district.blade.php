@@ -74,7 +74,7 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
 
-    <script src="{{ url('assets/js/custom/district.js') }}"></script>
+    <script src="{{ url('assets/js/custom/district.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 
 

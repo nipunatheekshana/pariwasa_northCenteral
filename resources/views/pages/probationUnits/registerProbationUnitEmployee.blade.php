@@ -249,6 +249,6 @@
 @section('script')
 <!-- Javascript -->
 <script src="{{url('vendors/lightbox/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{ url('assets/js/custom/probationUnits/registerProbationUnitEmployee.js') }}"></script>
+<script src="{{ url('assets/js/custom/probationUnits/registerProbationUnitEmployee.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 @endsection

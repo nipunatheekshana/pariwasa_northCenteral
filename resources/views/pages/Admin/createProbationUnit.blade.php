@@ -129,6 +129,6 @@
 
 @endsection
 @section('script')
-<script src="{{ url('assets/js/custom/admin/register_Probation_unit.js') }}"></script>
+<script src="{{ url('assets/js/custom/admin/register_Probation_unit.js') }}?random=<?php echo uniqid(); ?>"></script>
 
 @endsection
