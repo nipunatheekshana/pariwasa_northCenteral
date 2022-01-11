@@ -87,7 +87,7 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Gramaseva Division</label>
                             <input type="hidden" name="gramaseva_divition" id="gramaseva_divition">
-                            <input type="text" class="form-control auto-complete" id="gramasevaDivition" placeholder="Fund" >
+                            <input type="text" class="form-control auto-complete" id="gramasevaDivition" >
 
                             {{-- <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
                                 <option value=""selected disabled>Select Gramaseva Division</option>
