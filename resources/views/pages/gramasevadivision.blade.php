@@ -26,7 +26,6 @@
 
     <div class="row">
         <div class="col-md-12">
-
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"></h4>
@@ -35,7 +34,7 @@
                         <div class="form-group">
                             <label for="exampleInputName1">Divisional Secretariat</label>
                             <select class="form-control" id="divitional_secretariat" name="divitional_secretariat">
-                                <option value="0">Select A Divisional Secretariat</option>
+                                <option selected disabled>Select A Divisional Secretariat</option>
                             </select>
                         </div>
                         <div class="form-group">
