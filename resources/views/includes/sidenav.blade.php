@@ -82,7 +82,7 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'divitionalSecretariat') class="active"
-                                @endif href="/divitionalSecretariat">Divitional Secretariats</a>
+                                @endif href="/divitionalSecretariat">Divisional Secretariats</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"
@@ -214,7 +214,7 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'divitionalSecretariat') class="active"
-                                @endif href="/divitionalSecretariat">Divitional Secretariats</a>
+                                @endif href="/divitionalSecretariat">Divisional Secretariats</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"

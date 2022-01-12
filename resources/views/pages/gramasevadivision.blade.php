@@ -33,9 +33,9 @@
                     <p class="card-description">  </p>
                     <form class="forms-sample" id="dform">
                         <div class="form-group">
-                            <label for="exampleInputName1">Divitional Secretariat</label>
+                            <label for="exampleInputName1">Divisional Secretariat</label>
                             <select class="form-control" id="divitional_secretariat" name="divitional_secretariat">
-                                <option value="0">Select A Divitional Secretariat</option>
+                                <option value="0">Select A Divisional Secretariat</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -57,7 +57,7 @@
                                 <tr>
                                     <th class="thid"> #</th>
                                     <th class="thname"> Gramaseva Division</th>
-                                    <th class="thDVSname"> Divitional Secretariat</th>
+                                    <th class="thDVSname"> Divisional Secretariat</th>
                                     <th class="edit">  Edit</th>
                                     <th class="delete"> Delete</th>
                                 </tr>

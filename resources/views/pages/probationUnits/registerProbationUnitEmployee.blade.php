@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Email</label>
-                            <input type="text" class="form-control"  name="email"   id="email" placeholder="example@email.com"  required="">
+                            <input type="text" class="form-control"  name="email"   id="email" placeholder="example@email.com" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -111,21 +111,21 @@
 
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Basic Salary</label>
-                            <input type="number" class="form-control"  name="basic_salary" id="basic_salary" placeholder="Basic Salary"  required="">
+                            <input type="number" class="form-control"  name="basic_salary" id="basic_salary" placeholder="Basic Salary"  >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Incriment date</label>
-                            <input type="date" class="form-control"  name="Incriment_date"   id="Incriment_date"  required="">
+                            <input type="date" class="form-control"  name="Incriment_date"   id="Incriment_date" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Incriment value</label>
-                            <input type="number" class="form-control"  name="incriment_value"   id="incriment_value" placeholder="XXXX"  required="">
+                            <input type="number" class="form-control"  name="incriment_value"   id="incriment_value" placeholder="XXXX" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -190,14 +190,14 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom01">Education Qualifications</label>
-                            <textarea type="text" class="form-control"  name="Education_qualifications"   id="Education_qualifications" placeholder="Education Qualifications"  required=""></textarea>
+                            <textarea type="text" class="form-control"  name="Education_qualifications"   id="Education_qualifications" placeholder="Education Qualifications"></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom01">Other Qualifications</label>
-                            <textarea type="text" class="form-control"  name="other_qualification"   id="other_qualification"   required="" placeholder="Other Qualifications"></textarea>
+                            <textarea type="text" class="form-control"  name="other_qualification"   id="other_qualification"  placeholder="Other Qualifications"></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -223,7 +223,7 @@
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
                             <label for="validationCustom01">Working Equipment</label>
-                            <textarea type="text" class="form-control"  name="working_equipment"   id="working_equipment" placeholder="Working Equipment"  required=""></textarea>
+                            <textarea type="text" class="form-control"  name="working_equipment"   id="working_equipment" placeholder="Working Equipment"  ></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

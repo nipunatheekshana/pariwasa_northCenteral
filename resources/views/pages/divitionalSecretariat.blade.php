@@ -9,7 +9,7 @@
 
     <div class="page-header">
         <div>
-            <h3>Divitional Secretariats</h3>
+            <h3>Divisional Secretariats</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -18,7 +18,7 @@
                     <li class="breadcrumb-item">
                         <a href="#">Setting</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Divitional Secretariats</li>
+                    <li class="breadcrumb-item active" aria-current="page">Divisional Secretariats</li>
                 </ol>
             </nav>
         </div>
@@ -39,9 +39,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Divitional Secretariat</label>
+                            <label for="exampleInputName1">Divisional Secretariat</label>
                             <input type="hidden" class="form-control" name="id" id="txtid">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Divitional Secretariat">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Divisional Secretariat">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
@@ -50,13 +50,13 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Divitional Secretariats</h4>
+                    <h4 class="card-title">Divisional Secretariats</h4>
                     <div class="table-responsive">
                         <table id="tblgrade" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr>
                                     <th class="thid"> #</th>
-                                    <th class="thname"> Divitional Secretariat</th>
+                                    <th class="thname"> Divisional Secretariat</th>
                                     <th class="thDistrict"> District</th>
                                     <th class="edit">  Edit</th>
                                     <th class="delete"> Delete</th>

@@ -96,14 +96,14 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Fax</label>
-                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX"  required="">
+                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Email</label>
-                            <input type="text" class="form-control" name="email" id="email"   placeholder="example@example.com"  required="">
+                            <input type="text" class="form-control" name="email" id="email"   placeholder="example@example.com">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -112,7 +112,7 @@
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
                             <label for="txtFullName">Remarks</label>
-                            <textarea type="text" class="form-control" name="remarks"  id="remarks"    placeholder="Remarks"  required=""></textarea>
+                            <textarea type="text" class="form-control" name="remarks"  id="remarks"    placeholder="Remarks"></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
