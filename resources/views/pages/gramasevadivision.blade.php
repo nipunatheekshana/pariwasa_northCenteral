@@ -18,7 +18,7 @@
                     <li class="breadcrumb-item">
                         <a href="#">Setting</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Gramaseva divisions</li>
+                    <li class="breadcrumb-item active" aria-current="page">Grama Niladhari Division</li>
                 </ol>
             </nav>
         </div>
@@ -39,9 +39,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Gramaseva Division</label>
+                            <label for="exampleInputName1">Grama Niladhari Division</label>
                             <input type="hidden" class="form-control" name="id" id="txtid">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Gramaseva Division">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Grama Niladhari Division">
                             <input type="hidden" class="form-control" id="txtID" >
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
@@ -50,13 +50,13 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Gramaseva Division</h4>
+                    <h4 class="card-title">Grama Niladhari Division</h4>
                     <div class="table-responsive">
                         <table id="tblgrade" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr>
                                     <th class="thid"> #</th>
-                                    <th class="thname"> Gramaseva Division</th>
+                                    <th class="thname"> Grama Niladhari Division</th>
                                     <th class="thDVSname"> Divisional Secretariat</th>
                                     <th class="edit">  Edit</th>
                                     <th class="delete"> Delete</th>

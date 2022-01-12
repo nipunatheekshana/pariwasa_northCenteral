@@ -90,7 +90,7 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Gramaseva Divisions</a>
+                                @endif href="/gramasevadivision">Grama Niladhari Divisions</a>
                         </li>
                     </ul>
                 </li>
@@ -222,7 +222,7 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Gramaseva Divisions</a>
+                                @endif href="/gramasevadivision">Grama Niladhari Divisions</a>
                         </li>
                     </ul>
                 </li>
