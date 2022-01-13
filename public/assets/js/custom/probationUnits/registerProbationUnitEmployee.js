@@ -27,15 +27,15 @@ $(document).ready(function() {
 
     });
 
-    $('#working_divitional_secretariat').on('change', function () {
-        loadpoliceDevition(this.value)
-    });
-
+    loadpoliceDevition();
     loadDivitionalSecatariat();
     loadDDesignation();
     loadGrade();
     loadProbationUnitEmployee() ;
 });
+function autoCompleteSelectedOption(input, data) {
+    $('#working_police_divition').val(data.id);
+}
 function loadDivitionalSecatariat(){
     $.ajax({
         type: 'GET',
@@ -105,23 +105,20 @@ function loadGrade(){
         }
     });
 }
-function loadpoliceDevition(id){
+function loadpoliceDevition(){
     $.ajax({
         type: 'GET',
-        url: '/registerProbationUnitEmployee/loadpoliceDevition/'+id,
+        url: '/registerProbationUnitEmployee/loadpoliceDevition',
         async:false,
         success: function(response){
             console.log(response.result)
-            if (response.success) {
-                var html = "";
-                $.each(response.result, function(index, value){
-
-                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
-                });
-                $('#working_police_divition').html(html);
-
-
-            }
+             // console.log(response.result)
+             console.log(response);
+             if (response.success) {
+                 $('#policeDivition').setData(response.result);
+             } else {
+                 console.log('something went wrong');
+             }
         }, error: function(data){
             console.log(data);
             console.log('something went wrong');
@@ -283,6 +280,7 @@ function loadProbationUnitEmployee() {
                     }
                     $('#txtid').val(data.employee_id);
                     $('#name').val(data.full_name);
+                    $('#title').val(data.title);
                     $('#address').val(data.address);
                     $('#designation').val(data.designation);
                     $('#grade').val(data.grade);
@@ -292,6 +290,7 @@ function loadProbationUnitEmployee() {
                     $('#date_of_employeement_at_probational_unit').val(data.date_of_employeement_at_probational_unit);
                     $('#working_divitional_secretariat').val(data.working_divitional_secretariat);
                     $('#working_police_divition').val(data.working_police_divition);
+                    $('#policeDivition').val(data.name);
                     $('#working_equipment').val(data.working_equipment);
                     $('#DOB').val(data.DOB);
                     $('#email').val(data.email);
@@ -304,6 +303,9 @@ function loadProbationUnitEmployee() {
                     $('#other_qualification').val(data.other_qualification);
                     $('#courses_falloed_by_the_institute').val(data.courses_falloed_by_the_institute);
                     $('#courses_hope_to_fallow').val(data.courses_hope_to_fallow);
+                    if(data.isExecutive==true){
+                        $('#isExce').prop( "checked", true );;
+                    }
 
                 }
 
@@ -344,7 +346,7 @@ function reset(){
     $('#other_qualification').val('');
     $('#courses_falloed_by_the_institute').val('');
     $('#courses_hope_to_fallow').val('');
-
+    $('#policeDivition').val();
 }
 
 

@@ -346,15 +346,15 @@
                             <figure class="avatar avatar-sm">
                                 <img src="{{ url('assets/media/image/user/man_avatar3.jpg') }}" class="rounded-circle" alt="avatar">
                             </figure>
-                            <span class="ml-2 d-sm-inline d-none">Demo</span>
+                            <span class="ml-2 d-sm-inline d-none">{{Auth::user()->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
                             <div class="text-center py-4">
                                 <figure class="avatar avatar-lg mb-3 border-0">
                                     <img src="{{ url('assets/media/image/user/man_avatar3.jpg') }}" class="rounded-circle" alt="image">
                                 </figure>
-                                <h5 class="text-center">Demo</h5>
-                                <div class="mb-3 small text-center text-muted">@demouser</div>
+                                <h5 class="text-center">{{Auth::user()->name}}</h5>
+                                <div class="mb-3 small text-center text-muted">{{Auth::user()->email}}</div>
                                 <a href="#" class="btn btn-outline-light btn-rounded">Manage Your Account</a>
                             </div>
                             <div class="list-group">

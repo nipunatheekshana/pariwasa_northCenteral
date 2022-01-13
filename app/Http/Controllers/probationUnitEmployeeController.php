@@ -8,6 +8,7 @@ use App\Models\Probation_unit_employee;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Else_;
 
 class probationUnitEmployeeController extends Controller
@@ -17,6 +18,7 @@ class probationUnitEmployeeController extends Controller
     public function save(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
+            'title' => ['required'],
             'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
             'gender' => ['required'],
@@ -56,6 +58,7 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->Probation_unit_id=Auth::user()->probationUnitid;
             $Probation_unit_employee->image= $url;
             $Probation_unit_employee->full_name=$request->name;
+            $Probation_unit_employee->title=$request->title;
             $Probation_unit_employee->address=$request->address;
             $Probation_unit_employee->designation=$request->designation;
             $Probation_unit_employee->grade=$request->grade;
@@ -77,6 +80,8 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->other_qualification=$request->other_qualification;
             $Probation_unit_employee->courses_falloed_by_the_institute=$request->courses_falloed_by_the_institute;
             $Probation_unit_employee->courses_hope_to_fallow=$request->courses_hope_to_fallow;
+            $Probation_unit_employee->isExecutive=$request->has('isExce');
+
             $save=$Probation_unit_employee->save();
 
 
@@ -95,6 +100,7 @@ class probationUnitEmployeeController extends Controller
     public function update(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
+            'title' => ['required'],
             'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
             'gender' => ['required'],
@@ -136,6 +142,7 @@ class probationUnitEmployeeController extends Controller
             ->update(
                 [
                     'full_name' => $request->name,
+                    'title' => $request->title,
                     'image'=> $url,
                     'address' => $request->address,
                     'designation' => $request->designation,
@@ -158,6 +165,7 @@ class probationUnitEmployeeController extends Controller
                     'other_qualification' => $request->other_qualification,
                     'courses_falloed_by_the_institute' => $request->courses_falloed_by_the_institute,
                     'courses_hope_to_fallow' => $request->courses_hope_to_fallow,
+                    'isExecutive'=>$request->has('isExce')
                 ]);
             if($save){
                 $responseBody = $this->responseBody(true, "Probation_unit_employee", "Updated",'data saved');
@@ -173,11 +181,16 @@ class probationUnitEmployeeController extends Controller
     }
 
 
-    public function loadpoliceDevition($id){
+    public function loadpoliceDevition(){
         try {
-            $Police_division =Police_division::where('divisionalSecretariatID',$id)->get();
+            $Police_divisions =Police_division::all();
+            $Police_division_arr = [];
 
-            return $this->responseBody(true, "loadpoliceDevition", "found", $Police_division);
+            foreach ($Police_divisions as $Police_division) {
+                array_push($Police_division_arr, ["img" => "", "id" => $Police_division['id'], "value" => $Police_division['name']]);
+            }
+
+            return $this->responseBody(true, "loadpoliceDevition", "found", $Police_division_arr);
         }
          catch (Exception $exception) {
             return $this->responseBody(false, "loadpoliceDevition", "error", $exception->getMessage());
@@ -186,7 +199,11 @@ class probationUnitEmployeeController extends Controller
 
     public function loadProbationUnitEmployee($id){
         try {
-                $Probation_unit_employee=Probation_unit_employee::where('employee_id',$id)->first();
+                $Probation_unit_employee=DB::table('probation_unit_employees')
+                                            ->join('police_divisions','police_divisions.districtId','=','probation_unit_employees.working_police_divition')
+                                            ->where('probation_unit_employees.employee_id','=',$id)
+                                            ->select('probation_unit_employees.*','police_divisions.name')
+                                            ->first();
                 return $this->responseBody(true, "loadProbationUnitEmployee", "found",$Probation_unit_employee );
 
         }

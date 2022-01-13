@@ -12,18 +12,16 @@
 
 <div class="page-header">
     <div>
-        <h3>Probation Unit Employee</h3>
+        <h3>Children</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Employees</a>
+                    <a href="#">Children</a>
                 </li>
-                <li class="breadcrumb-item">
-                    <a href="#">Probation Unit</a>
-                </li>
+
                 <li class="breadcrumb-item active" aria-current="page">Create</li>
             </ol>
         </nav>
@@ -33,7 +31,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Create Probation Unit Employee</h6>
+                <h6 class="card-title">Register Child Form</h6>
                 <a class="image-popup" href="{{asset('uploads/user.jpg')}}">
                     <img src="{{asset('/uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
@@ -58,9 +56,16 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="txtFullName">Date Of Birth</label>
                             <input type="date" class="form-control" name="Dob"  id="Dob"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Date Entered</label>
+                            <input type="date" class="form-control" name="date_entered"  id="date_entered"    required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -105,6 +110,91 @@
                             </div>
                         </div>
 
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Birth Certificate</label>
+                            <select class="form-control" name="birth_certificate" id="birth_certificate">
+                                <option value="no">No</option>
+                                <option value="have">Have</option>
+                                <option value="in progress">In Progress</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Helth Statu</label>
+                            <textarea type="text" class="form-control" name="helth_status"  id="helth_status"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">How Entered</label>
+                            <textarea type="text" class="form-control" name="how_entered"  id="how_entered"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Case Number</label>
+                            <input type="text" class="form-control" name="case_number"  id="case_number"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Divition Entered</label>
+                            <input type="text" class="form-control" name="Entered_divition"  id="Entered_divition"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Court</label>
+                            <input type="text" class="form-control" name="court"  id="court"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Crime Commited</label>
+                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Crime Commited</label>
+                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Crime Commited</label>
+                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
                     </div>
 
 

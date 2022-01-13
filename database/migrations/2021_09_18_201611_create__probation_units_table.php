@@ -19,8 +19,8 @@ class CreateProbationUnitsTable extends Migration
             $table->string('address');
             $table->integer('district');
             $table->integer('divitional_secretariat');
-            $table->string('senior_officer');
-            $table->string('officer_incharge');
+            $table->integer('senior_officer')->nullable();
+            $table->integer('officer_incharge')->nullable();
             $table->string('tp_no');
             $table->string('fax')->nullable();
             $table->string('email');

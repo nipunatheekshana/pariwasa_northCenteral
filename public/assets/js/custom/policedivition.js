@@ -8,7 +8,7 @@ $(document).ready(function () {
         "columns": [
           { "data": "thid" },
           { "data": "thname" },
-          { "data": "thDVSname" },
+          { "data": "thDistrict" },
           { "data": "edit" },
           { "data": "delete" },
         ],
@@ -28,22 +28,22 @@ $(document).ready(function () {
     });
 
     loadpoliceDivitions();
-    loaddivitionalSecretariat();
+    loadDistrict();
 
 });
-function loaddivitionalSecretariat(){
+function loadDistrict(){
     $.ajax({
         type: 'GET',
-        url: '/divitionalSecretariat/loaddivitionalSecretariat',
+        url: '/district/loaddistrict',
         success: function(response){
             console.log(response.result)
             if (response.success) {
                 var html = "";
                 $.each(response.result, function(index, value){
 
-                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
+                    html += '<option value="'+value.id+'" > '+value.district+' </option>';
                 });
-                $('#divitional_secretariat').append(html);
+                $('#district').append(html);
 
             }
         }, error: function(data){
@@ -176,14 +176,15 @@ function loadpoliceDivitions(){
                 for (i = 0; i < response.result.length; i++) {
                     var name  = response.result[i]['name'];
                     var id  = response.result[i]['id'];
-                    var DVSname  = response.result[i]['DVSname'];
+                    var district  = response.result[i]['district'];
+
 
 
 
                     data.push({
                         "thid": id,
                         "thname":name,
-                        "thDVSname":DVSname,
+                        "thDistrict":district,
                         "edit": '<button class="btn btn-primary" onclick="edit(' + id + ')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>',
                         "delete": '<button class="btn btn-danger" onclick="_delete(' + id + ')"><i class="fa fa-trash" aria-hidden="true"></i></button>'
                      });

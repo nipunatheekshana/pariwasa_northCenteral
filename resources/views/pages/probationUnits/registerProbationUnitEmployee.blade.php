@@ -2,10 +2,13 @@
 @extends('layouts.app')
 
 @section('head')
+<link rel="stylesheet" href="{{ url('assets/js/autocomplete2/css/autocomplete.min.css') }}" type="text/css">
 <!-- Prism -->
 <link rel="stylesheet" href="{{ url('vendors/prism/prism.css') }}" type="text/css">
 <!-- Css -->
 <link rel="stylesheet" href="{{url('vendors/lightbox/magnific-popup.css')}}" type="text/css">
+<link rel="stylesheet" href="{{ url('assets/css/slider.css') }}" media="all" type="text/css">
+
 @endsection
 
 @section('content')
@@ -40,6 +43,17 @@
                 <form class="needs-validation" id="probation_Unit_employee_form"  enctype="multipart/form-data">
 
                     <div class="form-row">
+                        <div class="col-md-1 mb-3">
+                            <label for="validationCustom01">Title</label>
+                            <select class="form-control" name="title" id="title">
+                                <option value="Mr.">Mr.</option>
+                                <option value="Mrs.">Mrs.</option>
+                                <option value="Miss.">Miss.</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
                         <div class="col-md-6 mb-3">
                             <label for="txtFullName">Full Name</label>
                             <input type="hidden" name="id" id="txtid" name="">
@@ -48,7 +62,7 @@
                                 Looks good!
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-5 mb-3">
                             <label for="txtFullName">image</label>
                             <div class="custom-file">
                                 <input type="hidden" name="oldimage" id="oldimage">
@@ -162,10 +176,13 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Working Police Division</label>
-                            <select class="form-control" name="working_police_divition" id="working_police_divition">
-                                <option value="" selected disabled>Select Police Division</option>
-                            </select>
+                            <label for="validationCustom01">Working Police Devision</label>
+                            <input type="hidden" name="working_police_divition" id="working_police_divition">
+                            <input type="text" class="form-control auto-complete" id="policeDivition" >
+
+                            {{-- <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
+                                <option value=""selected disabled>Select Gramaseva Division</option>
+                            </select> --}}
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -238,6 +255,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustom01">Executive </label>
+                            <label class='switch ml-2'><input type='checkbox' id="isExce" name="isExce"><span class='slider round'></span</lable>
+                        </div>
+                    </div>
                     <button id="btnSave" class="btn btn-primary" type="button">Save</button>
                 </form>
             </div>
@@ -247,6 +270,7 @@
 
 @endsection
 @section('script')
+<script src="{{ url('assets/js/autocomplete2/js/autocomplete.min.js') }}"></script>
 <!-- Javascript -->
 <script src="{{url('vendors/lightbox/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{ url('assets/js/custom/probationUnits/registerProbationUnitEmployee.js') }}?random=<?php echo uniqid(); ?>"></script>

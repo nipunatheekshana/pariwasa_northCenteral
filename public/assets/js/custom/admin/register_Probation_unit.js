@@ -45,6 +45,31 @@ function loadDistrict(){
         }
     });
 }
+function loadOfficer(id){
+    $.ajax({
+        type: 'GET',
+        url: '/register_Probation_unit/loadOfficer/'+id,
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.employee_id+'" > '+value.title+value.full_name+' </option>';
+                });
+                $('#senior_officer').append(html);
+                $('#officer_incharge').append(html);
+
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
 function loadDivitionalSecatariat(id){
     $.ajax({
         type: 'GET',
@@ -185,6 +210,7 @@ function loadProbationUnit() {
         var sPageURL = window.location.search.substring(1);
         var param = sPageURL.split('&');
         var id = param[0];
+        loadOfficer(id);
        if (param.length == 2) {
             console.log('view ')
             $('#btnSave').hide();

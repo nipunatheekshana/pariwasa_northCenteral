@@ -209,14 +209,6 @@
                                 @endif href="/designation">Employee designations</a>
                         </li>
                         <li>
-                            <a @if(request()->segment(1) == 'district') class="active"
-                                @endif href="/district">Districts</a>
-                        </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'divitionalSecretariat') class="active"
-                                @endif href="/divitionalSecretariat">Divisional Secretariats</a>
-                        </li>
-                        <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"
                                 @endif href="/policeDivitions">Police Divisions</a>
                         </li>
