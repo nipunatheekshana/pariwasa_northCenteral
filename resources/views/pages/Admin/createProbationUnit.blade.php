@@ -94,21 +94,21 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Telephone No</label>
-                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="0XX XXX XX XX"  required="">
+                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="0XX XXX XX XX"  required="" pattern="[1-9]{1}[0-9]{9}">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Fax</label>
-                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX">
+                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX" pattern="[1-9]{1}[0-9]{9}">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Email</label>
-                            <input type="text" class="form-control" name="email" id="email"   placeholder="example@example.com">
+                            <input type="text" class="form-control" name="email" id="email"  placeholder="example@example.com">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

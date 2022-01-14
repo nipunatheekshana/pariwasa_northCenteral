@@ -9,10 +9,10 @@
 
     <div class="page-header">
         <div>
-            <h3>Gramaseva divisions</h3>
+            <h3>Gramaseva Divisions</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
+                    <li class="breadcrumb-item">        
                         <a href="#">Home</a>
                     </li>
                     <li class="breadcrumb-item">
