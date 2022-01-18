@@ -22,7 +22,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="shield"></i>
                         </span>
-                        <span>Probation Units</span>
+                        <span>Probation Offices</span>
                     </a>
                     <ul>
                         <li>
@@ -44,7 +44,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="">Probation Unit Users</a>
+                            <a href="">Probation Office Users</a>
                             <ul>
                                 <li>
                                     <a @if(request()->segment(1) == 'createProbationUnitUser') class="active"
@@ -65,12 +65,16 @@
                         <span class="nav-link-icon">
                             <i data-feather="settings"></i>
                         </span>
-                        <span>Setting</span>
+                        <span>Settings</span>
                     </a>
                     <ul>
                         <li>
                             <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
                                 @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'designation') class="active"
+                                @endif href="/designation">Employee Designations</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
@@ -111,7 +115,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="home"></i>
                         </span>
-                        <span>Probation Centers</span>
+                        <span>Childcare Centers</span>
                     </a>
                     <ul>
                         <li>
@@ -172,7 +176,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="">Probation Center Users</a>
+                            <a href="">Childcare Users</a>
                             <ul>
                                 <li>
                                     <a @if(request()->segment(1) == 'createProbationCenterUsers') class="active"
@@ -193,12 +197,12 @@
                         <span class="nav-link-icon">
                             <i data-feather="settings"></i>
                         </span>
-                        <span>Setting</span>
+                        <span>Settings</span>
                     </a>
                     <ul>
                         <li>
                             <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
-                                @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                                @endif href="/probationCenterCatagory">Childcare Catagory</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
@@ -206,15 +210,7 @@
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'designation') class="active"
-                                @endif href="/designation">Employee designations</a>
-                        </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'policeDivitions') class="active"
-                                @endif href="/policeDivitions">Police Divisions</a>
-                        </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Grama Niladhari Divisions</a>
+                                @endif href="/designation">Employee Designations</a>
                         </li>
                     </ul>
                 </li>

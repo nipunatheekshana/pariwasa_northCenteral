@@ -117,7 +117,7 @@
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
                             <label for="txtFullName">Remarks</label>
-                            <textarea type="text" class="form-control" name="remarks"  id="remarks"    placeholder="Remarks"></textarea>
+                            <textarea type="text" class="form-control " name="remarks"  id="remarks"    placeholder="Remarks"></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
