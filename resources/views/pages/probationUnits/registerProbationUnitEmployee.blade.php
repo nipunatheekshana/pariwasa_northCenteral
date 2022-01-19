@@ -55,9 +55,9 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Full Name</label>
+                            <label for="txtInitials">Name with Initials</label>
                             <input type="hidden" name="id" id="txtid" name="">
-                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Full Name"  required="">
+                            <input type="text" class="form-control" name="initials"  id="txtInitials"  placeholder="Name with Initials"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -68,6 +68,17 @@
                                 <input type="hidden" name="oldimage" id="oldimage">
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                         <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Full Name</label>
+                            <input type="hidden" name="id" id="txtid" name="">
+                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Full Name"  required="">
+                            <div class="valid-feedback">
+                                Looks good!
                             </div>
                         </div>
                     </div>

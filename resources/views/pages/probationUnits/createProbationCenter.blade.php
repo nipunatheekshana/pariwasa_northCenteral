@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Telephone No</label>
-                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="0XX XXX XX XX"  required="">
+                            <input type="text" class="form-control"  name="telepone_no"   id="tp_no" placeholder="0XX XXX XX XX"  required="" pattern="[1-9]{1}[0-9]{9}" maxlength="10">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
