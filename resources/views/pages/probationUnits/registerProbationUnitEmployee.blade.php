@@ -112,21 +112,21 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Date of Birth</label>
-                            <input type="date" class="form-control"  name="DOB"   id="DOB"   required="">
+                            <input type="date" class="form-control"  name="DOB"   id="DOB" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Date of Employeement</label>
-                            <input type="date" class="form-control"  name="date_of_employeement"   id="date_of_employeement"  required="">
+                            <input type="date" class="form-control"  name="date_of_employeement"   id="date_of_employeement">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Date of Employeement at probational unit</label>
-                            <input type="date" class="form-control" name="date_of_employeement_at_probational_unit" id="date_of_employeement_at_probational_unit"   required="">
+                            <input type="date" class="form-control" name="date_of_employeement_at_probational_unit" id="date_of_employeement_at_probational_unit">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

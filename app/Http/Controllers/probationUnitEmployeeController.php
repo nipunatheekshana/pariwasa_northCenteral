@@ -19,23 +19,24 @@ class probationUnitEmployeeController extends Controller
         $validatedData= $request->validate([
             'name' => ['required'],
             'title' => ['required'],
+            'initials' => ['required'],
             'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
+            // 'email' => ['email'],
             'gender' => ['required'],
-            'DOB' => ['required','date'],
-            'date_of_employeement' => ['required','date'],
-            'date_of_employeement_at_probational_unit' => ['required','date'],
-            'basic_salary' => ['required'],
-            'image' => ['image', 'max:1024'],
+            // 'DOB' => ['date'],
+            // 'date_of_employeement' => ['date'],
+            // 'date_of_employeement_at_probational_unit' => ['date'],
+            // 'basic_salary' => ['required'],
+            // 'image' => ['image', 'max:1024'],
             // 'Incriment_date' => ['date'],
             // 'incriment_value' => ['required'],
-            'designation' => ['required'],
-            'grade' => ['required'],
+            // 'designation' => ['required'],
+            // 'grade' => ['required'],
             'working_divitional_secretariat' => ['required'],
             'working_police_divition' => ['required'],
-            'NIC_no' => ['required'],
-            'pension_no' => ['required'],
-            'address' => ['required'],
+            // 'NIC_no' => ['required'],
+            // 'pension_no' => ['required'],
+            // 'address' => ['required'],
 
         ]);
         try{
@@ -58,6 +59,7 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->Probation_unit_id=Auth::user()->probationUnitid;
             $Probation_unit_employee->image= $url;
             $Probation_unit_employee->full_name=$request->name;
+            $Probation_unit_employee->initials=$request->initials;
             $Probation_unit_employee->title=$request->title;
             $Probation_unit_employee->address=$request->address;
             $Probation_unit_employee->designation=$request->designation;
@@ -101,23 +103,24 @@ class probationUnitEmployeeController extends Controller
         $validatedData= $request->validate([
             'name' => ['required'],
             'title' => ['required'],
+            'initials' => ['required'],
             'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
+            // 'email' => ['email'],
             'gender' => ['required'],
-            'DOB' => ['required','date'],
-            'date_of_employeement' => ['required','date'],
-            'date_of_employeement_at_probational_unit' => ['required','date'],
-            'basic_salary' => ['required'],
-            'image' => ['image', 'max:1024'],
+            // 'DOB' => ['date'],
+            // 'date_of_employeement' => ['date'],
+            // 'date_of_employeement_at_probational_unit' => ['date'],
+            // 'basic_salary' => ['required'],
+            // 'image' => ['image', 'max:1024'],
             // 'Incriment_date' => ['date'],
             // 'incriment_value' => ['required'],
-            'designation' => ['required'],
-            'grade' => ['required'],
+            // 'designation' => ['required'],
+            // 'grade' => ['required'],
             'working_divitional_secretariat' => ['required'],
             'working_police_divition' => ['required'],
-            'NIC_no' => ['required'],
-            'pension_no' => ['required'],
-            'address' => ['required'],
+            // 'NIC_no' => ['required'],
+            // 'pension_no' => ['required'],
+            // 'address' => ['required'],
 
         ]);
         try{
@@ -143,6 +146,7 @@ class probationUnitEmployeeController extends Controller
                 [
                     'full_name' => $request->name,
                     'title' => $request->title,
+                    'initials' => $request->initials,
                     'image'=> $url,
                     'address' => $request->address,
                     'designation' => $request->designation,
