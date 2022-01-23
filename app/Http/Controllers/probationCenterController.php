@@ -20,18 +20,18 @@ class probationCenterController extends Controller
     public function save(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'date_started' => ['required'],
-            'catagory' => ['required'],
-            'district' => ['required'],
-            'divitional_secretariat' => ['required'],
-            'address' => ['required'],
-            'registration_no' => ['required'],
-            'registration_date' => ['required'],
-            'fund' => ['required'],
-            'gramaseva_divition' => ['required'],
-            'maximum_children_capacity' => ['required'],
-            'minimum_children_capacity' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'date_started' => ['required'],
+            // 'catagory' => ['required'],
+            // 'district' => ['required'],
+            // 'divitional_secretariat' => ['required'],
+            // 'address' => ['required'],
+            // 'registration_no' => ['required'],
+            // 'registration_date' => ['required'],
+            // 'fund' => ['required'],
+            // 'gramaseva_divition' => ['required'],
+            // 'maximum_children_capacity' => ['required'],
+            // 'minimum_children_capacity' => ['required'],
+            // 'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
 
         ]);
         try{
@@ -67,18 +67,18 @@ class probationCenterController extends Controller
     public function update(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'date_started' => ['required'],
-            'catagory' => ['required'],
-            'district' => ['required'],
-            'divitional_secretariat' => ['required'],
-            'address' => ['required'],
-            'registration_no' => ['required'],
-            'registration_date' => ['required'],
-            'fund' => ['required'],
-            'gramaseva_divition' => ['required'],
-            'maximum_children_capacity' => ['required'],
-            'minimum_children_capacity' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'date_started' => ['required'],
+            // 'catagory' => ['required'],
+            // 'district' => ['required'],
+            // 'divitional_secretariat' => ['required'],
+            // 'address' => ['required'],
+            // 'registration_no' => ['required'],
+            // 'registration_date' => ['required'],
+            // 'fund' => ['required'],
+            // 'gramaseva_divition' => ['required'],
+            // 'maximum_children_capacity' => ['required'],
+            // 'minimum_children_capacity' => ['required'],
+            // 'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
 
         ]);
         try{

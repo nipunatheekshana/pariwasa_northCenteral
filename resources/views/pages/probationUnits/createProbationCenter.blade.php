@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">Minimum Children Capacity</label>
+                            <label for="validationCustom02">Number of Children Capacity</label>
                             <input type="number" class="form-control" name="minimum_children_capacity" id="minimum_children_capacity"   placeholder="0"  required="">
                             <div class="valid-feedback">
                                 Looks good!

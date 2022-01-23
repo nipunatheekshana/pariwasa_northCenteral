@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Fax</label>
-                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX" pattern="[1-9]{1}[0-9]{9}">
+                            <input type="text" class="form-control" name="fax"  id="fax"  placeholder="0XX XXX XX XX"pattern="[1-9]{1}[0-9]{9}" maxlength="10">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>

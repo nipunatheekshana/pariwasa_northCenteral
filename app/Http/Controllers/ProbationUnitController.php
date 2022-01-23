@@ -17,14 +17,14 @@ class ProbationUnitController extends Controller
     public function save(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'address' => ['required'],
+            // 'address' => ['required'],
             'district' => ['required'],
             'divitional_secretariat' => ['required'],
             // 'senior_officer' => ['required'],
             // 'officer_incharge' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
+            // 'email' => ['required','email'],
 
         ]);
         try{
@@ -56,14 +56,14 @@ class ProbationUnitController extends Controller
     public function update(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'address' => ['required'],
+            // 'address' => ['required'],
             'district' => ['required'],
             'divitional_secretariat' => ['required'],
             // 'senior_officer' => ['required'],
             // 'officer_incharge' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            // 'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
+            // 'email' => ['required','email'],
 
         ]);
         try{
