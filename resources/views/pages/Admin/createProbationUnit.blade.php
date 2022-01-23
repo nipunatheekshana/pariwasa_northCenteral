@@ -61,9 +61,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Senior Probational Officer</label>
-                            <select class="form-control" name="senior_officer" id="senior_officer">
-                                <option value=""selected disabled>Select  Probational Officer</option>
-                            </select>
+                            <input type="text" class="form-control"name="senior_officer" id="senior_officer"  placeholder="Senior Probational Officer" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -72,14 +70,11 @@
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Probation Officer Incharge</label>
-                            <select class="form-control"  name="officer_incharge" id="officer_incharge">
-                                <option value=""selected disabled>Select Officer Incharge</option>
-                            </select>
+                            <input type="text" class="form-control"  name="officer_incharge" id="officer_incharge" placeholder="Probation Officer Incharge" required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
-
 
                     </div>
                     <div class="form-row">

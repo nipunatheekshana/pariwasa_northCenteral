@@ -17,7 +17,7 @@ class PoliceDivisionController extends Controller
         ]);
         try {
             $Police_division =new Police_division();
-            $Police_division->districtId=$request->district;
+            $Police_division->divisionalSecretariatID=$request->divitional_secretariat;
             $Police_division->name=$request->name;
 
             $save=$Police_division->save();
@@ -44,7 +44,7 @@ class PoliceDivisionController extends Controller
             $save=Police_division::where('id',$request->id)
             ->update(
                 [
-                    'districtId' => $request->district,
+                    'divisionalSecretariatID' => $request->divitional_secretariat,
                     'name' => $request->name,
 
                 ]);
@@ -66,14 +66,14 @@ class PoliceDivisionController extends Controller
     public function loadpoliceDivitions(){
         try {
                 $District=DB::table('police_divisions')
-                            ->join('districts','districts.id','=','police_divisions.districtId')
-                            ->select('police_divisions.*','districts.district')
+                            ->join('divisional_secretariats','divisional_secretariats.id','=','police_divisions.divisionalSecretariatID')
+                            ->select('police_divisions.*','divisional_secretariats.name as DVSname')
                             ->get();
-                return $this->responseBody(true, "loadpoliceDivitions", "found",$District );
+                return $this->responseBody(true, "Divisional_secretariat", "found",$District );
 
         }
          catch (Exception $exception) {
-            return $this->responseBody(false, "loadpoliceDivitions", "error", $exception->getMessage());
+            return $this->responseBody(false, "Divisional_secretariat", "error", $exception->getMessage());
         }
     }
     public function loadpoliceDivitionsToid($id){

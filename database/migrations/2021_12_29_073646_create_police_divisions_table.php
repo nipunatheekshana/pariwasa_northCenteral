@@ -15,8 +15,8 @@ class CreatePoliceDivisionsTable extends Migration
     {
         Schema::create('police_divisions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('districtId');
-            $table->foreign('districtId')->references('id')->on('districts')->onDelete('cascade');
+            $table->foreignId('divisionalSecretariatID');
+            $table->foreign('divisionalSecretariatID')->references('id')->on('divisional_secretariats')->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
         });

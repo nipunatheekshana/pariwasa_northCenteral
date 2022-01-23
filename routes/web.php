@@ -60,9 +60,6 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::post('/register_Probation_unit/update',[ProbationUnitController::class,'update']);
     Route::get('/register_Probation_unit/loadProbationUnit/{id}', [ProbationUnitController::class, 'loadProbationUnit']);
     Route::get('/register_Probation_unit/loadDistrict', [ProbationUnitController::class, 'loadDistrict']);
-    Route::get('/register_Probation_unit/loadOfficer/{id}', [ProbationUnitController::class, 'loadOfficer']);
-
-
     Route::get('/register_Probation_unit/loadDivitionalSecatariat/{id}', [ProbationUnitController::class, 'loadDivitionalSecatariat']);
 
     //Probation Unit List
@@ -124,7 +121,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/registerProbationUnitEmployee', function () {
         return view('pages.probationUnits.registerProbationUnitEmployee');
     });
-    Route::get('/registerProbationUnitEmployee/loadpoliceDevition', [probationUnitEmployeeController::class, 'loadpoliceDevition']);
+    Route::get('/registerProbationUnitEmployee/loadpoliceDevition/{id}', [probationUnitEmployeeController::class, 'loadpoliceDevition']);
 
     Route::post('/registerProbationUnitEmployee/save',[probationUnitEmployeeController::class,'save']);
     Route::post('/registerProbationUnitEmployee/update',[probationUnitEmployeeController::class,'update']);

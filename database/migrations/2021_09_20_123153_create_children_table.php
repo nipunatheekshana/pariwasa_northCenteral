@@ -23,7 +23,7 @@ class CreateChildrenTable extends Migration
             $table->string('nationality')->nullable();
             $table->string('religion')->nullable();
             $table->string('gender')->nullable();
-            $table->string('birth_certificate')->nullable(); //1 =has 2 = dont have 3= in progress
+            $table->integer('birth_certificate')->nullable(); //1 =has 2 = dont have 3= in progress
             $table->string('helth_status',500)->nullable();
             $table->string('how_entered')->nullable();
             $table->string('case_number')->nullable();

@@ -6,7 +6,6 @@ use App\Http\common\commonFeatures;
 use App\Models\District;
 use App\Models\Divisional_secretariat;
 use App\Models\Probation_unit;
-use App\Models\Probation_unit_employee;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -20,8 +19,8 @@ class ProbationUnitController extends Controller
             'address' => ['required'],
             'district' => ['required'],
             'divitional_secretariat' => ['required'],
-            // 'senior_officer' => ['required'],
-            // 'officer_incharge' => ['required'],
+            'senior_officer' => ['required'],
+            'officer_incharge' => ['required'],
             'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
@@ -59,8 +58,8 @@ class ProbationUnitController extends Controller
             'address' => ['required'],
             'district' => ['required'],
             'divitional_secretariat' => ['required'],
-            // 'senior_officer' => ['required'],
-            // 'officer_incharge' => ['required'],
+            'senior_officer' => ['required'],
+            'officer_incharge' => ['required'],
             'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'fax' => ['regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['required','email'],
@@ -113,19 +112,6 @@ class ProbationUnitController extends Controller
         }
          catch (Exception $exception) {
             return $this->responseBody(false, "loadDistrict", "error", $exception->getMessage());
-        }
-    }
-    public function loadOfficer($id){
-        try {
-            $Probation_unit_employee =Probation_unit_employee::where('Probation_unit_id',$id)
-                                                ->where('isExecutive',true)
-                                                ->select('employee_id','full_name','title')
-                                                ->get();
-
-            return $this->responseBody(true, "loadOfficer", "found", $Probation_unit_employee);
-        }
-         catch (Exception $exception) {
-            return $this->responseBody(false, "loadOfficer", "error", $exception->getMessage());
         }
     }
     public function loadDivitionalSecatariat($id){

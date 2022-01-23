@@ -17,14 +17,13 @@ class CreateProbationUnitEmployeesTable extends Migration
             $table->id('employee_id');
             $table->foreignId('Probation_unit_id');
             $table->foreign('Probation_unit_id')->references('Probation_unit_id')->on('probation_units')->onDelete('cascade');
-            $table->string('title');
             $table->string('full_name');
             $table->string('address');
             $table->string('designation');
             $table->string('grade');
-            $table->string('tp_no')->unique();
+            $table->string('tp_no');
             $table->string('gender');
-            $table->string('NIC_no')->unique();
+            $table->string('NIC_no');
             $table->string('date_of_employeement_at_probational_unit');
             $table->string('working_divitional_secretariat');
             $table->string('working_police_divition');
@@ -41,7 +40,6 @@ class CreateProbationUnitEmployeesTable extends Migration
             $table->string('other_qualification')->nullable();
             $table->string('courses_falloed_by_the_institute')->nullable();
             $table->string('courses_hope_to_fallow')->nullable();
-            $table->boolean('isExecutive')->default(false);
             $table->timestamps();
         });
     }
