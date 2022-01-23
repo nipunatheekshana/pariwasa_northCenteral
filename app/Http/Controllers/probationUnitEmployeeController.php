@@ -17,12 +17,12 @@ class probationUnitEmployeeController extends Controller
 
     public function save(Request $request){
         $validatedData= $request->validate([
-            // 'name' => ['required'],
+            'name' => ['required'],
             'title' => ['required'],
             'initials' => ['required'],
-            // 'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'email' => ['email'],
-            // 'gender' => ['required'],
+            'gender' => ['required'],
             // 'DOB' => ['date'],
             // 'date_of_employeement' => ['date'],
             // 'date_of_employeement_at_probational_unit' => ['date'],
@@ -32,8 +32,8 @@ class probationUnitEmployeeController extends Controller
             // 'incriment_value' => ['required'],
             // 'designation' => ['required'],
             // 'grade' => ['required'],
-            // 'working_divitional_secretariat' => ['required'],
-            // 'working_police_divition' => ['required'],
+            'working_divitional_secretariat' => ['required'],
+            'working_police_divition' => ['required'],
             // 'NIC_no' => ['required'],
             // 'pension_no' => ['required'],
             // 'address' => ['required'],
@@ -57,6 +57,7 @@ class probationUnitEmployeeController extends Controller
             }
             $Probation_unit_employee=new Probation_unit_employee();
             $Probation_unit_employee->Probation_unit_id=Auth::user()->probationUnitid;
+            $Probation_unit_employee->image= $url;
             $Probation_unit_employee->full_name=$request->name;
             $Probation_unit_employee->initials=$request->initials;
             $Probation_unit_employee->title=$request->title;
@@ -75,7 +76,6 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->date_of_employeement=$request->date_of_employeement;
             $Probation_unit_employee->pension_no=$request->pension_no;
             $Probation_unit_employee->basic_salary=$request->basic_salary;
-            $Probation_unit_employee->image= $url;
             $Probation_unit_employee->Incriment_date=$request->Incriment_date;
             $Probation_unit_employee->incriment_value=$request->incriment_value;
             $Probation_unit_employee->Education_qualifications=$request->Education_qualifications;
@@ -101,12 +101,12 @@ class probationUnitEmployeeController extends Controller
     }
     public function update(Request $request){
         $validatedData= $request->validate([
-            // 'name' => ['required'],
+            'name' => ['required'],
             'title' => ['required'],
             'initials' => ['required'],
-            // 'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             // 'email' => ['email'],
-            // 'gender' => ['required'],
+            'gender' => ['required'],
             // 'DOB' => ['date'],
             // 'date_of_employeement' => ['date'],
             // 'date_of_employeement_at_probational_unit' => ['date'],
@@ -116,8 +116,8 @@ class probationUnitEmployeeController extends Controller
             // 'incriment_value' => ['required'],
             // 'designation' => ['required'],
             // 'grade' => ['required'],
-            // 'working_divitional_secretariat' => ['required'],
-            // 'working_police_divition' => ['required'],
+            'working_divitional_secretariat' => ['required'],
+            'working_police_divition' => ['required'],
             // 'NIC_no' => ['required'],
             // 'pension_no' => ['required'],
             // 'address' => ['required'],
@@ -147,6 +147,7 @@ class probationUnitEmployeeController extends Controller
                     'full_name' => $request->name,
                     'title' => $request->title,
                     'initials' => $request->initials,
+                    'image'=> $url,
                     'address' => $request->address,
                     'designation' => $request->designation,
                     'grade' => $request->grade,
@@ -162,7 +163,6 @@ class probationUnitEmployeeController extends Controller
                     'date_of_employeement' => $request->date_of_employeement,
                     'pension_no' => $request->pension_no,
                     'basic_salary' => $request->basic_salary,
-                    'image'=> $url,
                     'Incriment_date' => $request->Incriment_date,
                     'incriment_value' => $request->incriment_value,
                     'Education_qualifications' => $request->Education_qualifications,
