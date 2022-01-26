@@ -34,11 +34,11 @@ class CreateChildrenTable extends Migration
             $table->string('status_before_enter',500)->nullable();
             $table->string('status_after_enter',500)->nullable();
             $table->string('disability',500)->nullable();
-            $table->boolean('hasParents');
-            $table->boolean('hasEducation');
+            $table->boolean('hasParents')->default(false);
+            $table->boolean('hasEducation')->default(false);
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

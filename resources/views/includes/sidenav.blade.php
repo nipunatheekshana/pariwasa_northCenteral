@@ -243,8 +243,8 @@
                                 @endif href="/registerChildren">Register</a>
                         </li>
                         <li>
-                            <a @if(request()->segment(1) == 'products') class="active"
-                                @endif href="#">list</a>
+                            <a @if(request()->segment(1) == 'childrenList') class="active"
+                                @endif href="/childrenList">list</a>
                         </li>
 
                     </ul>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ChildrenListController;
+use App\Http\Controllers\ChildrenRegisterController;
 use App\Http\Controllers\designationController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\DivisionalSecretariatController;
@@ -221,5 +223,17 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/registerChildren', function () {
         return view('pages.probationCenters.registerChildren');
     });
+    Route::post('/registerChildren/save',[ChildrenRegisterController::class,'save']);
+    Route::post('/registerChildren/update',[ChildrenRegisterController::class,'update']);
+
+    Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadChild']);
+
+
+    // childrenList
+    Route::get('/childrenList', function () {
+        return view('pages.probationCenters.childrenList');
+    });
+    Route::get('/childrenList/loadChildren', [ChildrenListController::class, 'loadChildren']);
+    Route::delete('/childrenList/delete/{id}', [ChildrenListController::class, 'delete']);
 
 });

@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="{{ url('vendors/prism/prism.css') }}" type="text/css">
 <!-- Css -->
 <link rel="stylesheet" href="{{url('vendors/lightbox/magnific-popup.css')}}" type="text/css">
+<link rel="stylesheet" href="{{ url('assets/css/slider.css') }}" media="all" type="text/css">
+
 @endsection
 
 @section('content')
@@ -35,7 +37,7 @@
                 <a class="image-popup" href="{{asset('uploads/user.jpg')}}">
                     <img src="{{asset('/uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
-                <form class="needs-validation" id="probation_Unit_employee_form"  enctype="multipart/form-data">
+                <form class="needs-validation" id="probation_Center_children"  enctype="multipart/form-data">
 
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
@@ -126,8 +128,17 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
-                            <label for="txtFullName">Helth Statu</label>
+                            <label for="txtFullName">Helth Status</label>
                             <textarea type="text" class="form-control" name="helth_status"  id="helth_status"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Disabilities</label>
+                            <textarea type="text" class="form-control" name="disability"  id="disability"></textarea>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -144,6 +155,36 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Status Before Enter</label>
+                            <textarea type="text" class="form-control" name="status_before_enter"  id="status_before_enter"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Status After Entered</label>
+                            <textarea type="text" class="form-control" name="status_after_entered"  id="status_after_entered"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="txtFullName">Divition Entered</label>
+                            <input type="text" class="form-control" name="Entered_divition"  id="Entered_divition"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="txtFullName">Court</label>
+                            <input type="text" class="form-control" name="court"  id="court"    required="">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
                             <label for="txtFullName">Case Number</label>
                             <input type="text" class="form-control" name="case_number"  id="case_number"    required="">
                             <div class="valid-feedback">
@@ -151,49 +192,27 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Crime Commited</label>
+                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Divition Entered</label>
-                            <input type="text" class="form-control" name="Entered_divition"  id="Entered_divition"    required="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="validationCustom01">Parents </label>
+                            <label class='switch ml-2'><input type='checkbox' id="hasParents" name="hasParents"><span class='slider round'></span</lable>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Court</label>
-                            <input type="text" class="form-control" name="court"  id="court"    required="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-12 mb-3">
-                            <label for="txtFullName">Crime Commited</label>
-                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-12 mb-3">
-                            <label for="txtFullName">Crime Commited</label>
-                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-12 mb-3">
-                            <label for="txtFullName">Crime Commited</label>
-                            <textarea type="text" class="form-control" name="crime_commited"  id="crime_commited"></textarea>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="validationCustom01">Education </label>
+                            <label class='switch ml-2'><input type='checkbox' id="hasEducation" name="hasEducation"><span class='slider round'></span</lable>
                         </div>
                     </div>
 

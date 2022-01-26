@@ -19,36 +19,27 @@ class probationUnitEmployeeController extends Controller
         $validatedData= $request->validate([
             'name' => ['required'],
             'title' => ['required'],
-            'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
-            'gender' => ['required'],
-            'DOB' => ['required','date'],
-            'date_of_employeement' => ['required','date'],
-            'date_of_employeement_at_probational_unit' => ['required','date'],
-            'basic_salary' => ['required'],
-            'image' => ['image', 'max:1024'],
-            // 'Incriment_date' => ['date'],
-            // 'incriment_value' => ['required'],
-            'designation' => ['required'],
-            'grade' => ['required'],
-            'working_divitional_secretariat' => ['required'],
-            'working_police_divition' => ['required'],
+            'contact_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'email' => ['nullable','email'],
+            'DOB' => ['nullable','date'],
+            'date_of_employeement' => ['nullable','date'],
+            'date_of_employeement_at_probational_unit' => ['nullable','date'],
+            'image' => ['nullable','image', 'max:1024'],
+            'Incriment_date' => ['nullable','date'],
             'NIC_no' => ['required'],
-            'pension_no' => ['required'],
-            'address' => ['required'],
 
         ]);
         try{
             if($request->has('image')&&$request->has('image')!=null){
 
                 $id=$request->NIC_no;
-                $const='User-';
+                $const='Employee-';
                 $imagename =$const.$id; //new image name
                 // dd($request->get('logo'));
                 $guessExtension = $request->file('image')->guessExtension(); //file extention
-                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/users/userImages', $imagename.'.'.$guessExtension,'public_uploads' );
+                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/Emploies/EmployeeImages', $imagename.'.'.$guessExtension,'public_uploads' );
                 //build url for the image
-                $const_url='uploads/'.Auth::user()->probationUnitid.'/users/userImages/';
+                $const_url='uploads/'.Auth::user()->probationUnitid.'/Emploies/EmployeeImages/';
                 $url=$const_url.$imagename.'.'.$guessExtension;
             }
             else{
@@ -101,36 +92,33 @@ class probationUnitEmployeeController extends Controller
         $validatedData= $request->validate([
             'name' => ['required'],
             'title' => ['required'],
-            'contact_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
-            'email' => ['required','email'],
-            'gender' => ['required'],
-            'DOB' => ['required','date'],
-            'date_of_employeement' => ['required','date'],
-            'date_of_employeement_at_probational_unit' => ['required','date'],
-            'basic_salary' => ['required'],
-            'image' => ['image', 'max:1024'],
-            // 'Incriment_date' => ['date'],
-            // 'incriment_value' => ['required'],
-            'designation' => ['required'],
-            'grade' => ['required'],
-            'working_divitional_secretariat' => ['required'],
-            'working_police_divition' => ['required'],
+            'contact_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'email' => ['nullable','email'],
+            'DOB' => ['nullable','date'],
+            'date_of_employeement' => ['nullable','date'],
+            'date_of_employeement_at_probational_unit' => ['nullable','date'],
+            'image' => ['nullable','image', 'max:1024'],
+            'Incriment_date' => ['nullable','date'],
             'NIC_no' => ['required'],
-            'pension_no' => ['required'],
-            'address' => ['required'],
 
         ]);
         try{
             if($request->has('image')&&$request->has('image')!=null){
 
+                $removeImage= Probation_unit_employee::where('employee_id',$request->id)->first()->image;
+
+                if(file_exists($removeImage)){
+                    unlink($removeImage);
+                }
+
                 $id=$request->NIC_no;
-                $const='User-';
+                $const='Employee-';
                 $imagename =$const.$id; //new image name
                 // dd($request->get('logo'));
                 $guessExtension = $request->file('image')->guessExtension(); //file extention
-                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/users/userImages', $imagename.'.'.$guessExtension,'public_uploads' );
+                $file = $request->file('image')->storeAs(Auth::user()->probationUnitid.'/Emploies/EmployeeImages', $imagename.'.'.$guessExtension,'public_uploads' );
                 //build url for the image
-                $const_url='uploads/'.Auth::user()->probationUnitid.'/users/userImages/';
+                $const_url='uploads/'.Auth::user()->probationUnitid.'/Emploies/EmployeeImages/';
                 $url=$const_url.$imagename.'.'.$guessExtension;
             }
             else{
@@ -200,7 +188,7 @@ class probationUnitEmployeeController extends Controller
     public function loadProbationUnitEmployee($id){
         try {
                 $Probation_unit_employee=DB::table('probation_unit_employees')
-                                            ->join('police_divisions','police_divisions.districtId','=','probation_unit_employees.working_police_divition')
+                                            ->leftJoin('police_divisions','police_divisions.districtId','=','probation_unit_employees.working_police_divition')
                                             ->where('probation_unit_employees.employee_id','=',$id)
                                             ->select('probation_unit_employees.*','police_divisions.name')
                                             ->first();

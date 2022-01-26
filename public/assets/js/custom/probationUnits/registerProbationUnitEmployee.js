@@ -144,7 +144,7 @@ function save(data){
         success: function (response) {
             console.log(response);
             if(response.data.success){
-                toastr.success('Probation Center Created');
+                toastr.success('Employee Created');
                 reset();
             }
             else{
@@ -198,7 +198,7 @@ function update(data){
         success: function (response) {
             console.log(response);
             if(response.data.success){
-                toastr.success('Probation Center Updated');
+                toastr.success('Employee Updated');
                 reset();
                 location.href='/probationUnitEmployeeList'
             }
@@ -272,7 +272,9 @@ function loadProbationUnitEmployee() {
                     console.log(response.result);
                     var data = response.result;
 
-                    loadpoliceDevition(data.working_divitional_secretariat)
+                    if(!data.working_divitional_secretariat==''){
+                        loadpoliceDevition(data.working_divitional_secretariat)
+                    }
 
                     if(!data.image==''){
                         $("#userImage").attr("src",data.image);
