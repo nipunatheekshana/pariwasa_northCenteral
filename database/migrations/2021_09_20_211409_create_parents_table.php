@@ -18,6 +18,7 @@ class CreateParentsTable extends Migration
             $table->foreignId('child_id');
             $table->foreign('child_id')->references('id')->on('children')->onDelete('cascade');
             $table->string('mothers_name')->nullable();
+            $table->string('mothers_name_initial')->nullable();
             $table->date('mothers_DOB')->nullable();
             $table->string('mothers_address')->nullable();
             $table->string('mothers_tp_no')->nullable();
@@ -25,6 +26,7 @@ class CreateParentsTable extends Migration
             $table->string('mothers_religion')->nullable();
             $table->string('mothers_education_qulifications')->nullable();
             $table->string('fathers_name')->nullable();
+            $table->string('fathers_name_initial')->nullable();
             $table->date('fathers_DOB')->nullable();
             $table->string('fathers_address')->nullable();
             $table->string('fathers_tp_no')->nullable();

@@ -206,20 +206,195 @@
 
 
                     <div class="form-row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Parents </label>
                             <label class='switch ml-2'><input type='checkbox' id="hasParents" name="hasParents"><span class='slider round'></span</lable>
+
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-2 mb-3">
+                            <button type="button" class="btn btn-primary" id="addParents" >
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
                             <label for="validationCustom01">Education </label>
                             <label class='switch ml-2'><input type='checkbox' id="hasEducation" name="hasEducation"><span class='slider round'></span</lable>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <button type="button" class="btn btn-primary" id="addEducation" >
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
 
 
                     <button id="btnSave" class="btn btn-primary" type="button">Save</button>
-                </form>
             </div>
+        </div>
+    </div>
+</div>
+
+{{-- models --}}
+
+<div class="modal fade" id="parentsModel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="settingsAddModalTitle">Parents</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+
+            <div class="modal-body" id="settingsAddModalBody">
+                <h5 class="modal-title" id="settingsAddModalTitle">Mother's Details</h5>
+                <hr>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Name</label>
+                        <input type="text" class="form-control" id="mothers_name" name="mothers_name" >
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Name With Initials</label>
+                        <input type="text" class="form-control" id="mothers_name_initial" name="mothers_name_initial" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Date of birth</label>
+                        <input type="date" class="form-control" id="mothers_DOB" name="mothers_DOB" >
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Contact No</label>
+                        <input type="text" class="form-control" id="mothers_tp_no" name="mothers_tp_no" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Job</label>
+                        <input type="text" class="form-control" id="mothers_job" name="mothers_job" >
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="txtFullName">Relegion</label>
+                        <select class="form-control" name="mothers_religion" id="mothers_religion">
+                            <option value="buddhist">Buddhist</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="catholic">Catholic</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Address</label>
+                        <textarea type="date" class="form-control" id="mothers_address" name="mothers_address" ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Education Qulifications</label>
+                        <textarea type="date" class="form-control" id="mothers_education_qulifications" name="mothers_education_qulifications" ></textarea>
+                    </div>
+                </div>
+
+                <h5 class="modal-title" id="settingsAddModalTitle">Father's Details</h5>
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Name</label>
+                        <input type="text" class="form-control" id="fathers_name" name="fathers_name" >
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Name With Initials</label>
+                        <input type="text" class="form-control" id="fathers_name_initial" name="fathers_name_initial" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Date of birth</label>
+                        <input type="date" class="form-control" id="fathers_DOB" name="fathers_DOB" >
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Contact No</label>
+                        <input type="text" class="form-control" id="fathers_tp_no" name="fathers_tp_no" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Job</label>
+                        <input type="text" class="form-control" id="fathers_job" name="fathers_job" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-2">
+                        <label for="txtName">Address</label>
+                        <textarea type="date" class="form-control" id="fathers_address" name="fathers_address" ></textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">No Of sibilings</label>
+                        <input type="number" class="form-control" id="number_of_siblings" name="number_of_siblings" >
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="txtFullName">Status Of Marriadge</label>
+                        <select class="form-control" name="status_of_marriadge" id="status_of_marriadge">
+                            <option value="divorsed">Divorsed</option>
+                            <option value="married">Married</option>
+                            <option value="seperated">Seperated</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-2">
+                        <label for="txtName">Parent's Disabilities</label>
+                        <textarea type="date" class="form-control" id="disabilities_of_parents" name="disabilities_of_parents" ></textarea>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="educationModel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsAddModalTitle">Education</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="settingsAddModalBody">
+                <div class="form-row">
+                    <div class="col-md-12 mb-3" id="divSection">
+                        <label for="txtName" id="lblSection">Section</label>
+                        <select class="form-control" id="selcSection" name="selcSection" value="abc"></select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="txtName">Name</label>
+                        <input type="text" class="form-control" id="txtSettingName" name="txtSettingName" placeholder="Name" required="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                </button>
+            </div>
+            </form>
         </div>
     </div>
 </div>

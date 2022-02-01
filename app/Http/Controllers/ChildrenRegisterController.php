@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\common\commonFeatures;
 use App\Models\Child;
+use App\Models\ParentDetails;
 use App\Models\Probation_center;
 use Exception;
 use Illuminate\Http\Request;
@@ -60,6 +61,29 @@ class ChildrenRegisterController extends Controller
             $Child->hasParents=$request->has('hasParents');
             $Child->hasEducation=$request->has('hasEducation');
             $save=$Child->save();
+
+            if($save && $request->has('hasParents')){
+                $parent=new ParentDetails();
+                $parent->child_id=$Child->id;
+                $parent->mothers_name=$request->mothers_name;
+                $parent->mothers_name_initial=$request->mothers_name_initial;
+                $parent->mothers_DOB=$request->mothers_DOB;
+                $parent->mothers_tp_no=$request->mothers_tp_no;
+                $parent->mothers_job=$request->mothers_job;
+                $parent->mothers_religion=$request->mothers_religion;
+                $parent->mothers_address=$request->mothers_address;
+                $parent->mothers_education_qulifications=$request->mothers_education_qulifications;
+                $parent->fathers_name=$request->fathers_name;
+                $parent->fathers_name_initial=$request->fathers_name_initial;
+                $parent->fathers_DOB=$request->fathers_DOB;
+                $parent->fathers_tp_no=$request->fathers_tp_no;
+                $parent->fathers_job=$request->fathers_job;
+                $parent->fathers_address=$request->fathers_address;
+                $parent->save();
+
+
+
+            }
 
 
             if($save){

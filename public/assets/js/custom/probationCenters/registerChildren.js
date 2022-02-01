@@ -1,5 +1,8 @@
 console.log('registerChildren.js');
 $(document).ready(function() {
+    $('#addParents').attr('disabled', true);
+    $('#addEducation').attr('disabled', true);
+
 
     // image pop
     $('.image-popup').magnificPopup({
@@ -26,6 +29,32 @@ $(document).ready(function() {
             update(data);
         }
 
+    });
+
+    $('#hasParents').change(function () {
+
+        if (this.checked) {
+            $('#addParents').attr('disabled', false);
+        } else {
+            $('#addParents').attr('disabled', true);
+        }
+
+    });
+    $('#hasEducation').change(function () {
+
+        if (this.checked) {
+            $('#addEducation').attr('disabled', false);
+        } else {
+            $('#addEducation').attr('disabled', true);
+        }
+
+    });
+
+    $('#addParents').on('click', function () {
+        $('#parentsModel').modal('toggle');
+    });
+    $('#addEducation').on('click', function () {
+        $('#educationModel').modal('toggle');
     });
 
     loadChild()
