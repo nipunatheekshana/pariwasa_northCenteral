@@ -278,6 +278,8 @@ function loadProbationUnitEmployee() {
 
                     if(!data.image==''){
                         $("#userImage").attr("src",data.image);
+                        $("#userImagelarge").attr("href",data.image);
+
                         $('#oldimage').val(data.image);
                     }
                     $('#txtid').val(data.employee_id);

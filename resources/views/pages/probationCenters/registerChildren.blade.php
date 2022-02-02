@@ -34,7 +34,7 @@
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title">Register Child Form</h6>
-                <a class="image-popup" href="{{asset('uploads/user.jpg')}}">
+                <a class="image-popup" id="userImagelarge" href="{{asset('uploads/user.jpg')}}">
                     <img src="{{asset('/uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
                 <form class="needs-validation" id="probation_Center_children"  enctype="multipart/form-data">
@@ -370,7 +370,7 @@
 </div>
 
 <div class="modal fade" id="educationModel" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="settingsAddModalTitle">Education</h5>
@@ -379,17 +379,106 @@
                 </button>
             </div>
             <div class="modal-body" id="settingsAddModalBody">
+                <h5 class="modal-title" id="settingsAddModalTitle">School Education</h5>
+                <hr>
                 <div class="form-row">
-                    <div class="col-md-12 mb-3" id="divSection">
-                        <label for="txtName" id="lblSection">Section</label>
-                        <select class="form-control" id="selcSection" name="selcSection" value="abc"></select>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">School name</label>
+                        <input type="text" class="form-control" id="school_name" name="school_name" >
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="txtName">Name</label>
-                        <input type="text" class="form-control" id="txtSettingName" name="txtSettingName" placeholder="Name" required="">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Grade</label>
+                        <input type="number" class="form-control" id="grade" name="grade" >
                     </div>
                 </div>
-            </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Skils</label>
+                        <textarea type="date" class="form-control" id="skills" name="skills" ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Aesthetic Subjects</label>
+                        <textarea type="date" class="form-control" id="aesthetics" name="aesthetics" ></textarea>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-12 mb-2">
+                        <label for="txtName">Extracurricular activities</label>
+                        <textarea type="date" class="form-control" id="extra_curiculars" name="extra_curiculars" ></textarea>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Subjects Study</label>
+                        <textarea type="date" class="form-control" id="school_subjects" name="school_subjects" ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Address</label>
+                        <textarea type="date" class="form-control" id="school_address" name="school_address" ></textarea>
+                    </div>
+                </div>
+
+                <h5 class="modal-title" id="settingsAddModalTitle">Deploma Details</h5>
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Deploma Center Contact No</label>
+                        <input type="text" class="form-control" id="diploma_contactNum" name="diploma_contactNum" >
+                    </div>
+
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Subjects Study</label>
+                        <textarea type="date" class="form-control" id="diploma_subjects" name="diploma_subjects" ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Higher Education</label>
+                        <textarea type="date" class="form-control" id="diploma_higherEducation" name="diploma_higherEducation" ></textarea>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+
+                    <div class="col-md-12 mb-2">
+                        <label for="txtName">Address</label>
+                        <textarea type="date" class="form-control" id="diploma_address" name="diploma_address" ></textarea>
+                    </div>
+                </div>
+
+                <h5 class="modal-title" id="settingsAddModalTitle">University Details</h5>
+                <hr>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Contact No</label>
+                        <input type="text" class="form-control" id="uni_contact_num" name="uni_contact_num" >
+                    </div>
+
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Subjects Study</label>
+                        <textarea type="date" class="form-control" id="uni_subjects" name="uni_subjects" ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="txtName">Address</label>
+                        <textarea type="date" class="form-control" id="uni_address" name="uni_address" ></textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="form-row mb-4">
+
+                    <div class="col-md-12 mb-2">
+                        <label for="txtName">Probation Officers FollowUp</label>
+                        <textarea type="date" class="form-control" id="probation_officers_followUp" name="probation_officers_followUp" ></textarea>
+                    </div>
+                </div>
+
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close
                 </button>

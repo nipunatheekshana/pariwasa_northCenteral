@@ -1,4 +1,5 @@
 console.log('registerChildren.js');
+
 $(document).ready(function() {
     $('#addParents').attr('disabled', true);
     $('#addEducation').attr('disabled', true);
@@ -60,6 +61,7 @@ $(document).ready(function() {
     loadChild()
 
 });
+
 function save(data){
     $.ajax({
         type: "POST",
@@ -204,11 +206,12 @@ function loadChild() {
                 if (response.success) {
 
                     console.log(response.result);
-                    var data = response.result;
-
+                    var data = response.result['child'];
 
                     if(!data.image==''){
                         $("#userImage").attr("src",data.image);
+                        $("#userImagelarge").attr("href",data.image);
+
                         $('#oldimage').val(data.image);
                     }
                     $('#txtid').val(data.id);
@@ -229,10 +232,24 @@ function loadChild() {
                     $('#case_number').val(data.case_number);
                     $('#crime_commited').val(data.crime_commited);
                     if(data.hasEducation==true){
-                        $('#hasEducation').prop( "checked", true );;
+                        $('#hasEducation').prop( "checked", true );
+                        $('#addEducation').attr('disabled', false);
+
+                        var education =  response.result['education'];
+
+                        if(!education==''){
+                            loadeducation(education);
+                        }
                     }
                     if(data.hasParents==true){
-                        $('#hasParents').prop( "checked", true );;
+                        $('#hasParents').prop( "checked", true );
+                        $('#addParents').attr('disabled', false);
+
+                        var parentDetails =  response.result['parentDetails'];
+
+                        if(!parentDetails==''){
+                            loadparents(parentDetails);
+                        }
                     }
 
                 }
@@ -249,6 +266,43 @@ function loadChild() {
         });
     }
 
+}
+
+
+function loadparents(data){
+    $('#mothers_name').val(data.mothers_name);
+    $('#mothers_name_initial').val(data.mothers_name_initial);
+    $('#mothers_DOB').val(data.mothers_DOB);
+    $('#mothers_tp_no').val(data.mothers_tp_no);
+    $('#mothers_job').val(data.mothers_job);
+    $('#mothers_religion').val(data.mothers_religion);
+    $('#mothers_address').val(data.mothers_address);
+    $('#mothers_education_qulifications').val(data.mothers_education_qulifications);
+    $('#fathers_name').val(data.fathers_name);
+    $('#fathers_name_initial').val(data.fathers_name_initial);
+    $('#fathers_DOB').val(data.fathers_DOB);
+    $('#fathers_tp_no').val(data.fathers_tp_no);
+    $('#fathers_job').val(data.fathers_job);
+    $('#fathers_address').val(data.fathers_address);
+
+}
+
+function loadeducation(data){
+    $('#school_name').val(data.school_name);
+    $('#grade').val(data.grade);
+    $('#skills').val(data.skills);
+    $('#aesthetics').val(data.aesthetics);
+    $('#extra_curiculars').val(data.extra_curiculars);
+    $('#school_subjects').val(data.school_subjects);
+    $('#school_address').val(data.school_address);
+    $('#diploma_contactNum').val(data.diploma_contactNum);
+    $('#diploma_subjects').val(data.diploma_subjects);
+    $('#diploma_higherEducation').val(data.diploma_higherEducation);
+    $('#diploma_address').val(data.diploma_address);
+    $('#uni_contact_num').val(data.uni_contact_num);
+    $('#uni_subjects').val(data.uni_subjects);
+    $('#uni_address').val(data.uni_address);
+    $('#probation_officers_followUp').val(data.probation_officers_followUp);
 }
 
 function reset(){
@@ -271,5 +325,37 @@ function reset(){
     $('#court').val('');
     $('#case_number').val('');
     $('#crime_commited').val('');
+
+    $('#mothers_name').val('');
+    $('#mothers_name_initial').val('');
+    $('#mothers_DOB').val('');
+    $('#mothers_tp_no').val('');
+    $('#mothers_job').val('');
+    $('#mothers_religion').val('');
+    $('#mothers_address').val('');
+    $('#mothers_education_qulifications').val('');
+    $('#fathers_name').val('');
+    $('#fathers_name_initial').val('');
+    $('#fathers_DOB').val('');
+    $('#fathers_tp_no').val('');
+    $('#fathers_job').val('');
+    $('#fathers_address').val('');
+
+
+    $('#school_name').val('');
+    $('#grade').val('');
+    $('#skills').val('');
+    $('#aesthetics').val('');
+    $('#extra_curiculars').val('');
+    $('#school_subjects').val('');
+    $('#school_address').val('');
+    $('#diploma_contactNum').val('');
+    $('#diploma_subjects').val('');
+    $('#diploma_higherEducation').val('');
+    $('#diploma_address').val('');
+    $('#uni_contact_num').val('');
+    $('#uni_subjects').val('');
+    $('#uni_address').val('');
+    $('#probation_officers_followUp').val('');
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\common\commonFeatures;
 use App\Models\Child;
+use App\Models\Education_detail;
 use App\Models\ParentDetails;
 use App\Models\Probation_center;
 use Exception;
@@ -63,6 +64,7 @@ class ChildrenRegisterController extends Controller
             $save=$Child->save();
 
             if($save && $request->has('hasParents')){
+
                 $parent=new ParentDetails();
                 $parent->child_id=$Child->id;
                 $parent->mothers_name=$request->mothers_name;
@@ -81,7 +83,27 @@ class ChildrenRegisterController extends Controller
                 $parent->fathers_address=$request->fathers_address;
                 $parent->save();
 
+            }
+            if($save && $request->has('hasEducation')){
 
+                $education=new Education_detail();
+                $education->child_id=$Child->id;
+                $education->school_name=$request->school_name;
+                $education->grade=$request->grade;
+                $education->skills=$request->skills;
+                $education->aesthetics=$request->aesthetics;
+                $education->extra_curiculars=$request->extra_curiculars;
+                $education->school_subjects=$request->school_subjects;
+                $education->school_address=$request->school_address;
+                $education->diploma_contactNum=$request->diploma_contactNum;
+                $education->diploma_subjects=$request->diploma_subjects;
+                $education->diploma_higherEducation=$request->diploma_higherEducation;
+                $education->diploma_address=$request->diploma_address;
+                $education->uni_contact_num=$request->uni_contact_num;
+                $education->uni_subjects=$request->uni_subjects;
+                $education->uni_address=$request->uni_address;
+                $education->probation_officers_followUp=$request->probation_officers_followUp;
+                $education->save();
 
             }
 
@@ -98,6 +120,7 @@ class ChildrenRegisterController extends Controller
         return response()->json(["data" => $responseBody]);
 
     }
+
     public function update(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
@@ -153,6 +176,50 @@ class ChildrenRegisterController extends Controller
                     'hasParents'=>$request->has('hasParents'),
                     'hasEducation'=>$request->has('hasEducation')
                 ]);
+                
+                if($save && $request->has('hasParents')){
+                    $parent=ParentDetails::updateOrCreate(['child_id'=>$request->id],
+                                                            [
+                                                                'mothers_name'=>$request->mothers_name,
+                                                                'mothers_name_initial'=>$request->mothers_name_initial,
+                                                                'mothers_DOB'=>$request->mothers_DOB,
+                                                                'mothers_tp_no'=>$request->mothers_tp_no,
+                                                                'mothers_job'=>$request->mothers_job,
+                                                                'mothers_religion'=>$request->mothers_religion,
+                                                                'mothers_address'=>$request->mothers_address,
+                                                                'mothers_education_qulifications'=>$request->mothers_education_qulifications,
+                                                                'fathers_name'=>$request->fathers_name,
+                                                                'fathers_name_initial'=>$request->fathers_name_initial,
+                                                                'fathers_DOB'=>$request->fathers_DOB,
+                                                                'fathers_tp_no'=>$request->fathers_tp_no,
+                                                                'fathers_job'=>$request->fathers_job,
+                                                                'fathers_address'=>$request->fathers_address,
+                                                            ]);
+                }
+
+                if($save && $request->has('hasEducation')){
+                    $education=Education_detail::updateOrCreate(['child_id'=>$request->id],
+                                                            [
+                                                                'school_name'=>$request->school_name,
+                                                                'grade'=>$request->grade,
+                                                                'skills'=>$request->skills,
+                                                                'aesthetics'=>$request->aesthetics,
+                                                                'extra_curiculars'=>$request->extra_curiculars,
+                                                                'school_subjects'=>$request->school_subjects,
+                                                                'school_address'=>$request->school_address,
+                                                                'diploma_contactNum'=>$request->diploma_contactNum,
+                                                                'diploma_subjects'=>$request->diploma_subjects,
+                                                                'diploma_higherEducation'=>$request->diploma_higherEducation,
+                                                                'diploma_address'=>$request->diploma_address,
+                                                                'uni_contact_num'=>$request->uni_contact_num,
+                                                                'uni_subjects'=>$request->uni_subjects,
+                                                                'uni_address'=>$request->uni_address,
+                                                                'probation_officers_followUp'=>$request->probation_officers_followUp,
+
+                                                            ]);
+                }
+
+
             if($save){
                 $responseBody = $this->responseBody(true, "Probation_unit_employee", "Updated",'data saved');
 
@@ -165,12 +232,24 @@ class ChildrenRegisterController extends Controller
         return response()->json(["data" => $responseBody]);
 
     }
+
     public function loadChild($id){
         try {
+
+            $parentDetails=null;
+            $education=null;
+
                 $child=DB::table('children')
                             ->where('id','=',$id)
                             ->first();
-                return $this->responseBody(true, "loadChild", "found",$child );
+
+                if( $child->hasParents){
+                    $parentDetails=ParentDetails::where('child_id',$child->id)->first();
+                }
+               if( $child->hasEducation){
+                    $education=Education_detail::where('child_id',$child->id)->first();
+               }
+                return $this->responseBody(true, "loadChild", "found",['child'=>$child,'parentDetails'=>$parentDetails,'education'=>$education ]);
 
         }
          catch (Exception $exception) {
