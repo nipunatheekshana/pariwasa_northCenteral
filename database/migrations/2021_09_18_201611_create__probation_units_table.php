@@ -16,14 +16,14 @@ class CreateProbationUnitsTable extends Migration
         Schema::create('probation_units', function (Blueprint $table) {
             $table->id('Probation_unit_id');
             $table->string('name');
-            $table->string('address');
-            $table->integer('district');
-            $table->integer('divitional_secretariat');
+            $table->string('address')->nullable();
+            $table->integer('district')->nullable();
+            $table->integer('divitional_secretariat')->nullable();
             $table->integer('senior_officer')->nullable();
             $table->integer('officer_incharge')->nullable();
-            $table->string('tp_no');
+            $table->string('tp_no')->nullable();
             $table->string('fax')->nullable();
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('remarks')->nullable();
             $table->timestamps();
 

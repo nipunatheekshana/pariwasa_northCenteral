@@ -18,7 +18,8 @@ class CreateProbationUnitEmployeesTable extends Migration
             $table->foreignId('Probation_unit_id');
             $table->foreign('Probation_unit_id')->references('Probation_unit_id')->on('probation_units')->onDelete('cascade');
             $table->string('title');
-            $table->string('full_name');
+            $table->string('full_name')->nullable();
+            $table->string('initials');
             $table->string('address')->nullable();
             $table->string('designation')->nullable();
             $table->string('grade')->nullable();
@@ -33,7 +34,7 @@ class CreateProbationUnitEmployeesTable extends Migration
             $table->string('email')->nullable();
             $table->string('date_of_employeement')->nullable();
             $table->string('pension_no')->nullable();
-            $table->string('basic_salary');
+            $table->string('basic_salary')->nullable();
             $table->string('image')->nullable();
             $table->string('Incriment_date')->nullable();
             $table->string('incriment_value')->nullable();

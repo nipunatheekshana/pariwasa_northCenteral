@@ -17,7 +17,8 @@ class CreateChildrenTable extends Migration
             $table->id();
             $table->foreignId('probation_center_id');
             $table->foreign('probation_center_id')->references('probation_center_id')->on('probation_centers')->onDelete('cascade');
-            $table->string('full_name');
+            $table->string('full_name')->nullable();
+            $table->string('initials');
             $table->string('image')->nullable();
             $table->date('DOB')->nullable();
             $table->string('nationality')->nullable();
@@ -38,7 +39,7 @@ class CreateChildrenTable extends Migration
             $table->boolean('hasEducation')->default(false);
             $table->timestamps();
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.

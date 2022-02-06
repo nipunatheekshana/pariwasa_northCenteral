@@ -18,7 +18,7 @@ class ChildrenRegisterController extends Controller
 
     public function save(Request $request){
         $validatedData= $request->validate([
-            'name' => ['required'],
+            'initials' => ['required'],
             'image' => ['image', 'max:1024'],
 
 
@@ -44,6 +44,7 @@ class ChildrenRegisterController extends Controller
             $Child->probation_center_id=Auth::user()->probationCenterId;
             $Child->image= $url;
             $Child->full_name=$request->name;
+            $Child->initials=$request->initials;
             $Child->DOB=$request->Dob;
             $Child->nationality=$request->nationality;
             $Child->religion=$request->religion;
@@ -123,7 +124,7 @@ class ChildrenRegisterController extends Controller
 
     public function update(Request $request){
         $validatedData= $request->validate([
-            'name' => ['required'],
+            'initials' => ['required'],
             'image' => ['image', 'max:1024'],
 
 
@@ -158,6 +159,7 @@ class ChildrenRegisterController extends Controller
                 [
                     'image'=> $url,
                     'full_name'=>$request->name,
+                    'initials'=>$request->initials,
                     'DOB'=>$request->Dob,
                     'nationality'=>$request->nationality,
                     'religion'=>$request->religion,
@@ -176,7 +178,7 @@ class ChildrenRegisterController extends Controller
                     'hasParents'=>$request->has('hasParents'),
                     'hasEducation'=>$request->has('hasEducation')
                 ]);
-                
+
                 if($save && $request->has('hasParents')){
                     $parent=ParentDetails::updateOrCreate(['child_id'=>$request->id],
                                                             [
@@ -220,10 +222,10 @@ class ChildrenRegisterController extends Controller
                 }
 
 
-            if($save){
-                $responseBody = $this->responseBody(true, "Probation_unit_employee", "Updated",'data saved');
+            // if($save){
+                $responseBody = $this->responseBody(true, "Probation_unit_employee", "Updated",$request->initials);
 
-            }
+            // }
         }
         catch(Exception $exception){
             $responseBody = $this->responseBody(false, "Probation_unit_employee", "error", $exception->getMessage());

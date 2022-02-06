@@ -20,18 +20,7 @@ class probationCenterController extends Controller
     public function save(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'date_started' => ['required'],
-            'catagory' => ['required'],
-            'district' => ['required'],
-            'divitional_secretariat' => ['required'],
-            'address' => ['required'],
-            'registration_no' => ['required'],
-            'registration_date' => ['required'],
-            'fund' => ['required'],
-            'gramaseva_divition' => ['required'],
-            'maximum_children_capacity' => ['required'],
-            'minimum_children_capacity' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'telepone_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
 
         ]);
         try{
@@ -49,7 +38,7 @@ class probationCenterController extends Controller
             $probationCenter->fund=$request->fund;
             $probationCenter->gramaseva_divition=$request->gramaseva_divition;
             $probationCenter->maximum_children_capacity=$request->maximum_children_capacity;
-            $probationCenter->minimum_children_capacity=$request->minimum_children_capacity;
+            $probationCenter->number_of_children=$request->number_of_children;
 
             $save=$probationCenter->save();
             if($save){
@@ -67,18 +56,7 @@ class probationCenterController extends Controller
     public function update(Request $request){
         $validatedData= $request->validate([
             'name' => ['required'],
-            'date_started' => ['required'],
-            'catagory' => ['required'],
-            'district' => ['required'],
-            'divitional_secretariat' => ['required'],
-            'address' => ['required'],
-            'registration_no' => ['required'],
-            'registration_date' => ['required'],
-            'fund' => ['required'],
-            'gramaseva_divition' => ['required'],
-            'maximum_children_capacity' => ['required'],
-            'minimum_children_capacity' => ['required'],
-            'telepone_no' => ['required','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
+            'telepone_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
 
         ]);
         try{
@@ -98,7 +76,7 @@ class probationCenterController extends Controller
                     'fund' => $request->fund,
                     'gramaseva_divition' => $request->gramaseva_divition,
                     'maximum_children_capacity' => $request->maximum_children_capacity,
-                    'minimum_children_capacity' => $request->minimum_children_capacity,
+                    'number_of_children' => $request->number_of_children,
 
                 ]);
             if($save){
@@ -164,7 +142,7 @@ class probationCenterController extends Controller
         try {
                 $Probation_unit=Probation_center::where('probation_center_id',$id)->first();
                 $Probation_unit=DB::table('probation_centers')
-                                    ->join('gramaseva_divisions','gramaseva_divisions.id','=','probation_centers.gramaseva_divition')
+                                    ->leftJoin('gramaseva_divisions','gramaseva_divisions.id','=','probation_centers.gramaseva_divition')
                                     ->where('probation_centers.probation_center_id',$id)
                                     ->select('probation_centers.*','gramaseva_divisions.name as gramasewaname')
                                     ->first();

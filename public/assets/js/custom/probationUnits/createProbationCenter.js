@@ -286,7 +286,7 @@ function loadProbationCenter() {
                     $('#gramasevaDivition').val(data.gramasewaname);
                     $('#gramaseva_divition').val(data.gramaseva_divition);
                     $('#maximum_children_capacity').val(data.maximum_children_capacity);
-                    $('#minimum_children_capacity').val(data.minimum_children_capacity);
+                    $('#number_of_children').val(data.number_of_children);
                     $('#address').val(data.address);
                     $('#txtid').val(data.probation_center_id);
 
@@ -317,7 +317,7 @@ function reset(){
     $('#fund').val('');
     $('#gramaseva_divition').val('');
     $('#maximum_children_capacity').val('');
-    $('#minimum_children_capacity').val('');
+    $('#number_of_children').val('');
     $('#address').val('');
 
 

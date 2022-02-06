@@ -16,7 +16,7 @@ class probationUnitEmployeeListController extends Controller
     public function loadProbationUnitEmployees(){
         try {
                 $Probation_unit_employee=DB::table('probation_unit_employees')
-                                                ->join('designations','designations.id','=','probation_unit_employees.designation')
+                                                ->leftJoin('designations','designations.id','=','probation_unit_employees.designation')
                                                 ->where('probation_unit_employees.Probation_unit_id','=',Auth::user()->probationUnitid)
                                                 ->select('probation_unit_employees.*','designations.name as desigName')
                                                 ->get();

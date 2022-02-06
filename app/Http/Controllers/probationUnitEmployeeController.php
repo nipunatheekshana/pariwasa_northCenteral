@@ -17,8 +17,8 @@ class probationUnitEmployeeController extends Controller
 
     public function save(Request $request){
         $validatedData= $request->validate([
-            'name' => ['required'],
-            'title' => ['required'],
+            'initials' => ['required'],
+            // 'title' => ['required'],
             'contact_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['nullable','email'],
             'DOB' => ['nullable','date'],
@@ -49,6 +49,8 @@ class probationUnitEmployeeController extends Controller
             $Probation_unit_employee->Probation_unit_id=Auth::user()->probationUnitid;
             $Probation_unit_employee->image= $url;
             $Probation_unit_employee->full_name=$request->name;
+            $Probation_unit_employee->initials=$request->initials;
+
             $Probation_unit_employee->title=$request->title;
             $Probation_unit_employee->address=$request->address;
             $Probation_unit_employee->designation=$request->designation;
@@ -90,7 +92,7 @@ class probationUnitEmployeeController extends Controller
     }
     public function update(Request $request){
         $validatedData= $request->validate([
-            'name' => ['required'],
+            'initials' => ['required'],
             'title' => ['required'],
             'contact_no' => ['nullable','regex:/^(?:7|0|(?:\+94))[0-9]{9,10}$/'],
             'email' => ['nullable','email'],
@@ -130,6 +132,7 @@ class probationUnitEmployeeController extends Controller
             ->update(
                 [
                     'full_name' => $request->name,
+                    'initials' => $request->initials,
                     'title' => $request->title,
                     'image'=> $url,
                     'address' => $request->address,

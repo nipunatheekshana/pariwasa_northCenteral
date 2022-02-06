@@ -216,6 +216,7 @@ function loadChild() {
                     }
                     $('#txtid').val(data.id);
                     $('#name').val(data.full_name);
+                    $('#initials').val(data.initials);
                     $('#Dob').val(data.DOB);
                     $('#date_entered').val(data.date_entered);
                     $('#gender').val(data.gender);
@@ -308,6 +309,7 @@ function loadeducation(data){
 function reset(){
     $('#txtid').val('');
     $('#name').val('');
+    $('#initials').val('');
     $('#image').val('');
     $('#oldimage').val('');
     $('#Dob').val('');

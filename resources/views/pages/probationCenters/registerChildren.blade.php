@@ -38,7 +38,15 @@
                     <img src="{{asset('/uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
                 <form class="needs-validation" id="probation_Center_children"  enctype="multipart/form-data">
-
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Name With Initials</label>
+                            <input type="text" class="form-control" name="initials"  id="initials" >
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="txtFullName">Full Name</label>

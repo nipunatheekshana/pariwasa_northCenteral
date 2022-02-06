@@ -284,6 +284,7 @@ function loadProbationUnitEmployee() {
                     }
                     $('#txtid').val(data.employee_id);
                     $('#name').val(data.full_name);
+                    $('#initials').val(data.initials);
                     $('#title').val(data.title);
                     $('#address').val(data.address);
                     $('#designation').val(data.designation);
@@ -330,6 +331,7 @@ function loadProbationUnitEmployee() {
 
 function reset(){
     $('#name').val('');
+    $('#initials').val('');
     $('#address').val('');
     $('#designation').val('');
     $('#contact_no').val('');
