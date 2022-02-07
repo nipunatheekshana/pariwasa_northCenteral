@@ -275,7 +275,7 @@
                     </div>
                     <div class="col-md-6 mb-2">
                         <label for="txtName">Contact No</label>
-                        <input type="text" class="form-control" id="mothers_tp_no" name="mothers_tp_no" >
+                        <input type="text" class="form-control" id="mothers_tp_no" name="mothers_tp_no" pattern="[1-9]{1}[0-9]{9}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
                     </div>
                 </div>
 
@@ -326,7 +326,7 @@
                     </div>
                     <div class="col-md-6 mb-2">
                         <label for="txtName">Contact No</label>
-                        <input type="text" class="form-control" id="fathers_tp_no" name="fathers_tp_no" >
+                        <input type="text" class="form-control" id="fathers_tp_no" name="fathers_tp_no"  pattern="[1-9]{1}[0-9]{9}" maxlength="10"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                 </div>
 
@@ -432,7 +432,7 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-2">
                         <label for="txtName">Deploma Center Contact No</label>
-                        <input type="text" class="form-control" id="diploma_contactNum" name="diploma_contactNum" >
+                        <input type="text" class="form-control" id="diploma_contactNum" name="diploma_contactNum" pattern="[1-9]{1}[0-9]{9}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
 
                 </div>
@@ -460,7 +460,7 @@
                 <div class="form-row">
                     <div class="col-md-6 mb-2">
                         <label for="txtName">Contact No</label>
-                        <input type="text" class="form-control" id="uni_contact_num" name="uni_contact_num" >
+                        <input type="text" class="form-control" id="uni_contact_num" name="uni_contact_num" pattern="[1-9]{1}[0-9]{9}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
 
                 </div>

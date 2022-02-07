@@ -75,6 +75,10 @@
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
                                 @endif href="/grade">Employee Grades</a>
+                        </li>  
+                        <li>
+                            <a @if(request()->segment(1) == 'designation') class="active"
+                                @endif href="/designation">Employee designations</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'district') class="active"
@@ -200,14 +204,14 @@
                             <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
                                 @endif href="/probationCenterCatagory">Probation Center Catagory</a>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
                                 @endif href="/grade">Employee Grades</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'designation') class="active"
                                 @endif href="/designation">Employee designations</a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a @if(request()->segment(1) == 'policeDivitions') class="active"
                                 @endif href="/policeDivitions">Police Divisions</a>
