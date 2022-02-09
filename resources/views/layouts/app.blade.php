@@ -73,6 +73,47 @@
     </div>
     <!-- ./ Layout wrapper -->
 
+    {{-- change password model --}}
+    <div class="modal fade" id="changePasswordModel" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="settingsAddModalTitle">Change Password</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="ti-close"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body" id="settingsAddModalBody">
+                    <form class="needs-validation" id="changePasswordForm" autocomplete="off">
+                        <div class="form-row">
+                            <div class="col-md-12 mb-2">
+                                <label for="txtName">Current Password</label>
+                                <input type="password" class="form-control" id="old_password" name="old_password" >
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="txtName">New Password</label>
+                                <input type="password" class="form-control" id="password" name="password" >
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="txtName">Confirm New Password</label>
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" >
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btnChangePassword" onclick="changePassword()" class="btn btn-primary" type="button">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Main scripts -->
     <script src="{{ url('vendors/bundle.js') }}"></script>
 
@@ -80,6 +121,8 @@
 
     <!-- App scripts -->
     <script src="{{ url('assets/js/app.min.js') }}"></script>
+    <script src="{{ url('assets/js/custom/changePassword.js') }}?random=<?php echo uniqid(); ?>"></script>
+
 </body>
 
 </html>

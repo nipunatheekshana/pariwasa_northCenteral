@@ -8,6 +8,7 @@ use App\Http\Controllers\DivisionalSecretariatController;
 use App\Http\Controllers\GradesController;
 use App\Http\Controllers\GramasevaDivisionController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\passwordChangeController;
 use App\Http\Controllers\PoliceDivisionController;
 use App\Http\Controllers\probationCenterCatagoryController;
 use App\Http\Controllers\probationCenterController;
@@ -52,6 +53,10 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/dashbord', function () {
         return view('sample');
     });
+
+
+    //changePassword
+    Route::post('/changepassword/changePassword', [passwordChangeController::class, 'changePassword']);
 
 
     //probation Unit

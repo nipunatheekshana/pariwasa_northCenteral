@@ -34,8 +34,8 @@
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title">Register Child Form</h6>
-                <a class="image-popup" id="userImagelarge" href="{{asset('uploads/user.jpg')}}">
-                    <img src="{{asset('/uploads/user.jpg')}}" id="userImage" class="mb-3" height="200" alt="image">
+                <a class="image-popup" id="userImagelarge" href="{{url('img/user.jpg') }}">
+                    <img src="{{url('img/user.jpg') }}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
                 <form class="needs-validation" id="probation_Center_children"  enctype="multipart/form-data">
                     <div class="form-row">
