@@ -13,11 +13,13 @@ use App\Http\Controllers\PoliceDivisionController;
 use App\Http\Controllers\probationCenterCatagoryController;
 use App\Http\Controllers\probationCenterController;
 use App\Http\Controllers\probationCenterListController;
+use App\Http\Controllers\ProbationCenterUserDashbordController;
 use App\Http\Controllers\probationCenterUserListController;
 use App\Http\Controllers\ProbationUnitController;
 use App\Http\Controllers\probationUnitEmployeeController;
 use App\Http\Controllers\probationUnitEmployeeListController;
 use App\Http\Controllers\probationUnitListController;
+use App\Http\Controllers\ProbationUnitUserDashbordController;
 use App\Http\Controllers\probationUnitUserListController;
 use App\Http\Controllers\symlincController;
 use App\Http\Controllers\userController;
@@ -49,10 +51,24 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
 
 
 
-    //dashboard
-    Route::get('/dashbord', function () {
-        return view('sample');
+    //adminDashboard
+    Route::get('/Admindashbord', function () {
+        return view('pages.Admin.dashbord');
     });
+
+    // probationUnitUserDashbord
+    Route::get('/probationUnitUserDashbord', function () {
+        return view('pages.probationUnits.dashbord');
+    });
+    Route::get('/probationUnitUserDashbord/loadProbationUnitID', [ProbationUnitUserDashbordController::class, 'loadProbationUnitID']);
+
+    // probationCenterUserDashbord
+    Route::get('/probationCenterUserDashbord', function () {
+        return view('pages.probationCenters.dashbord');
+    });
+    Route::get('/probationCenterUserDashbord/loadProbationCenterID', [ProbationCenterUserDashbordController::class, 'loadProbationCenterID']);
+
+
 
 
     //changePassword

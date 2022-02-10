@@ -9,7 +9,8 @@
         @if (Auth::user()->role=='admin')
             <ul>
                 <li>
-                    <a @if(!request()->segment(1)) class="active" @endif href="#">
+                    <a @if(request()->segment(1)=='Admindashbord') class="active"
+                        @endif href="/Admindashbord">
                         <span class="nav-link-icon">
                             <i data-feather="pie-chart"></i>
                         </span>
@@ -75,7 +76,7 @@
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
                                 @endif href="/grade">Employee Grades</a>
-                        </li>  
+                        </li>
                         <li>
                             <a @if(request()->segment(1) == 'designation') class="active"
                                 @endif href="/designation">Employee designations</a>
@@ -102,7 +103,8 @@
         @elseif (Auth::user()->role=='probationUnitUser')
             <ul>
                 <li>
-                    <a @if(!request()->segment(1)) class="active" @endif href="#">
+                    <a @if(request()->segment(1)=='probationUnitUserDashbord') class="active"
+                        @endif href="/probationUnitUserDashbord">
                         <span class="nav-link-icon">
                             <i data-feather="pie-chart"></i>
                         </span>
@@ -226,7 +228,8 @@
         @else
             <ul>
                 <li>
-                    <a @if(!request()->segment(1)) class="active" @endif href="#">
+                    <a @if(request()->segment(1)=='probationCenterUserDashbord') class="active"
+                        @endif href="/probationCenterUserDashbord">
                         <span class="nav-link-icon">
                             <i data-feather="pie-chart"></i>
                         </span>

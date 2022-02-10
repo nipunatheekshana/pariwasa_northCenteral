@@ -17,7 +17,9 @@ class LogInController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password], true)) {
             // Authentication passed...
-            return '200';
+            // return "200";
+
+            return ['status'=>'200','role'=>Auth::user()->role];
         } else {
             return "201";
         }

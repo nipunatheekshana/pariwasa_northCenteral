@@ -1,11 +1,7 @@
-var redirect = null;
 
 $(document).ready(function () {
 
-    redirect = getUrlParameter('redirect');
-    if (user != '' && redirect != '') {
-        location.href = redirect;
-    }
+
 
     toastr.options = {
         timeOut: 4000,
@@ -34,12 +30,21 @@ $(document).ready(function () {
             },
             success: function (response) {
                 console.log(response);
-                if (response == '200') {
-                    // window.location.replace("/welcome");
-                    if (redirect == '') {
-                        location.href = '/dashbord';
-                    } else {
-                        location.href = redirect;
+
+                // if (response == '200'){
+                //     location.href = '/dashbord';
+                // }
+
+                if (response.status == '200') {
+
+                    if(response.role=='admin'){
+                        location.href = '/Admindashbord';
+                    }
+                    else if(response.role=='probationUnitUser'){
+                        location.href = '/probationUnitUserDashbord';
+                    }
+                    else{
+                        location.href = '/probationCenterUserDashbord';
                     }
 
                 } else {
@@ -59,11 +64,3 @@ $(document).ready(function () {
     });
 
 });
-
-
-function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-};
