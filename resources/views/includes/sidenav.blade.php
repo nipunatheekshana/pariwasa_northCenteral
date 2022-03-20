@@ -23,7 +23,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="shield"></i>
                         </span>
-                        <span>Probation Units</span>
+                        <span>Probation Office</span>
                     </a>
                     <ul>
                         <li>
@@ -45,7 +45,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="">Probation Unit Users</a>
+                            <a href="">Probation Office Users</a>
                             <ul>
                                 <li>
                                     <a @if(request()->segment(1) == 'createProbationUnitUser') class="active"
@@ -71,7 +71,7 @@
                     <ul>
                         <li>
                             <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
-                                @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                                @endif href="/probationCenterCatagory">Child Development Center Catagory</a>
                         </li>
                         <li>
                             <a @if(request()->segment(1) == 'grade') class="active"
@@ -117,7 +117,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="home"></i>
                         </span>
-                        <span>Probation Centers</span>
+                        <span>Child Development Center</span>
                     </a>
                     <ul>
                         <li>
@@ -139,7 +139,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="">Probation Unit</a>
+                            <a href="">Probation Office</a>
                             <ul>
                                 <li>
                                     <a @if(request()->segment(1) == 'registerProbationUnitEmployee') class="active"
@@ -178,7 +178,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="">Probation Center Users</a>
+                            <a href="">Child Development Center Users</a>
                             <ul>
                                 <li>
                                     <a @if(request()->segment(1) == 'createProbationCenterUsers') class="active"

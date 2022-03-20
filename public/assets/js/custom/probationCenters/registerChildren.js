@@ -50,6 +50,12 @@ $(document).ready(function() {
         }
 
     });
+    $('#divitional_secretariat').on('change', function () {
+
+        loadGramasevadivision(this.value);
+        $('#gramasevaDivition').val('');
+        $('#gramaseva_divition').val('');
+    });
 
     $('#addParents').on('click', function () {
         $('#parentsModel').modal('toggle');
@@ -58,10 +64,78 @@ $(document).ready(function() {
         $('#educationModel').modal('toggle');
     });
 
-    loadChild()
+    loadChild();
+    loadpoliceDevition();
+    loadDivitionalSecatariat();
 
 });
+function autoCompleteSelectedOption(input, data) {
+    $('#police_divition').val(data.id);
+    $('#gramaseva_divition').val(data.id);
 
+}
+function loadDivitionalSecatariat(){
+    $.ajax({
+        type: 'GET',
+        url: '/divitionalSecretariat/loaddivitionalSecretariat',
+        async:false,
+        success: function(response){
+            console.log(response.result)
+            if (response.success) {
+                var html = "";
+                $.each(response.result, function(index, value){
+
+                    html += '<option value="'+value.id+'" > '+value.name+' </option>';
+                });
+                $('#divitional_secretariat').append(html);
+
+
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
+function loadpoliceDevition(){
+    $.ajax({
+        type: 'GET',
+        url: '/registerProbationUnitEmployee/loadpoliceDevition',
+        async:false,
+        success: function(response){
+            console.log(response.result)
+             // console.log(response.result)
+             console.log(response);
+             if (response.success) {
+                 $('#policeDivition').setData(response.result);
+             } else {
+                 console.log('something went wrong');
+             }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
+function loadGramasevadivision(id){
+    $.ajax({
+        type: 'GET',
+        url: '/createProbationCenter/loadGramasevadivision/'+id,
+        async:false,
+        success: function(response){
+            // console.log(response.result)
+            console.log(response);
+            if (response.success) {
+                $('#gramasevaDivition').setData(response.result)
+            } else {
+                console.log('something went wrong');
+            }
+        }, error: function(data){
+            console.log(data);
+            console.log('something went wrong');
+        }
+    });
+}
 function save(data){
     $.ajax({
         type: "POST",
@@ -232,6 +306,17 @@ function loadChild() {
                     $('#court').val(data.court);
                     $('#case_number').val(data.case_number);
                     $('#crime_commited').val(data.crime_commited);
+                    $('#address').val(data.address);
+                    $('#transfer_address').val(data.transfer_address);
+
+                    $('#divitional_secretariat').val(data.divitional_secretariat);
+                    $('#police_divition').val(data.policeDivition);
+                    $('#gramaseva_divition').val(data.gramaseva_divition);
+                    $('#policeDivition').val(data.pname);
+                    $('#gramasevaDivition').val(data.gname);
+
+
+
                     if(data.hasEducation==true){
                         $('#hasEducation').prop( "checked", true );
                         $('#addEducation').attr('disabled', false);
@@ -327,6 +412,17 @@ function reset(){
     $('#court').val('');
     $('#case_number').val('');
     $('#crime_commited').val('');
+
+    $('#divitional_secretariat').val('');
+    $('#police_divition').val('');
+    $('#policeDivition').val('');
+    $('#gramaseva_divition').val('');
+    $('#gramasevaDivition').val('');
+    $('#address').val('');
+    $('#transfer_address').val('');
+
+
+
 
     $('#mothers_name').val('');
     $('#mothers_name_initial').val('');

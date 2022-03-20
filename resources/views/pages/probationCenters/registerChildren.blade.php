@@ -2,6 +2,8 @@
 @extends('layouts.app')
 
 @section('head')
+<link rel="stylesheet" href="{{ url('assets/js/autocomplete2/css/autocomplete.min.css') }}" type="text/css">
+
 <!-- Prism -->
 <link rel="stylesheet" href="{{ url('vendors/prism/prism.css') }}" type="text/css">
 <!-- Css -->
@@ -120,6 +122,57 @@
                             </div>
                         </div>
 
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Divisional Secretariat</label>
+                            <select class="form-control" name="divitional_secretariat" id="divitional_secretariat">
+                                <option value="" selected disabled>Select Divisional Secretariat</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Police Devision</label>
+                            <input type="hidden" name="police_divition" id="police_divition">
+                            <input type="text" class="form-control auto-complete" id="policeDivition" >
+
+                            {{-- <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
+                                <option value=""selected disabled>Select Gramaseva Division</option>
+                            </select> --}}
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Gramaseva Division</label>
+                            <input type="hidden" name="gramaseva_divition" id="gramaseva_divition">
+                            <input type="text" class="form-control auto-complete" id="gramasevaDivition" >
+
+                            {{-- <select class="form-control" name="gramaseva_divition" id="gramaseva_divition">
+                                <option value=""selected disabled>Select Gramaseva Division</option>
+                            </select> --}}
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Address</label>
+                            <textarea type="text" class="form-control" name="address"  id="address"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="txtFullName">Transfer address</label>
+                            <textarea type="text" class="form-control" name="transfer_address"  id="transfer_address"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
@@ -498,6 +551,8 @@
 
 @endsection
 @section('script')
+<script src="{{ url('assets/js/autocomplete2/js/autocomplete.min.js') }}"></script>
+
 <!-- Javascript -->
 <script src="{{url('vendors/lightbox/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{ url('assets/js/custom/probationCenters/registerChildren.js') }}?random=<?php echo uniqid(); ?>"></script>

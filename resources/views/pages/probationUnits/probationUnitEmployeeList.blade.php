@@ -9,7 +9,7 @@
 @section('content')
     <div class="page-header">
         <div>
-            <h3>Probation Unit Employee List</h3>
+            <h3>Probation Office Employee List</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -19,7 +19,7 @@
                         <a href="#">Employees</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="#">Probation Unit</a>
+                        <a href="#">Probation Office</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">List</li>
                 </ol>
@@ -31,7 +31,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Probation Centers</h4>
+                    <h4 class="card-title">Probation Offices</h4>
                     <div class="table-responsive">
                         <table id="tblProbationunitEmployee" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>

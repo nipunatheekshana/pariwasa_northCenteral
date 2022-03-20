@@ -9,7 +9,7 @@
 
 <div class="page-header">
     <div>
-        <h3>Probation Center Users</h3>
+        <h3>Child Development Center Users</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -19,7 +19,7 @@
                     <a href="#">Users</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Probation Center Users</a>
+                    <a href="#">Child Development Center Users</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Create</li>
             </ol>
@@ -32,7 +32,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Create Probation Center Users</h6>
+                <h6 class="card-title">Create Child Development Center Users</h6>
                 <form class="needs-validation" id="createUserForm" autocomplete="off">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">

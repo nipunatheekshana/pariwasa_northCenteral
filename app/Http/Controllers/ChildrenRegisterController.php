@@ -60,8 +60,17 @@ class ChildrenRegisterController extends Controller
             $Child->status_before_enter=$request->status_before_enter;
             $Child->status_after_enter=$request->status_after_entered;
             $Child->disability=$request->disability;
+            $Child->divitional_secretariat=$request->divitional_secretariat;
+            $Child->policeDivition=$request->police_divition;
+            $Child->gramaseva_divition=$request->gramaseva_divition;
+            $Child->address=$request->address;
+            $Child->transfer_address=$request->transfer_address;
             $Child->hasParents=$request->has('hasParents');
             $Child->hasEducation=$request->has('hasEducation');
+
+
+
+
             $save=$Child->save();
 
             if($save && $request->has('hasParents')){
@@ -175,6 +184,11 @@ class ChildrenRegisterController extends Controller
                     'status_before_enter'=>$request->status_before_enter,
                     'status_after_enter'=>$request->status_after_entered,
                     'disability'=>$request->disability,
+                    'divitional_secretariat'=>$request->divitional_secretariat,
+                    'policeDivition'=>$request->police_divition,
+                    'gramaseva_divition'=>$request->gramaseva_divition,
+                    'address'=>$request->address,
+                    'transfer_address'=>$request->transfer_address,
                     'hasParents'=>$request->has('hasParents'),
                     'hasEducation'=>$request->has('hasEducation')
                 ]);
@@ -242,7 +256,10 @@ class ChildrenRegisterController extends Controller
             $education=null;
 
                 $child=DB::table('children')
-                            ->where('id','=',$id)
+                            ->where('children.id','=',$id)
+                            ->leftJoin('gramaseva_divisions','children.gramaseva_divition','=','gramaseva_divisions.id')
+                            ->leftJoin('police_divisions','children.policeDivition','=','police_divisions.id')
+                            ->select('children.*','gramaseva_divisions.name as gname','police_divisions.name as pname')
                             ->first();
 
                 if( $child->hasParents){

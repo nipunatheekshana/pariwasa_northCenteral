@@ -9,14 +9,14 @@
 @section('content')
     <div class="page-header">
         <div>
-            <h3>Probation Centers List</h3>
+            <h3>Child Development Center List</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="#">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="#">Probation Centers</a>
+                        <a href="#">Child Development Center</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">List</li>
                 </ol>
@@ -28,7 +28,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Probation Centers</h4>
+                    <h4 class="card-title">Child Development Centers</h4>
                     <div class="table-responsive">
                         <table id="tblProbationCenters" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                             <thead>

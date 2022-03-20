@@ -35,8 +35,16 @@ class CreateChildrenTable extends Migration
             $table->string('status_before_enter',500)->nullable();
             $table->string('status_after_enter',500)->nullable();
             $table->string('disability',500)->nullable();
+            $table->string('divitional_secretariat',500)->nullable();
+            $table->string('policeDivition',500)->nullable();
+            $table->string('gramaseva_divition',500)->nullable();
+            $table->string('address',500)->nullable();
+            $table->string('transfer_address',500)->nullable();
             $table->boolean('hasParents')->default(false);
             $table->boolean('hasEducation')->default(false);
+
+
+
             $table->timestamps();
         });
     }

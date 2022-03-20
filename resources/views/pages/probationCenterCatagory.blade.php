@@ -9,7 +9,7 @@
 
     <div class="page-header">
         <div>
-            <h3>Probation Center Category</h3>
+            <h3>Child Development Center Category</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -18,7 +18,7 @@
                     <li class="breadcrumb-item">
                         <a href="#">Setting</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Probation Center Category</li>
+                    <li class="breadcrumb-item active" aria-current="page">Child Development Center Category</li>
                 </ol>
             </nav>
         </div>

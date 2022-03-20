@@ -15,7 +15,7 @@
 
 <div class="page-header">
     <div>
-        <h3>Probation Unit Employee</h3>
+        <h3>Probation Office Employee</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -25,7 +25,7 @@
                     <a href="#">Employees</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Probation Unit</a>
+                    <a href="#">Probation Office</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Create</li>
             </ol>
@@ -36,7 +36,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Create Probation Unit Employee</h6>
+                <h6 class="card-title">Create Probation Office Employee</h6>
                 <a class="image-popup" id="userImagelarge" href="{{url('img/user.jpg') }}">
                     <img src="{{url('img/user.jpg') }}" id="userImage" class="mb-3" height="200" alt="image">
                 </a>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Date of Employeement</label>
+                            <label for="validationCustom01">Appointment Date</label>
                             <input type="date" class="form-control"  name="date_of_employeement"   id="date_of_employeement"  required="">
                             <div class="valid-feedback">
                                 Looks good!

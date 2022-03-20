@@ -11,14 +11,14 @@
 
 <div class="page-header">
     <div>
-        <h3>Probation Center</h3>
+        <h3>Child Development Center</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Probation Centers</a>
+                    <a href="#">Child Development Center</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Create</li>
             </ol>
@@ -29,7 +29,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Create Probation Center</h6>
+                <h6 class="card-title">Create Child Development Center</h6>
                 <form class="needs-validation" id="probation_center_form">
                     <div class="form-row">
                         <div class="col-md-12 mb-3">

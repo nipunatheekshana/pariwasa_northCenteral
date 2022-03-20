@@ -25,13 +25,13 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Edit Probation Unit</h6>
+                <h6 class="card-title">Edit Probation Office</h6>
                 <form class="needs-validation" id="probation_unit_form">
                     <div class="form-row">
                         <div class="col-md-12 mb-3">
                             <label for="txtFullName">Name</label>
                             <input type="hidden" name="id" id="txtid" name="">
-                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Probation Unit Name"  required="">
+                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Probation Office Name"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
