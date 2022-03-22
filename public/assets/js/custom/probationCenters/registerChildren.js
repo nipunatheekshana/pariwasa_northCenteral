@@ -70,8 +70,12 @@ $(document).ready(function() {
 
 });
 function autoCompleteSelectedOption(input, data) {
-    $('#police_divition').val(data.id);
-    $('#gramaseva_divition').val(data.id);
+    if(input.id=='policeDivition'){
+        $('#police_divition').val(data.id);
+
+    }else{
+        $('#gramaseva_divition').val(data.id);
+    }
 
 }
 function loadDivitionalSecatariat(){
