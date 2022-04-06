@@ -41,9 +41,10 @@
                 </a>
                 <form class="needs-validation" id="probation_Center_children"  enctype="multipart/form-data">
                     <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Name With Initials</label>
-                            <input type="text" class="form-control" name="initials"  id="initials" >
+                        <div class="col-md-12 mb-3">
+                            <label for="txtFullName">Full Name</label>
+                            <input type="hidden" name="id" id="txtid" name="">
+                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Full Name"  required="">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -51,9 +52,8 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Full Name</label>
-                            <input type="hidden" name="id" id="txtid" name="">
-                            <input type="text" class="form-control" name="name"  id="name"  placeholder="Full Name"  required="">
+                            <label for="txtFullName">Name With Initials</label>
+                            <input type="text" class="form-control" name="initials"  id="initials" >
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="txtFullName">Date Entered</label>
+                            <label for="txtFullName">Date Registered</label>
                             <input type="date" class="form-control" name="date_entered"  id="date_entered"    required="">
                             <div class="valid-feedback">
                                 Looks good!
