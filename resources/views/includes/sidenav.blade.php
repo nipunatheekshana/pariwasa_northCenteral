@@ -66,7 +66,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="settings"></i>
                         </span>
-                        <span>Setting</span>
+                        <span>Settings</span>
                     </a>
                     <ul>
                         <li>
@@ -194,36 +194,38 @@
 
                     </ul>
                 </li>
-                <li>
-                    <a href="#">
-                        <span class="nav-link-icon">
-                            <i data-feather="settings"></i>
-                        </span>
-                        <span>Setting</span>
-                    </a>
-                    <ul>
-                        <!-- <li>
-                            <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
-                                @endif href="/probationCenterCatagory">Probation Center Catagory</a>
-                        </li> -->
-                        <!-- <li>
-                            <a @if(request()->segment(1) == 'grade') class="active"
-                                @endif href="/grade">Employee Grades</a>
-                        </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'designation') class="active"
-                                @endif href="/designation">Employee designations</a>
-                        </li> -->
-                        <!-- <li>
-                            <a @if(request()->segment(1) == 'policeDivitions') class="active"
-                                @endif href="/policeDivitions">Police Divisions</a>
-                        </li>
-                        <li>
-                            <a @if(request()->segment(1) == 'gramasevadivision') class="active"
-                                @endif href="/gramasevadivision">Grama Niladhari Divisions</a>
-                        </li> -->
-                    </ul>
-                </li>
+                <?php  /*
+                    <li>
+                        <a href="#">
+                            <span class="nav-link-icon">
+                                <i data-feather="settings"></i>
+                            </span>
+                            <span>Setting</span>
+                        </a>
+                        <ul>
+                            <!-- <li>
+                                <a @if(request()->segment(1) == 'probationCenterCatagory') class="active"
+                                    @endif href="/probationCenterCatagory">Probation Center Catagory</a>
+                            </li> -->
+                            <!-- <li>
+                                <a @if(request()->segment(1) == 'grade') class="active"
+                                    @endif href="/grade">Employee Grades</a>
+                            </li>
+                            <li>
+                                <a @if(request()->segment(1) == 'designation') class="active"
+                                    @endif href="/designation">Employee designations</a>
+                            </li> -->
+                            <!-- <li>
+                                <a @if(request()->segment(1) == 'policeDivitions') class="active"
+                                    @endif href="/policeDivitions">Police Divisions</a>
+                            </li>
+                            <li>
+                                <a @if(request()->segment(1) == 'gramasevadivision') class="active"
+                                    @endif href="/gramasevadivision">Grama Niladhari Divisions</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                */ ?>
             </ul>
         @else
             <ul>
