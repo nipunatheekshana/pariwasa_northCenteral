@@ -407,6 +407,7 @@
                     <div class="col-md-6 mb-3">
                         <label for="txtFullName">Status Of Marriadge</label>
                         <select class="form-control" name="status_of_marriadge" id="status_of_marriadge">
+                            <option value="unmarried">Unmarried</option>
                             <option value="divorsed">Divorsed</option>
                             <option value="married">Married</option>
                             <option value="seperated">Seperated</option>
