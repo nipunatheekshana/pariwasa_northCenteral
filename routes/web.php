@@ -257,4 +257,11 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/childrenList/loadChildren', [ChildrenListController::class, 'loadChildren']);
     Route::delete('/childrenList/delete/{id}', [ChildrenListController::class, 'delete']);
 
+    // adminFilterChildren
+    Route::get('/adminFilterChildren', function () {
+        return view('pages.Admin.filterChildren');
+    });
+    Route::get('/adminFilterChildren/loadChildren', [adminChildrenFilterController::class, 'loadChildren']);
+
+
 });

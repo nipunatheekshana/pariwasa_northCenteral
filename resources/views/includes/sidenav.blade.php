@@ -17,6 +17,24 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="filter"></i>
+                        </span>
+                        <span>Filters</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a @if(request()->segment(1) == 'adminFilterChildren') class="active"
+                                @endif href="/adminFilterChildren">Children</a>
+                        </li>
+                        {{-- <li>
+                            <a @if(request()->segment(1) == 'probationUnitList') class="active"
+                                @endif href="/probationUnitList">List</a>
+                        </li> --}}
+                    </ul>
+                </li>
 
                 <li>
                     <a href="#">
