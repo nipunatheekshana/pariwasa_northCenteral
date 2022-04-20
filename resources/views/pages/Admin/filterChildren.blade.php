@@ -31,12 +31,15 @@
 
         <div class="card">
             <div class="card-body">
+
+
+                {{-- probation office start --}}
                 <div class="form-row">
                     <div class="col-md-2 mb-1">
-                            <label class="form-check-label"> Probation office </label>
+                            <label class="form-check-label"> Probation Office </label>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label class="switch"><input type="checkbox" id="cbxpboffice" ><span class="slider round"></span></label>
+                        <label class="switch"><input type="checkbox" id="cbxpbOffice" ><span class="slider round"></span></label>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -44,15 +47,67 @@
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
-                        <select class="form-control" name="pboffice" id="pboffice">
+                        <select class="form-control" name="pbOffice" id="pbOffice">
                             <option value="">Unspesifide</option>
                         </select>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
-                </div> 
-               
+                </div>
+                {{-- probation office end --}}
+
+                {{-- probation center start --}}
+                <div class="form-row">
+                    <div class="col-md-2 mb-1">
+                            <label class="form-check-label"> Child Care Center </label>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="switch"><input type="checkbox" id="cbxpbCenter" ><span class="slider round"></span></label>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <select class="form-control" name="pbCenter" id="pbCenter">
+                            <option value="">Unspesifide</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                {{-- probation center end --}}
+
+                {{-- gender start --}}
+                <div class="form-row">
+                    <div class="col-md-2 mb-1">
+                            <label class="form-check-label"> Child Care Center </label>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="switch"><input type="checkbox" id="cbxGender" ><span class="slider round"></span></label>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <select class="form-control" name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                {{-- gender end --}}
+
+
+
 
                 <button class="btn btn-primary" type="button" id="btnReload">Reload</button>
 

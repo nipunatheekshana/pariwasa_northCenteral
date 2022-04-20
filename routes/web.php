@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminChildrenFilterController;
 use App\Http\Controllers\ChildrenListController;
 use App\Http\Controllers\ChildrenRegisterController;
 use App\Http\Controllers\designationController;
@@ -247,7 +248,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::post('/registerChildren/save',[ChildrenRegisterController::class,'save']);
     Route::post('/registerChildren/update',[ChildrenRegisterController::class,'update']);
 
-    Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadChild']);
+    Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadC  hild']);
 
 
     // childrenList
@@ -262,6 +263,11 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
         return view('pages.Admin.filterChildren');
     });
     Route::get('/adminFilterChildren/loadChildren', [adminChildrenFilterController::class, 'loadChildren']);
+    Route::get('/adminFilterChildren/loadData', [adminChildrenFilterController::class, 'loadData']);
+    Route::get('/adminFilterChildren/loadPbCenter', [adminChildrenFilterController::class, 'loadPbCenter']);
+    Route::get('/adminFilterChildren/loadPbOffice', [adminChildrenFilterController::class, 'loadPbOffice']);
+    Route::get('/adminFilterChildren/loadPbCenterToUnit/{id}', [adminChildrenFilterController::class, 'loadPbCenterToUnit']);
+
 
 
 });
