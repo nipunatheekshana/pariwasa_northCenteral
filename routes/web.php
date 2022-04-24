@@ -248,7 +248,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::post('/registerChildren/save',[ChildrenRegisterController::class,'save']);
     Route::post('/registerChildren/update',[ChildrenRegisterController::class,'update']);
 
-    Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadC  hild']);
+    Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadChild']);
 
 
     // childrenList

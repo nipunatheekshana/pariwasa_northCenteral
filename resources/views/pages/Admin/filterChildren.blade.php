@@ -139,12 +139,15 @@
         </div>
     </div>
 </div>
+<button id="btnexpt" type="button" class="btn btn-primary mr-2">Export</button>
+
 
 
 @endsection
 @section('script')
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
     <!-- my script  -->
     <script src="{{ url('assets/js/custom/admin/filterChildren.js') }}?random=<?php echo uniqid(); ?>"></script>
