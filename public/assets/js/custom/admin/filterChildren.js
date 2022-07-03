@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     $('#tblChildren').DataTable({
         responsive: true,
+        "paging": false,
         'columnDefs': [{
             "targets": [0, 1, 2, 3, 4],
             "className": "text-center",
