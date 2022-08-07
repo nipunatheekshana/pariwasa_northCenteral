@@ -32,6 +32,7 @@ $(document).ready(function () {
             { "data": "thtransfer_address" },
             { "data": "thcourt" },
             { "data": "thdisability" },
+            { "data": "thbirth_certificate" },
             { "data": "thDOB" },
             { "data": "actions" },
         ],
@@ -128,6 +129,8 @@ $(document).ready(function () {
                         var gramaseva_divition= response.result[i]['gramasewaname'];
                         var address= response.result[i]['address'];
                         var transfer_address= response.result[i]['transfer_address'];
+                        var birth_certificate= response.result[i]['birth_certificate'];
+
                         var DOB = response.result[i]['DOB'];
 
                         var edit = '<button class="btn btn-primary mr-1" onclick="edit(' + id + ')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
@@ -156,7 +159,7 @@ $(document).ready(function () {
                                 "thtransfer_address": transfer_address,
                                 "thcourt": court,
                                 "thdisability": disability,
-
+                                "thbirth_certificate": birth_certificate,
                                 "thDOB": DOB,
 
                                 "actions":view+edit+dele,
@@ -287,6 +290,8 @@ function loadChildren() {
                     var gramaseva_divition= response.result[i]['gramasewaname'];
                     var address= response.result[i]['address'];
                     var transfer_address= response.result[i]['transfer_address'];
+                    var birth_certificate= response.result[i]['birth_certificate'];
+
                     var DOB = response.result[i]['DOB'];
 
                     var edit = '<button class="btn btn-primary mr-1" onclick="edit(' + id + ')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
@@ -315,11 +320,12 @@ function loadChildren() {
                             "thtransfer_address": transfer_address,
                             "thcourt": court,
                             "thdisability": disability,
-
+                            "thbirth_certificate": birth_certificate,
                             "thDOB": DOB,
 
                             "actions":view+edit+dele,
                         });
+
 
                 }
 

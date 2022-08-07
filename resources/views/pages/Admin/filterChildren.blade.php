@@ -146,6 +146,7 @@
                                 <th class="thtransfer_address">Transfer address</th>
                                 <th class="thcourt">Court</th>
                                 <th class="thdisability">Disability</th>
+                                <th class="thbirth_certificate">Birth certificate</th>
                                 <th class="thDOB">DOB</th>
                                 <th class="actions"> Actions</th>
                         </thead>
