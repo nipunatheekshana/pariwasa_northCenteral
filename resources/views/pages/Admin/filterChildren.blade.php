@@ -129,7 +129,24 @@
                                 <th class="thId">#</th>
                                 <th class="thName"> Name</th>
                                 <th class="thGender">Gender</th>
-                                <th class="thDOB">Date of Birth</th>
+                                <th class="thnationality">Nationality</th>
+                                <th class="threligion">Religion</th>
+                                <th class="thhelth_status">Helth Status</th>
+                                <th class="thhow_entered">How Entered</th>
+                                <th class="thcase_number">Case Number</th>
+                                <th class="thEntered_divition">entered Divition</th>
+                                <th class="thcrime_commited">\Crime commited</th>
+                                <th class="thdate_entered">Date entered</th>
+                                <th class="thstatus_before_enter">Status before enter</th>
+                                <th class="thstatus_after_enter">Status after enter</th>
+                                <th class="thdivitional_secretariat">Divitional secretariat</th>
+                                <th class="thpoliceDivition">PoliceDivition</th>
+                                <th class="thgramaseva_divition">Gramaseva divition</th>
+                                <th class="thaddress">Address</th>
+                                <th class="thtransfer_address">Transfer address</th>
+                                <th class="thcourt">Court</th>
+                                <th class="thdisability">Disability</th>
+                                <th class="thDOB">DOB</th>
                                 <th class="actions"> Actions</th>
                         </thead>
                         <tbody></tbody>

@@ -14,7 +14,15 @@ class adminChildrenFilterController extends Controller
     use commonFeatures;
     public function loadChildren(){
         try {
-            $Children = Child::all();
+            // $Children = Child::all();
+            $Children = DB::table('children')
+                            ->leftJoin('divisional_secretariats','divisional_secretariats.id','=','children.divitional_secretariat')
+                            ->leftJoin('gramaseva_divisions','gramaseva_divisions.id','=','children.gramaseva_divition')
+                            ->leftJoin('police_divisions','police_divisions.id','=','children.policeDivition')
+                            ->select('children.*','divisional_secretariats.name as DistrictName','gramaseva_divisions.name as gramasewaname','police_divisions.name as policename')
+                            ->get();
+
+
             return $this->responseBody(true, "loadChildren", "found",$Children );
 
         }
