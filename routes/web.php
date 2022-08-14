@@ -94,6 +94,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
         return view('pages.Admin.probationUnitList');
     });
     Route::get('/probationUnitList/loadProbationUnits', [probationUnitListController::class, 'loadProbationUnits']);
+    Route::delete('/probationUnitList/delete/{id}', [probationUnitListController::class, 'delete']);
 
     //createProbationUnitUser
     Route::get('/createProbationUnitUser', function () {

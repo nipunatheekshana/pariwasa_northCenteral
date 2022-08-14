@@ -20,4 +20,14 @@ class probationUnitListController extends Controller
             return $this->responseBody(false, "loadProbationUnits", "error", $exception->getMessage());
         }
     }
+    public function delete($id){
+        try {
+                $Probation_unit=Probation_unit::where('Probation_unit_id',$id)->delete();
+                return $this->responseBody(true, "District", "Deleted",null );
+
+        }
+         catch (Exception $exception) {
+            return $this->responseBody(false, "District", "error", $exception->getMessage());
+        }
+    }
 }
