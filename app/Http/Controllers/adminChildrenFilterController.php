@@ -33,7 +33,10 @@ class adminChildrenFilterController extends Controller
     public function loadData(Request $request){
         try {
             // $Asset=Child::where('probation_center_id',$request->probation_center_id);
-            $Asset=DB::table('children');
+            $Asset=DB::table('children')
+            ->leftJoin('divisional_secretariats','divisional_secretariats.id','=','children.divitional_secretariat')
+            ->leftJoin('gramaseva_divisions','gramaseva_divisions.id','=','children.gramaseva_divition')
+            ->leftJoin('police_divisions','police_divisions.id','=','children.policeDivition');
 
 
             if(!$request->probation_center_id==null){
@@ -47,7 +50,7 @@ class adminChildrenFilterController extends Controller
             if(!$request->gender==null){
                 $Asset->where('children.gender',$request->gender);
             }
-            $result =$Asset->select('children.*')->get();
+            $result =$Asset->select('children.*','divisional_secretariats.name as DistrictName','gramaseva_divisions.name as gramasewaname','police_divisions.name as policename')->get();
 
 
             return $this->responseBody(true, "loadData", "found",$result );
