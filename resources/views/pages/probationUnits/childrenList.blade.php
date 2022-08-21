@@ -76,5 +76,5 @@
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
     <!-- my script  -->
-    <script src="{{ url('assets/js/custom/probationCenters/childrenList.js') }}?random=<?php echo uniqid(); ?>"></script>
+    <script src="{{ url('assets/js/custom/probationUnits/childrenList.js') }}?random=<?php echo uniqid(); ?>"></script>
 @endsection

@@ -54,7 +54,7 @@ function ExportExcel(type, fn, dl) {
 function loadChildren() {
     $.ajax({
         type: 'GET',
-        url: '/childrenList/loadChildren',
+        url: '/ProbationUnitchildrenList/loadChildren',
         success: function (response) {
             console.log(response.result)
             if (response.success) {
@@ -85,8 +85,6 @@ function loadChildren() {
 
                     var DOB = response.result[i]['DOB'];
 
-                    var edit = '<button class="btn btn-primary mr-1" onclick="edit(' + id + ')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
-                    var dele = '<button class="btn btn-danger mr-1" onclick="_delete(' + id + ')"><i class="fa fa-trash" aria-hidden="true"></i></button>';
                     var view = '<button class="btn btn-success mr-1" onclick="view(' + id + ')"><i class="fa fa-eye" aria-hidden="true"></i></button>';
 
 
@@ -114,7 +112,7 @@ function loadChildren() {
                         "thbirth_certificate": birth_certificate,
                         "thDOB": DOB,
 
-                        "actions": view + edit + dele,
+                        "actions": view,
                     });
 
 
