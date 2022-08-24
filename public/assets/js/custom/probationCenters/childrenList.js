@@ -114,7 +114,7 @@ function loadChildren() {
                         "thbirth_certificate": birth_certificate,
                         "thDOB": DOB,
 
-                        "actions": view + edit + dele,
+                        "actions": view + edit ,
                     });
 
 
