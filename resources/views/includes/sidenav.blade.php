@@ -190,6 +190,22 @@
                 <li>
                     <a href="#">
                         <span class="nav-link-icon">
+                            <i data-feather="user-check"></i>
+                        </span>
+                        <span>Children</span>
+                    </a>
+                    <ul>
+
+                        <li>
+                            <a @if(request()->segment(1) == 'ProbationUnitchildrenList') class="active"
+                                @endif href="/ProbationUnitchildrenList">list</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
                             <i data-feather="users"></i>
                         </span>
                         <span>Users</span>

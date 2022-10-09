@@ -16,6 +16,7 @@ use App\Http\Controllers\probationCenterController;
 use App\Http\Controllers\probationCenterListController;
 use App\Http\Controllers\ProbationCenterUserDashbordController;
 use App\Http\Controllers\probationCenterUserListController;
+use App\Http\Controllers\ProbationUnitChildrenListController;
 use App\Http\Controllers\ProbationUnitController;
 use App\Http\Controllers\probationUnitEmployeeController;
 use App\Http\Controllers\probationUnitEmployeeListController;
@@ -269,6 +270,10 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/adminFilterChildren/loadPbOffice', [adminChildrenFilterController::class, 'loadPbOffice']);
     Route::get('/adminFilterChildren/loadPbCenterToUnit/{id}', [adminChildrenFilterController::class, 'loadPbCenterToUnit']);
 
-
+    // childrenList probation Unit
+    Route::get('/ProbationUnitchildrenList', function () {
+        return view('pages.probationUnits.childrenList');
+    });
+    Route::get('/ProbationUnitchildrenList/loadChildren', [ProbationUnitChildrenListController::class, 'loadChildren']);
 
 });
