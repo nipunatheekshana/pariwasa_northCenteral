@@ -48,7 +48,7 @@ function loadProbationUnitEmployees() {
                             "thName": name,
                             "thTpNo": tp_no,
                             "thdesig": desigName,
-                            "actions":view+edit+dele,
+                            "actions":view+edit,
                         });
 
                 }

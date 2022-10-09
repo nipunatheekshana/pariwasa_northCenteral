@@ -47,7 +47,7 @@ function loadProbationCenterUsers() {
                             "thCenterName": probationCenterName,
                             "thName": name,
                             "thEmail": email,
-                            "actions":view+dele,
+                            "actions":view,
                         });
 
                 }

@@ -48,7 +48,7 @@ function loadChildren() {
                             "thName": name,
                             "thGender": gender,
                             "thDOB": DOB,
-                            "actions":view+edit+dele,
+                            "actions":view+edit,
                         });
 
                 }
