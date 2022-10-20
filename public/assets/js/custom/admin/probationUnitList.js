@@ -21,10 +21,18 @@ $(document).ready(function () {
     });
 
     loadProbationUnits();
-
+    $('#btnexpt').on('click', function () {
+        ExportExcel('xlsx');
+    });
 });
 
-
+function ExportExcel(type, fn, dl) {
+    var elt = document.getElementById('tblProbationUnits');
+    var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
+    return dl ?
+       XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
+       XLSX.writeFile(wb, fn || ('Children.' + (type || 'xlsx')));
+}
 function loadProbationUnits() {
     $.ajax({
         type: 'GET',

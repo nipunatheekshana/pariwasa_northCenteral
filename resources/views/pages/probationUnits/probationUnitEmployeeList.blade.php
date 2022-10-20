@@ -50,6 +50,7 @@
         </div>
     </div>
 
+    <button id="btnexpt" type="button" class="btn btn-primary mr-2">Export</button>
 
 @endsection
 
