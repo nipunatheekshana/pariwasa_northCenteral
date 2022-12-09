@@ -3,8 +3,16 @@ console.log('probationUnitUserList.js');
 $(document).ready(function () {
 
     $('#tblProbationUnitsUser').DataTable({
-        responsive: true,
-        'columnDefs': [{
+        scrollY: 600,
+        scrollX: true,
+        scrollCollapse: true,
+        'columnDefs': [
+            {
+                "targets": '_all',
+                "createdCell": function (td) {
+                    $(td).css('padding', '2px')
+                }
+            },{
             "targets": [0, 1, 2, 3,4],
             "className": "text-center",
         }],

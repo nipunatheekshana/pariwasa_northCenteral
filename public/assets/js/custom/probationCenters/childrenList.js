@@ -3,7 +3,10 @@ console.log('childrenList.js');
 $(document).ready(function () {
 
     $('#tblChildren').DataTable({
-        responsive: true,
+        scrollY: 600,
+        scrollX: true,
+        info: false,
+        scrollCollapse: true,
         "paging": false,
         // 'columnDefs': [{
         //     "targets": [0, 1, 2, 3, 4],

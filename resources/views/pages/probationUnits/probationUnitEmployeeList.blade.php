@@ -3,7 +3,6 @@
 @section('head')
     <!-- DataTable -->
     <link rel="stylesheet" href="{{ url('vendors/dataTable/datatables.min.css') }}" type="text/css">
-
 @endsection
 
 @section('content')
@@ -33,7 +32,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Probation Offices</h4>
                     <div class="table-responsive">
-                        <table id="tblProbationunitEmployee" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                        <table id="tblProbationunitEmployee" class="table table-striped table-bordered Date display nowrap">
                             <thead>
                                 <tr>
                                     <th class="thId">#</th>
@@ -51,7 +50,6 @@
     </div>
 
     <button id="btnexpt" type="button" class="btn btn-primary mr-2">Export</button>
-
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -59,5 +57,6 @@
     <!-- DataTable -->
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
     <!-- my script  -->
-    <script src="{{ url('assets/js/custom/probationUnits/probationUnitEmployeeList.js') }}?random=<?php echo uniqid(); ?>"></script>
+    <script src="{{ url('assets/js/custom/probationUnits/probationUnitEmployeeList.js') }}?random=<?php echo uniqid(); ?>">
+    </script>
 @endsection

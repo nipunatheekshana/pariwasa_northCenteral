@@ -5,12 +5,19 @@ $(document).ready(function () {
     $('select').attr('disabled', true);
 
     $('#tblChildren').DataTable({
-        responsive: true,
-        "paging": false,
-        // 'columnDefs': [{
-        //     "targets": [0, 1, 2, 3, 4],
-        //     "className": "text-center",
-        // }],
+        scrollY: 600,
+        scrollX: true,
+        scrollCollapse: true,
+        'columnDefs': [
+            {
+                "targets": '_all',
+                "createdCell": function (td) {
+                    $(td).css('padding', '2px')
+                }
+            },{
+            "targets": [0, 1, 2, 3, 4],
+            "className": "text-center",
+        }],
         "order": [],
         "columns": [
             { "data": "thId" },

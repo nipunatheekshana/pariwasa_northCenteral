@@ -3,12 +3,15 @@ console.log('childrenList.js');
 $(document).ready(function () {
 
     $('#tblChildren').DataTable({
-        responsive: true,
-        "paging": false,
-        // 'columnDefs': [{
-        //     "targets": [0, 1, 2, 3, 4],
-        //     "className": "text-center",
-        // }],
+        scrollY: 600,
+        scrollX: true,
+        scrollCollapse: true,
+        'columnDefs': [ {
+            "targets": '_all',
+            "createdCell": function (td) {
+                $(td).css('padding', '2px')
+            }
+        },],
         "order": [],
         "columns": [
             { "data": "thId" },

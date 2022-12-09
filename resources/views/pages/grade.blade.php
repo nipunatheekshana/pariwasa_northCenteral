@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-
     <div class="page-header">
         <div>
             <h3>Grade</h3>
@@ -29,13 +28,13 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title"></h4>
-                    <p class="card-description">  </p>
+                    <p class="card-description"> </p>
                     <form class="forms-sample" id="dform">
                         <div class="form-group">
                             <label for="exampleInputName1">Grade</label>
                             <input type="hidden" class="form-control" name="id" id="txtid">
                             <input type="text" class="form-control" name="name" id="name" placeholder="Grade">
-                            <input type="hidden" class="form-control" id="txtID" >
+                            <input type="hidden" class="form-control" id="txtID">
                         </div>
                         <button type="button" id="btnsave" class="btn btn-primary mr-2">Save</button>
                     </form>
@@ -45,12 +44,12 @@
                 <div class="card-body">
                     <h4 class="card-title">Grades</h4>
                     <div class="table-responsive">
-                        <table id="tblgrade" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                        <table id="tblgrade" class="table table-striped table-bordered Date display nowrap">
                             <thead>
                                 <tr>
                                     <th class="thid"> #</th>
                                     <th class="thname"> Grade</th>
-                                    <th class="edit">  Edit</th>
+                                    <th class="edit"> Edit</th>
                                     <th class="delete"> Delete</th>
                                 </tr>
                             </thead>
@@ -62,8 +61,6 @@
 
         </div>
     </div>
-
-
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -72,7 +69,4 @@
     <script src="{{ url('vendors/dataTable/datatables.min.js') }}"></script>
 
     <script src="{{ url('assets/js/custom/grade.js') }}?random=<?php echo uniqid(); ?>"></script>
-
-
-
 @endsection

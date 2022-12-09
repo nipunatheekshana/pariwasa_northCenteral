@@ -3,7 +3,6 @@
 @section('head')
     <!-- DataTable -->
     <link rel="stylesheet" href="{{ url('vendors/dataTable/datatables.min.css') }}" type="text/css">
-
 @endsection
 
 @section('content')
@@ -30,7 +29,7 @@
                 <div class="card-body">
                     <h4 class="card-title"> Probation Office Users</h4>
                     <div class="table-responsive">
-                        <table id="tblProbationUnitsUser" class="table table-striped table-bordered dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
+                        <table id="tblProbationUnitsUser" class="table table-striped table-bordered Date display nowrap">
                             <thead>
                                 <tr>
                                     <th class="thId">#</th>
@@ -47,8 +46,6 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

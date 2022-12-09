@@ -3,8 +3,17 @@ console.log('policedivition.js');
 $(document).ready(function () {
 
     $('#tblgrade').DataTable({
-        responsive: true,
+        scrollY: 600,
+        scrollX: true,
+        scrollCollapse: true,
         "order": [],
+        'columnDefs': [
+            {
+                "targets": '_all',
+                "createdCell": function (td) {
+                    $(td).css('padding', '2px')
+                }
+            }],
         "columns": [
           { "data": "thid" },
           { "data": "thname" },
