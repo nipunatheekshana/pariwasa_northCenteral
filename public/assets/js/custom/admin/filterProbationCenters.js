@@ -181,11 +181,11 @@ $(document).ready(function () {
 });
 
 function ExportExcel(type, fn, dl) {
-    var elt = document.getElementById('tblChildren');
+    var elt = document.getElementById('tblProbationCenters');
     var wb = XLSX.utils.table_to_book(elt, {sheet:"Sheet JS"});
     return dl ?
        XLSX.write(wb, {bookType:type, bookSST:true, type: 'base64'}) :
-       XLSX.writeFile(wb, fn || ('Children.' + (type || 'xlsx')));
+       XLSX.writeFile(wb, fn || ('ProbationCenters.' + (type || 'xlsx')));
 }
 
 function SetConditions() {
