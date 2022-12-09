@@ -1,0 +1,4 @@
+ ln -s domains/ncprobationdept.com/public public_html
+ln -s public public_html
+
+ln -s sourse_of_the_file  path_to_create_sym_link 
