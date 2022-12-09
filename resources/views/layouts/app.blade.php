@@ -32,7 +32,7 @@
 </head>
 {{-- class="scrollable-layout" --}}
 
-<body class="scrollable-layout"  >
+<body class="scrollable-layout dark"  >
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-icon"></div>

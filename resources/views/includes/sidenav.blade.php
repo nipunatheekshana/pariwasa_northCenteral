@@ -29,6 +29,14 @@
                             <a @if(request()->segment(1) == 'adminFilterChildren') class="active"
                                 @endif href="/adminFilterChildren">Children</a>
                         </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'adminFilterProbationCenters') class="active"
+                                @endif href="/adminFilterProbationCenters">Probation Centers</a>
+                        </li>
+                        <li>
+                            <a @if(request()->segment(1) == 'adminFilterEmployees') class="active"
+                                @endif href="/adminFilterEmployees">Employees</a>
+                        </li>
                         {{-- <li>
                             <a @if(request()->segment(1) == 'probationUnitList') class="active"
                                 @endif href="/probationUnitList">List</a>

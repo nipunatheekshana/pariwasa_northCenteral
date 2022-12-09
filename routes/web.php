@@ -48,7 +48,7 @@ Route::post('/login', [LogInController::class, 'login']);
 //logout
 Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 
-Route::group(['middleware'=>['is.logged']],function(){ //logged users route group
+Route::group(['middleware' => ['is.logged']], function () { //logged users route group
 
 
 
@@ -81,8 +81,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/createProbationUnit', function () {
         return view('pages.Admin.createProbationUnit');
     });
-    Route::post('/register_Probation_unit/save',[ProbationUnitController::class,'save']);
-    Route::post('/register_Probation_unit/update',[ProbationUnitController::class,'update']);
+    Route::post('/register_Probation_unit/save', [ProbationUnitController::class, 'save']);
+    Route::post('/register_Probation_unit/update', [ProbationUnitController::class, 'update']);
     Route::get('/register_Probation_unit/loadProbationUnit/{id}', [ProbationUnitController::class, 'loadProbationUnit']);
     Route::get('/register_Probation_unit/loadDistrict', [ProbationUnitController::class, 'loadDistrict']);
     Route::get('/register_Probation_unit/loadOfficer/{id}', [ProbationUnitController::class, 'loadOfficer']);
@@ -101,7 +101,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/createProbationUnitUser', function () {
         return view('pages.Admin.createProbationUnitUser');
     });
-    Route::post('/createProbationUnitUser/saveProbationUnitUser',[userController::class,'saveProbationUnitUser']);
+    Route::post('/createProbationUnitUser/saveProbationUnitUser', [userController::class, 'saveProbationUnitUser']);
     Route::get('/createProbationUnitUser/loadProbationUnits', [userController::class, 'loadProbationUnits']);
     Route::get('/createProbationUnitUser/loadProbationUnitUser/{id}', [userController::class, 'loadProbationUnitUser']);
 
@@ -123,8 +123,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/createProbationCenter/loadGramasevadivision/{id}', [probationCenterController::class, 'loadGramasevadivision']);
 
     Route::get('/createProbationCenter/loadcatagories', [probationCenterController::class, 'loadcatagories']);
-    Route::post('/createProbationCenter/save',[probationCenterController::class,'save']);
-    Route::post('/createProbationCenter/update',[probationCenterController::class,'update']);
+    Route::post('/createProbationCenter/save', [probationCenterController::class, 'save']);
+    Route::post('/createProbationCenter/update', [probationCenterController::class, 'update']);
     Route::get('/createProbationCenter/loadProbationCenter/{id}', [probationCenterController::class, 'loadProbationCenter']);
 
 
@@ -152,8 +152,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::get('/registerProbationUnitEmployee/loadpoliceDevition', [probationUnitEmployeeController::class, 'loadpoliceDevition']);
 
-    Route::post('/registerProbationUnitEmployee/save',[probationUnitEmployeeController::class,'save']);
-    Route::post('/registerProbationUnitEmployee/update',[probationUnitEmployeeController::class,'update']);
+    Route::post('/registerProbationUnitEmployee/save', [probationUnitEmployeeController::class, 'save']);
+    Route::post('/registerProbationUnitEmployee/update', [probationUnitEmployeeController::class, 'update']);
     Route::get('/registerProbationUnitEmployee/loadProbationUnitEmployee/{id}', [probationUnitEmployeeController::class, 'loadProbationUnitEmployee']);
 
 
@@ -231,7 +231,7 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/createProbationCenterUsers', function () {
         return view('pages.probationUnits.createProbationCenterUsers');
     });
-    Route::post('/createProbationCenterUsers/saveProbationCenterUser',[userController::class,'saveProbationCenterUser']);
+    Route::post('/createProbationCenterUsers/saveProbationCenterUser', [userController::class, 'saveProbationCenterUser']);
     Route::get('/createProbationCenterUsers/loadProbationCenters', [userController::class, 'loadProbationCenters']);
     Route::get('/createProbationCenterUsers/loadProbationCenterUser/{id}', [userController::class, 'loadProbationCenterUser']);
 
@@ -247,8 +247,8 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     Route::get('/registerChildren', function () {
         return view('pages.probationCenters.registerChildren');
     });
-    Route::post('/registerChildren/save',[ChildrenRegisterController::class,'save']);
-    Route::post('/registerChildren/update',[ChildrenRegisterController::class,'update']);
+    Route::post('/registerChildren/save', [ChildrenRegisterController::class, 'save']);
+    Route::post('/registerChildren/update', [ChildrenRegisterController::class, 'update']);
 
     Route::get('/registerChildren/loadChild/{id}', [ChildrenRegisterController::class, 'loadChild']);
 
@@ -276,4 +276,11 @@ Route::group(['middleware'=>['is.logged']],function(){ //logged users route grou
     });
     Route::get('/ProbationUnitchildrenList/loadChildren', [ProbationUnitChildrenListController::class, 'loadChildren']);
 
+    Route::get('/adminFilterProbationCenters', function () {
+        return view('pages.Admin.filterProbationCenters');
+    });
+
+    Route::get('/adminFilterEmployees', function () {
+        return view('pages.Admin.filterEmployees');
+    });
 });
