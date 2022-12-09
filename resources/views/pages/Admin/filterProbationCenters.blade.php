@@ -118,35 +118,18 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Children</h4>
+                                    <h4 class="card-title">Probation Centers</h4>
                                     <div class="table-responsive">
-                                        <table id="tblChildren"
-                                            class="table table-striped table-bordered Date display nowrap">
+                                        <table id="tblProbationCenters" class="table table-striped table-bordered Date display nowrap">
                                             <thead>
                                                 <tr>
                                                     <th class="thId">#</th>
                                                     <th class="thName"> Name</th>
-                                                    <th class="thGender">Gender</th>
-                                                    <th class="thnationality">Nationality</th>
-                                                    <th class="threligion">Religion</th>
-                                                    <th class="thhelth_status">Helth Status</th>
-                                                    <th class="thhow_entered">How Entered</th>
-                                                    <th class="thcase_number">Case Number</th>
-                                                    <th class="thEntered_divition">entered Divition</th>
-                                                    <th class="thcrime_commited">\Crime commited</th>
-                                                    <th class="thdate_entered">Date entered</th>
-                                                    <th class="thstatus_before_enter">Status before enter</th>
-                                                    <th class="thstatus_after_enter">Status after enter</th>
-                                                    <th class="thdivitional_secretariat">Divitional secretariat</th>
-                                                    <th class="thpoliceDivition">PoliceDivition</th>
-                                                    <th class="thgramaseva_divition">Gramaseva divition</th>
-                                                    <th class="thaddress">Address</th>
-                                                    <th class="thtransfer_address">Transfer address</th>
-                                                    <th class="thcourt">Court</th>
-                                                    <th class="thdisability">Disability</th>
-                                                    <th class="thbirth_certificate">Birth certificate</th>
-                                                    <th class="thDOB">DOB</th>
+                                                    <th class="thTpNo">Telephone</th>
+                                                    <th class="thNumOfStalf">Num of Stalf</th>
+                                                    <th class="thNumOfChildren">Num of Children</th>
                                                     <th class="actions"> Actions</th>
+                                                </tr>
                                             </thead>
                                             <tbody></tbody>
                                         </table>
@@ -163,5 +146,5 @@
                     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
                     <!-- my script  -->
-                    <script src="{{ url('assets/js/custom/admin/filterChildren.js') }}?random=<?php echo uniqid(); ?>"></script>
+                    <script src="{{ url('assets/js/custom/admin/filterProbationCenters.js') }}?random=<?php echo uniqid(); ?>"></script>
                 @endsection

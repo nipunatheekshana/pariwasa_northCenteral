@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\adminChildrenFilterController;
+use App\Http\Controllers\adminFilterEmployeecontroller;
+use App\Http\Controllers\adminFilterProbationCenterController;
 use App\Http\Controllers\ChildrenListController;
 use App\Http\Controllers\ChildrenRegisterController;
 use App\Http\Controllers\designationController;
@@ -279,8 +281,11 @@ Route::group(['middleware' => ['is.logged']], function () { //logged users route
     Route::get('/adminFilterProbationCenters', function () {
         return view('pages.Admin.filterProbationCenters');
     });
+    Route::get('/adminFilterProbationCenters/loadProbationCenters', [adminFilterProbationCenterController::class, 'loadProbationCenters']);
 
     Route::get('/adminFilterEmployees', function () {
         return view('pages.Admin.filterEmployees');
     });
+    Route::get('/adminFilteremployee/loadEmployees', [adminFilterEmployeecontroller::class, 'loadEmployees']);
+
 });
